@@ -22,7 +22,7 @@ item:
   - title: Learn R
     content:
     align: center
-    overlay_color: '#8C8DAE'  
+    overlay_color:   
     overlay_img: chapter_3_strip_2.png 
     # overlay_filter: 0.5
     cta_label: I want R tutorials
@@ -32,7 +32,7 @@ item:
   - title: JIGSAWs Puzzles
     content: 
     align: center
-    overlay_color: '#8C8DAE'
+    overlay_color: 
     overlay_img: chapter_11_strip_2.png
     cta_label: Solutions for end-of-chapter tasks
     cta_url: '/solutions/'

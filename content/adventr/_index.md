@@ -6,7 +6,7 @@ title: adventr
 linktitle: adventr
 
 # Page summary for search engines.
-summary: Description of the `adventr` package for R
+summary: Description of the adventr package for R
 
 # Date page published
 date: 2022-02-07

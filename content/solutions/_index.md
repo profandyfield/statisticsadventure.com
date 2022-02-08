@@ -1,11 +1,11 @@
 ---
-title: Solutions
+title: JIG:SAW's  Puzzles Solutions
 
 # Title for the menu link if you wish to use a shorter link title, otherwise remove this option.
 linktitle: JIG:SAW Puzzles
 
 # Page summary for search engines.
-summary: An adventure in statistics jig:saw puzzle solutions
+summary: An adventure in statistics end-of-chapter solutions
 
 # Date page published
 date: 2022-02-10

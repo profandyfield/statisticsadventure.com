@@ -1,5 +1,5 @@
 ---
-title: Run a tutorial
+title: Workflow
 date: 2022-02-07
 type: book
 weight: 60

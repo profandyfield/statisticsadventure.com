@@ -18,7 +18,7 @@ A list of tutorials appears in this pane. Scroll through them and click on the *
 
 {{< figure src="run_tutorial_pane.png" caption="Running a tutorial from RStudio's tutorials pane" numbered="true">}}
 
-## Running a tutorial within {{< icon name="r-project" pack="fab" >}}
+## Running a tutorial within R
 
 If you're not using RStudio then to run a particular tutorial type the following at the console and execute [^1]
 

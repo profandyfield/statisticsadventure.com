@@ -14,12 +14,9 @@ date: 2022-02-10
 type: book
 
 # Position of this page in the menu. Remove this option to sort alphabetically.
-weight: 1
+weight: 10
 
-# Optional header image (relative to `static/img/` folder).
-header:
-  caption: ""
-  image: ""
+
 ---
 
 {{< figure src="chapter_7_strip_1.png" width="100%">}}

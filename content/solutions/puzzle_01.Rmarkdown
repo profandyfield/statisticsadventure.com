@@ -1,0 +1,142 @@
+---
+title: "Why you need science"
+date: '`r Sys.Date()`'
+output: html_document
+type: book
+weight: 20
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(kableExtra)
+```
+
+## Puzzle 1
+
+> Zach wanted to impress Alice, so he asked The Head to find him some famous scientific theories. For each one, can you help him to generate a prediction that might arise from the theory. 
+
+> Galton suggested that intelligence is hereditary (runs in families).
+
+One prediction would be ‘People with highly intelligent parents will be more intelligent than those with less intelligent parents’. 
+
+>	Bandura suggested that people learn their behaviours from watching others (observational learning).
+
+One prediction would be ‘The more violent films a person watches, the more aggressively they behave’.
+
+>	Paivio suggested that things are easier to remember if you visualize them (dual-coding theory).
+
+One prediction would be ‘There will be a difference between the number of words remembered by people who read a list of words and visualize each word compared to people who only read the list of words’.
+
+>	Piaget suggested that children develop logical thinking skills as they grow older.
+
+One prediction would be ‘Children aged 11 will be able to solve more difficult logical problems than children aged 6 (or any age younger than 11 really)’. 
+
+## Puzzle 2
+
+> What is the difference between descriptive and inferential statistics?
+
+Descriptive statistics can be used only to describe the data collected from a sample. Inferential statistics, on the other hand, allows us to take the data collected from a sample and generalize it to the population from which that sample came. For the inferential statistics to be accurate it is important to make sure that your sample is representative of the population to which it is being generalized. 
+
+## Puzzle 3
+
+> What is the difference between a statistic and a parameter?
+
+A statistic is a value that describes the sample. For example, the average number of T-shirts sold in the sample in the chapter is a statistic. The value of the statistic can then be used to estimate the corresponding value in the population (the parameter).
+
+## Puzzle 4
+
+> What is the difference between sampling variation and sampling error?
+
+The sampling error is the difference between the value estimated from the sample (the statistic) and the true value in the population (the population parameter). If you take lots of samples from a population it is likely that the statistics will vary; this is known as sampling variation. 
+
+## Puzzle 5
+
+> What is the difference between a point and an interval estimate?
+
+A point estimate uses a single value, or point, to estimate the likely value of an unknown quantity (such as the population value). An interval estimate uses a range of values to estimate this value.
+
+## Puzzle 6
+
+> What is the difference between correlational and experimental research?
+
+Correlational research is a form of research in which you observe what naturally goes on in the world without directly interfering with it. This term implies that data will be analysed so as to look at relationships between naturally occurring variables rather than making statements about cause and effect. Experimental research, on the other hand, is a form of research in which one or more variables are systematically manipulated to see their effect (alone or in combination) on an outcome variable. This term implies that data will be able to be used to make statements about cause and effect.
+
+## Puzzle 7
+
+> What is the difference between systematic and unsystematic variation?
+
+Systematic variation is the variation due to some genuine effect. We can think of this as variation that can be explained by the model that we’ve fitted to the data. Unsystematic variation is variation that isn’t due to the effect in which we’re interested (so could be due to natural differences between people in different samples, such as differences in intelligence or motivation). We can think of this as variation that can’t be explained by whatever model we’ve fitted to the data.
+
+## Puzzle 8
+
+> Zach takes a group of fans of his band and gets them to rate each of five successive gigs according to how good they thought the band were. 
+
+> What kind of design has Zach used?
+
+Zach has used a repeated-measures design because all the fans in the group are asked to rate all five gigs. In other words, all Zach’s fans take part in all five conditions of the experiment. 
+
+> What is the independent variable?
+
+The independent variable would be the gig that was attended. This variable has five levels (gig 1, 2, 3, 4, 5).
+
+> What is the dependent variable?
+
+The dependent variable would be the fans’ ratings of each of the five gigs. 
+
+## Puzzle 9
+
+> Zach wants to know which musical instrument makes you the most popular. He looks at the memoryBank pages of a random selection of guitarists, drummers, bassists and singers and counts how many ‘Hails’ they have. 
+
+> 	What kind of design is this?
+
+This would be an example of an independent design because there are different musicians in each category of musical instrument (guitarists, drummers, bassists and singers). 
+
+> What is the outcome variable?
+
+The outcome variable (or dependent variable) would be the number of ‘Hails’ each band has.
+
+>	What is the predictor variable?
+
+The predictor variable (or independent variable) would be the type of musical instrument the person plays (guitar, bass, drums, voice).
+
+## Puzzle 10
+
+> Alice wanted to see what methods were best for getting your partner to take an interest in your life. She got her girlfriends to try different techniques on their partners: giving them affection whenever they showed an interest in their lives, giving them chocolate when they showed interest, or rebuking them when they did not pay attention. Every friend tried each method for one week and counted how often her partner listened to her. 
+
+>	How would you implement a Latin square counterbalancing for this study?
+
+A Latin square is an *n* by *n* grid of symbols where every symbol appears exactly once in every row and column location. In the question we have three tasks: affection, chocolate and rebuking. n is the number of tasks, so we would have a 3 × 3 grid (3 rows by 3 columns). The rows represent different counterbalancing orders, and the columns represent the tasks to be performed (see Table 1). Note that each task appears once as the first task, once as the middle task and once as the final task. As such, the order of tasks is counterbalanced.
+
+```{r}
+cb <- tibble::tribble(
+  ~`Group`, ~`Task 1`, ~`Task 2`, ~`Task 3`,
+  "Group 1", "Affection", "Chocolate", "Rebuking",
+  "Group 2", "Rebuking", "Affection", "Chocolate",
+  "Group 3", "Chocolate", "Rebuking", "Affection",
+)
+```
+
+```{r, results = 'asis'}
+cb %>% 
+  knitr::kable(caption = "Latin square counterbalancing") %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE)
+```
+
+
+>	What is the outcome variable?
+
+The number of times the partner listened.
+
+>	What is the independent variable?
+
+The technique used to get the partners to take an interest. This variable has three levels: (1) affection, (2) chocolate, (3) rebuking them when they did not pay attention.
+
+>	What is the predictor variable?
+
+A predictor variable is another term for an independent variable; they mean the same thing. Therefore, the predictor variable is the technique used to get the partners to take an interest. This variable has three levels: (1) affection, (2) chocolate, (3) rebuking them when they did not pay attention.
+
+>	What is the dependent variable?
+
+The dependent variable is the same as the outcome variable. They are different terms used to represent the same thing – confusing, I know. Therefore, the dependent variable would be the number of times the partner listened.

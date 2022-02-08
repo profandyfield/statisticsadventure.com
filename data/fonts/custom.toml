@@ -1,0 +1,11 @@
+# Font style metadata
+name = "adventr"
+
+# Optional Google font URL
+google_fonts = "family=Special+Elite&family=Marcellus:wght@400;700"
+
+# Font families
+heading_font = "Special Elite"
+body_font = "Marcellus"
+nav_font = "Special Elite"
+mono_font = "Marcellus"

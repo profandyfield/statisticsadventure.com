@@ -1,0 +1,22 @@
+# Theme metadata
+name = "custom"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#4C9A4F" #highlight text
+
+# Menu
+menu_primary = "#BCD252"
+menu_text = "#4C9A4F"
+menu_text_active = "#4C9A4F"
+menu_title = "#fff"
+
+# Home sections
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(140, 140, 174)"
+
+[dark]
+  link = "#bbdefb"
+  link_hover = "#bbdefb"

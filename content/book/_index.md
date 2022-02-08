@@ -9,7 +9,7 @@ linktitle: Book
 summary: An adventure in statistics textbook
 
 # Date page published
-date: 2022-02-10
+date: 2022-02-08
 
 # Book page type (do not modify).
 type: book

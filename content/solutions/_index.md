@@ -8,7 +8,7 @@ linktitle: Solutions
 summary: An adventure in statistics end-of-chapter solutions
 
 # Date page published
-date: 2022-02-10
+date: 2022-02-8
 
 # Book page type (do not modify).
 type: book

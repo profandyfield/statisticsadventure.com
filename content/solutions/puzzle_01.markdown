@@ -3,6 +3,7 @@ title: "Why you need science"
 date: '2022-02-08'
 output: html_document
 type: book
+categories: solutions
 weight: 20
 ---
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>

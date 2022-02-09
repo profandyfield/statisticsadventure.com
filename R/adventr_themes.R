@@ -12,3 +12,7 @@ ong <- "#d47500"
 ong_dk <- "#d35400"
 red <- "#ef4836"
 red_dk <- "#b50000"
+
+
+tbl_highlight <- "#67AD5B"
+tbl_hlg_txt <- "#FFFFFF"

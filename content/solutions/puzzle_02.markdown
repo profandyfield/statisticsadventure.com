@@ -1,6 +1,6 @@
 ---
-title: "Reporting Research, Variables and Measurement"
-date: '2022-02-08'
+title: "Chapter 2"
+date: '2022-02-09'
 output: html_document
 type: book
 weight: 30
@@ -18,7 +18,7 @@ weight: 30
 
 
 
-
+# Reporting Research, Variables and Measurement
 ## Puzzle 1
 
 > Describe the main sections of a research report.

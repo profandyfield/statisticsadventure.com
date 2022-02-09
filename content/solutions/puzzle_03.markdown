@@ -1,6 +1,6 @@
 ---
-title: "Summarizing data"
-date: '2022-02-08'
+title: "Chapter 3"
+date: '2022-02-09'
 output: html_document
 type: book
 weight: 40
@@ -10,6 +10,7 @@ weight: 40
 
 
 
+# Summarizing data
 
 ## Puzzle 1
 

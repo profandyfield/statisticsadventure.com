@@ -1,5 +1,5 @@
 ---
-title: "Why you need science"
+title: "Chapter 1"
 date: '`r Sys.Date()`'
 output: html_document
 type: book
@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(kableExtra)
 ```
+
+# Why you need science
 
 ## Puzzle 1
 

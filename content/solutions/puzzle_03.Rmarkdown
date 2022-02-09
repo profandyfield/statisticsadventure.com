@@ -1,5 +1,5 @@
 ---
-title: "Summarizing data"
+title: "Chapter 3"
 date: '`r Sys.Date()`'
 output: html_document
 type: book
@@ -16,6 +16,7 @@ library(kableExtra)
 here::here("R/adventr_themes.R") %>% source()
 ```
 
+# Summarizing data
 
 ## Puzzle 1
 

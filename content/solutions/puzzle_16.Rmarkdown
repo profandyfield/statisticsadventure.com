@@ -1,0 +1,971 @@
+---
+title: "Chapter 16"
+date: '`r Sys.Date()`'
+output: html_document
+type: book
+weight: 170
+toc-depth: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.kable.NA = '')
+
+library(broom)
+library(gt)
+library(here)
+library(tidyverse)
+library(kableExtra)
+
+here::here("R/adventr_themes.R") %>% source()
+```
+
+# Factorial designs
+## Puzzle 1
+
+> When Zach entered the JIG:SAW complex he tried garlic, rTMS and Tasers to deter the zombie security. Afterwards, he decided to do a study to test which of these weapons was best. Based on his experiences, he predicted that Tasers and rTMS would be better deterrents than garlic, but that there would be no significant difference between Tasers and rTMS. He randomly assigned 5 people a Taser, 5 people an rTMS device, and 5 people a necklace of garlic. He then put them in a pit with 10 hungry zombies. He counted how many of the 10 zombies were incapacitated for each participant. The data are in Table 16.10 (in the book). Compute the *F*-ratio. Were there significant differences between the mean number of zombies incapacitated by the different weapons?
+
+The summary table for the model is as follows:
+
+```{r}
+weapon_tib <- here::here("static/csv/ais_ch_16_puzzle_zombie_weapons.csv") %>% 
+  readr::read_csv()
+
+puz1_aov <- aov(Zombies~Weapon, weapon_tib)
+
+broom::tidy(puz1_aov) %>%
+  dplyr::mutate(
+    p.value = ifelse(!is.na(p.value), paste(round(p.value, 3)), NA)
+  ) %>%
+  knitr::kable(caption = "Summary table of the model predicting the number of zombies incapacitated from the weapon used", digits = 2) %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+Let's see how we calculate these values. First, we compute the total sum of squares:
+
+$$
+SS_\text{T} = \sum_{i = 1}^{N}(x_i - \bar{x}_\text{grand})^2 = 59.35
+$$
+
+We arrive at this value (approx) by subtracting the grand mean from each score, squaring these differences and adding them up, as shown in the following table
+
+```{r p1.sst}
+puz1 <- weapon_tib %>% 
+  dplyr::mutate(
+    mean = round(mean(Zombies), 3),
+    error = Zombies-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Zombies = "Zombies ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares")
+```
+
+```{r}
+puz1
+```
+
+Next, we calculate the model sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{M} &= \sum_{i=1}^{k} n_k(\bar{x}_k - \bar{x})^2 \\\\
+&= 5(4.2-3.667)^2 + 5(5.4-3.667)^2 + 5(1.4-3.667)^2 \\\\
+&= 42.13.
+\\end{aligned}
+$$
+
+Now, we calculate the residual sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{R} &= \sum(Y_{ik}-\bar{Y}_k)^2 \\\\
+&= 10.8 + 5.2 + 1.2 \\\\
+&= 17.2.
+\\end{aligned}
+$$
+
+For each score we compute the difference between the score and the *group* mean, then square these differences and sum them, as shown in the following table:
+
+```{r p1.sstaz}
+puz_taser <- weapon_tib %>%
+  dplyr::filter(Weapon == "Taser") %>% 
+  dplyr::mutate(
+    mean = round(mean(Zombies), 3),
+    error = Zombies-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Zombies = "Zombies ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares for Taser")
+```
+
+```{r}
+puz_taser
+```
+
+
+```{r p1.sstms}
+puz_tms <- weapon_tib %>%
+  dplyr::filter(Weapon == "rTMS") %>% 
+  dplyr::mutate(
+    mean = round(mean(Zombies), 3),
+    error = Zombies-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Zombies = "Zombies ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares for rTMS")
+```
+
+```{r}
+puz_tms
+```
+
+```{r p1.ssgar}
+puz_gar <- weapon_tib %>%
+  dplyr::filter(Weapon == "Garlic") %>% 
+  dplyr::mutate(
+    mean = round(mean(Zombies), 3),
+    error = Zombies-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    ) %>% 
+    gt::cols_label(
+    Zombies = "Zombies ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares for Garlic")
+```
+
+```{r}
+puz_gar
+```
+
+We convert the sums of squares to mean squares by dividing by the degrees of freedom for each:
+
+$$
+\\begin{aligned}
+MS_\text{M} &= \frac{SS_\text{M}}{df_\text{M}} = \frac{42.13}{2} = 21.07 \\\\
+MS_\text{R} &= \frac{SS_\text{R}}{df_\text{R}} = \frac{17.2}{12} = 1.433.
+\\end{aligned}
+$$
+
+We calculate *F* as
+
+$$
+\\begin{aligned}
+F &= \frac{MS_\text{M}}{MS_\text{R}} \\\\
+&= \frac{21.07}{1.433} \\\\
+&= 14.70.
+\\end{aligned}
+$$
+
+We conclude that there was a significant difference in the mean number of zombies incapacitated by different weapons, *F*(2, 12) = 14.70, *p* < 0.001.
+
+## Puzzle 2
+
+> Based on Zach’s predictions, construct some contrasts and weights for those contrasts to test his predictions.
+
+The contrasts and weights reflecting Zach's predictions are in the following table:
+
+```{r}
+tibble::tibble(
+  Contrast= c("Garlic compared to other weapon", "Taser compared to rTMS"),
+  Taser = c(1, 1),
+  rTMS = c(1, -1),
+  Garlic = c(-2, 0)
+  ) %>% 
+  knitr::kable(caption = "Table of contrast codes") %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = F) 
+  
+```
+
+## Puzzle 3
+
+> Calculate omega squared for the zombie data, and also calculate Cohen’s $d$ for the difference between means of the three conditions (use the pooled estimate of the standard deviation).
+
+First we calculate $ \omega^s $ as
+
+$$
+\\begin{aligned}
+\omega^2 &= \frac{SS_\text{M}-df_\text{M} \times MS_\text{R}}{SS_\text{T} + MS_\text{R}} \\\\
+&= \frac{42.13-2 \times 1.433}{59.35+ 1.433} \\\\
+&= \frac{39.264}{60.783} \\\\
+&= 0.646.
+\\end{aligned}
+$$
+
+Cohen’s *d* is defined as
+
+$$
+\hat{d} = \frac{\bar{X_1}-\bar{X_2}}{s}.
+$$
+
+The pooled estimate of the standard deviation is
+
+$$
+s_p = \sqrt{\frac{(N_1-1) s_1^2+(N_2-1) s_2^2}{N_1+N_2-2}}.
+$$
+
+The values and resulting calculations are tabulated below
+
+
+```{r}
+tibble::tibble(
+  Comparison = c("Taser - Garlic", "rTMS - Garlic", "Taser - rTMS"),
+  mean1 = c(4.2, 5.4, 4.2),
+  mean2 = c(1.4, 1.4, 5.4),
+  sd1 = c(2.7, 1.3, 2.7),
+  sd2 = c(0.3, 0.3, 1.3),
+  n1 = rep(5, 3),
+  n2 = rep(5, 3),
+  diff = mean1-mean2,
+  sp = round(sqrt(((n1-1)*sd1^2+(n2-1)*sd2^2)/(n1+n2-2)), 3),
+  d = round(diff/sp, 3)
+  ) %>%
+  gt() %>% 
+  gt::cols_label(
+    mean1 = "$M_1$",
+    mean2 = "$M_2$",
+    sd1 = "$SD_1$",
+    sd2 = "$SD_2$",
+    n1 = "$n_1$",
+    n2 = "$n_2$",
+    diff = "$M_1-M_2$",
+    sp = "$s_p$",
+    d = "$d$"
+  ) %>% 
+  gt::tab_header("Effect size calculations")
+```
+
+## Puzzle 4
+
+> Rob Nutcot used an oxytocin spray to try to make people trust him more. Zach set up an experiment to see whether oxytocin affected trust. He took 7 people who were delivered a speech about different products to keep you looking younger by three different people. Before each speech they were sprayed with either (1) a placebo that smelled like oxytocin spray but had no active ingredient, (2) a spray with a low dose of oxytocin in it, or (3) a spray with a high dose of oxytocin in it. Each participant was, therefore, exposed to each dose of oxytocin. The outcome was how much they believed the claims about the product (out of 10). The data are in Table 16.11. Calculate the F-ratio. Did oxytocin affect trust in the product?
+
+The summary table for the model is as follows:
+
+```{r}
+oxy_tib <- here::here("static/csv/ais_ch_16_puzzle_oxytocin.csv") %>% 
+  readr::read_csv() %>% 
+  dplyr::mutate(
+    ID = forcats::as_factor(ID)
+  )
+
+oxy_tidy <- oxy_tib %>% 
+  tidyr::pivot_longer(
+    cols = Placebo:High,
+    names_to = "Dose",
+    values_to = "Belief"
+  )
+
+puz4_aov <- aov(Belief~Dose + Error(ID), oxy_tidy)
+
+broom::tidy(puz4_aov) %>%
+  dplyr::mutate(
+    p.value = ifelse(!is.na(p.value), paste(round(p.value, 3)), NA)
+  ) %>% 
+  knitr::kable(caption = "Summary table of the model predicting the belief in the product from the dose of oxytocin administered before the speech", digits = 2) %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+
+Let's see how we calculate these values. First, we compute the total sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{T} &= \sum_{i = 1}^{N}(x_i - \bar{x}_\text{grand})^2 \\\\
+&= 75.82.
+\\end{aligned}
+$$
+
+We arrive at this value by subtracting the grand mean from each score, squaring these differences and adding them up, as shown in the following table.
+
+```{r}
+oxy_tidy %>% 
+  dplyr::mutate(
+    mean = round(mean(Belief), 3),
+    error = Belief-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Belief = "Belief ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares")
+```
+
+Next, we calculate the model sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{M} &= \sum_{i=1}^{k}n_k(\bar{x}_k-\bar{x})^2 \\\\
+&= 7(5.143-6.238)^2 + 7(5.429-6.238)^2 +7(8.143-6.238)^2 \\\\
+&= 38.38.
+\\end{aligned}
+$$
+
+Next, we calculate the within-participant sum of squares by calculating the sum of squared error within each participant and adding them up. The table shows how to arrive at the sums of squares for each entity
+
+```{r}
+oxy_tidy %>% 
+  dplyr::group_by(ID) %>% 
+  dplyr::summarize(
+    mean = round(mean(Belief), 3),
+    var = round(var(Belief), 3)
+  ) %>% 
+  dplyr::mutate(
+    df = 2,
+    SS = df*var
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = SS,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    mean = "Mean ($\\bar{X}$)",
+    var = "Variance ($s^2$)",
+  ) %>% 
+  gt::tab_header("Calculating sums of squares within participants")
+```
+
+We use these values as follows
+
+$$
+\\begin{aligned}
+SS_\text{W} &= SS_\text{Entity 1} + SS_\text{Entity 2} + \ldots + SS_{\text{Entity }i} \\\\
+&= 0 + 4.666 + 18.666 + 14.000 + 8.666 + 8.666 + 10.666 \\\\
+&= 65.33.
+\\end{aligned}
+$$
+
+The associated degrees of freedom are
+
+$$
+\\begin{aligned}
+df_\text{W} &= df_\text{Entity 1} + df_\text{Entity 2} + \ldots + df_{\text{Entity }i} \\\\
+&= 2 + 2 + 2 + 2 + 2 + 2 + 2 \\\\
+&= 14.
+\\end{aligned}
+$$
+
+Next, we calculate the residual sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{R} &= SS_\text{W}-SS_\text{M} \\\\
+&= 65.33 - 38.38 \\\\
+&= 26.95,
+\\end{aligned}
+$$
+
+and their degrees of freedom
+
+$$
+\\begin{aligned}
+df_\text{R} &= df_\text{W}-df_\text{M} \\\\
+&= 14 - 2 \\\\
+&= 12.
+\\end{aligned}
+$$
+
+We convert the sums of squares to mean squares by dividing by the degrees of freedom for each:
+
+$$
+\\begin{aligned}
+MS_\text{M} &= \frac{SS_\text{M}}{df_\text{M}} = \frac{38.38}{2} = 19.190 \\\\
+MS_\text{R} &= \frac{SS_\text{R}}{df_\text{R}} = \frac{26.95}{12} = 2.246.
+\\end{aligned}
+$$
+
+We calculate *F* as follows
+
+$$
+F = \frac{MS_\text{M}}{MS_\text{R}} = \frac{19.190}{2.246} = 8.544
+$$
+
+There was a significant difference in the belief scores after different doses of oxytocin, *F*(2, 12) = 8.54, *p* = 0.005.
+
+## Puzzle 5
+
+> Earlier in his journey, Zach looked at some data showing the strength, footspeed and vision of different groups of JIG:SAW employees (code 1318, scientists, security, professional services and technicians; see Figure 9.1 in the book). There were 240 employees in total. Milton forced him reluctantly to test whether the mean strength differed across the five groups. Then, because he is an evil cat, he erased some of the values from the summary (Table 16.12 in the book). Can you help Zach to fill in the blanks? (Hint: think about the degrees of freedom first.)
+
+* There were five groups being compared (code 1318, scientists, security, professional services and technicians), so the degrees of freedom for the model will be 4 ($ k - 1 $)
+* The total degrees of freedom will be: $ N - 1 = 240 - 1 = 239 $
+* The residual degrees of freedom will be: $ df_\text{T} - df_\text{M} = 239 - 4 = 235 $
+* We can work out the mean squared error for the model by dividing the sum of squares by the degrees of freedom 
+
+$$
+MS_\text{M} = \frac{SS_\text{M}}{df_\text{M}} = \frac{8490624}{4} = 2122656
+$$
+
+* We can work out the residual sum of squared errors by multiplying the mean squared error by the degrees of freedom
+
+$$
+SS_\text{R} = MS_\text{R} \times df_\text{R} = 89636 \times 235 = 21064460
+$$
+
+* We can work out the total sum of squares by adding the model and residual sum of squares
+
+$$
+SS_\text{T} = SS_\text{M} + SS_\text{R} = 8490624 + 21064460 = 29555084
+$$
+
+* The *F* statistic is the mean squared error for the model divided by that for the residual
+
+$$
+F = \frac{MS_\text{M}}{MS_\text{R}} = \frac{2122656}{89636} = 23.68
+$$
+
+## Puzzle 6
+
+> That cat, Milton, is such a japester that he has done the same thing to the summary table (Table 16.13 in the book) for the comparison between means of footspeed across the five job types (see puzzle 5). Help Zach to fill in the blanks before he dies of tedium.
+
+* There were five groups being compared (code 1318, scientists, security, professional services and technicians), so the degrees of freedom for the model will be 4 ($ k - 1 $)
+* The total degrees of freedom will be: $ N - 1 = 240 - 1 = 239 $
+* The residual degrees of freedom will be: $ df_\text{T} - df_\text{M} = 239 - 4 = 235 $
+* We can work out the model sum of squares by subtracting the residual sum of squares from the total sum of squares
+
+$$
+SS_\text{M} = SS_\text{T} - SS_\text{R} = 3272 - 3256 = 16
+$$
+
+* We can work out the mean squared error for the model by dividing the sum of squares by the degrees of freedom
+
+$$
+MS_\text{M} = \frac{SS_\text{M}}{df_\text{M}} = \frac{16}{4} = 4
+$$
+
+* We can work out the mean squared error for the residual by dividing the sum of squares by the degrees of freedom: 
+
+$$
+MS_\text{R} = \frac{SS_\text{R}}{df_\text{R}} = \frac{3256}{235} = 13.86
+$$
+
+* The *F* statistic is the mean squared error for the model divided by that for the residual
+
+$$
+F = \frac{MS_\text{M}}{MS_\text{R}} = \frac{4}{13.86} = 0.29
+$$
+
+## Puzzle 7
+
+> When Celia was trying to woo Zach, she looked at whether there was a significant association between how you rated the costs and rewards of your relationship and openness to alternative relationships (see Reality Check 13.2 in the book). She decided to see whether you could manipulate a person’s openness to alternative relationships. She took five people and asked them to list all the costs and rewards of their current relationship, then asked them to rate their openness to alternative relationships. At another point in time she asked the same people to study a list of potential costs to being in a relationship and again got them to rate their openness to alternative relationships. At a final point in time she asked the same people to study a list of potential benefits or rewards to being in a relationship and again got them to rate their openness to alternative relationships. Each person completed these tasks a week apart and in random order. The data are in Table 16.14 (in the boiok). Use these values to compute the F-ratio. Is openness to alternative relationships affected by focusing on lists of potential costs or rewards compared to generating your own costs and rewards?
+
+The summary table for the model is in the table below
+
+```{r}
+rel_tib <- here::here("static/csv/ais_ch_16_puzzle_relationships.csv") %>% 
+  readr::read_csv() %>% 
+  dplyr::mutate(
+    ID = forcats::as_factor(ID)
+  )
+
+rel_tidy <- rel_tib %>% 
+  tidyr::pivot_longer(
+    cols = Free_List:Rewards,
+    names_to = "Prompt",
+    values_to = "Openness"
+  )
+
+puz7_aov<-aov(Openness~Prompt + Error(ID), rel_tidy)
+
+broom::tidy(puz7_aov) %>%
+  dplyr::mutate(
+    p.value = ifelse(!is.na(p.value), paste(round(p.value, 3)), NA)
+  ) %>% 
+  knitr::kable(caption = "Summary table of the model predicting openness to a new relationship after studying different prompt lists", digits = 2) %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+Let's see how we calculate these values. First, we compute the total sum of squares:
+
+$$
+SS_\text{T} = \sum_{i = 1}^{N}(x_i - \bar{x}_\text{grand})^2 = 29.60
+$$
+
+We arrive at this value by subtracting the grand mean from each score, squaring these differences and adding them up, as shown in the following table
+
+```{r}
+rel_tidy %>% 
+  dplyr::mutate(
+    mean = round(mean(Openness), 3),
+    error = Openness-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Openness = "Openness ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares for Openness")
+```
+
+
+Next, we calculate the model sum of squares:
+
+$$
+\\begin{aligned}
+SS_\text{M} &= \sum_{i=1}^{k}n_k(\bar{x}_k-\bar{x})^2 \\\\
+&= 5(3.60-3.40)^2 + 5(4.40-3.40)^2 +5(2.20-3.40)^2 \\\\
+&= 12.40
+\\end{aligned}
+$$
+
+Next, we calculate the within-participant sum of squares by calculating the sum of squared error within each participant and adding them up. The sum of squared error for each participant is shown in the following table
+
+```{r}
+rel_tidy %>% 
+  dplyr::group_by(ID) %>% 
+  dplyr::summarize(
+    mean = round(mean(Openness), 3),
+    var = round(var(Openness), 3)
+  ) %>% 
+  dplyr::mutate(
+    df = 2,
+    SS = df*var
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = SS,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    mean = "Mean ($\\bar{X}$)",
+    var = "Variance ($s^2$)",
+  ) %>% 
+  gt::tab_header("Calculating sums of squares within participants")
+```
+
+We use these values as follows
+
+$$
+\\begin{aligned}
+SS_\text{W} &= SS_\text{Entity 1} + SS_\text{Entity 2} + \ldots + SS_{\text{Entity }i} \\\\
+&= 2.666 + 4.666 + 0.666 + 4.666 + 8.000 \\\\
+&= 20.664
+\\end{aligned}
+$$
+
+The associated degrees of freedom are
+
+
+$$
+\\begin{aligned}
+df_\text{W} &= df_\text{Entity 1} + df_\text{Entity 2} + \ldots + df_{\text{Entity }i} \\\\
+&= 2 + 2 + 2 + 2 + 2 \\\\
+&= 10.
+\\end{aligned}
+$$
+
+Next, we calculate the residual sum of squares:
+
+$$
+\\begin{aligned}
+SS_\text{R} &= SS_\text{W}-SS_\text{M} \\\\
+&= 20.664 - 12.40 \\\\
+&= 8.264,
+\\end{aligned}
+$$
+
+with associated degrees of freedom
+
+$$
+\\begin{aligned}
+df_\text{R} &= df_\text{W}-df_\text{M} \\\\
+&= 10 - 2 \\\\
+&= 8.
+\\end{aligned}
+$$
+
+We convert the sums of squares to mean squares by dividing by the degrees of freedom for each
+
+$$
+\\begin{aligned}
+MS_\text{M} &= \frac{SS_\text{M}}{df_\text{M}} = \frac{12.40}{2} = 6.200 \\\\
+MS_\text{R} &= \frac{SS_\text{R}}{df_\text{R}} = \frac{8.264}{8} = 1.033.
+\\end{aligned}
+$$
+
+We calculate *F* as
+
+$$
+F = \frac{MS_\text{M}}{MS_\text{R}} = \frac{6.200}{1.033} = 6.002.
+$$
+
+There was a significant difference in the openness to a new relationship after different prompts to thing about pros and cons of relationships, *F*(2, 8) = 6.00, *p* = 0.026.
+
+
+## Puzzle 8
+
+> Output 16.13 shows the results of an analysis on the data in Table 16.14 (see puzzle 7), to compute a Bayes factor based on a reasonable default prior. Interpret this output.
+
+The Bayes factor is 5.08, which means that the data are 5.08 times more likely given the alternative hypothesis compared to the null hypothesis. In other words, we should shift our belief in the alternative hypothesis (that these prompts change openness to new relationships) relative to the null by a factor of 5.08. This value 'has substance' but is not at all strong evidence for the alternative hypothesis (relative to the null). In other words we should shift our belief that these prompts change openness to new relationships a little, but not very much.
+
+## Puzzle 9
+
+> The second experiment in Alice’s report (Alice's Lab Notes 16.1 in the book), when Zach reanalysed it, seemed to suggest that sending visual images to someone’s ID chip while they recalled a memory would interfere with it (i.e., result in lower recall of the event). Roediger decided to do a follow-up study. He took 18 participants: 6 of them received no memory interference while they recalled an event, 6 received visual interference unrelated to the event they were recalling, and 6 received visual interference related to the event they were recalling. The data are in Table 16.15. Compute the *F*-ratio. Were there significant differences in recall between the three groups?
+
+The summary table for the model is as follows:
+
+```{r}
+int_tib <- here::here("static/csv/ais_ch_16_puzzle_interference.csv") %>% 
+  readr::read_csv() %>% 
+  dplyr::mutate(
+    ID = forcats::as_factor(ID)
+  )
+
+puz9_aov<-aov(Recall~Interference, int_tib)
+
+broom::tidy(puz9_aov) %>%
+  dplyr::mutate(
+    p.value = ifelse(!is.na(p.value), paste(round(p.value, 3)), NA)
+  ) %>% 
+  knitr::kable(caption = "Summary table of the model predicting memory recall from the type of interference", digits = 2) %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+Let's see how we calculate these values. First, we compute the total sum of squares:
+
+$$
+SS_\text{T} = \sum_{i = 1}^{N}(x_i - \bar{x}_\text{grand})^2 = 127.106
+$$
+
+We arrive at this value by subtracting the grand mean from each score, squaring these differences and adding them up, as shown in the following tables
+
+```{r}
+int_tib %>% 
+  dplyr::mutate(
+    mean = round(mean(Recall), 3),
+    error = Recall-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Recall = "Recall ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Calculating sums of squares")
+```
+
+Next, we calculate the model sum of squares
+
+$$
+\\begin{aligned}
+SS_\text{M} &= \sum_{i=1}^{k}n_k(\bar{x}_k-\bar{x})^2 \\\\
+&= 6(7.833-5.222)^2 + 6(5.167-5.222)^2 +6(2.667-5.222)^2 \\\\
+&= 80.09
+\\end{aligned}
+$$
+
+The associated degrees of freedom are $ k-1 = 2 $.
+
+Next, we calculate the residual sum of squares. For each score we compute the difference between the score and the *group* mean, then square these differences and sum them, as shown in the following tables
+
+```{r}
+int_tib %>%
+  dplyr::filter(Interference == "No Interference") %>% 
+  dplyr::mutate(
+    mean = round(mean(Recall), 3),
+    error = Recall-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Recall = "Recall ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Residual sum of squares for the no interference group")
+```
+
+```{r}
+int_tib %>%
+  dplyr::filter(Interference == "Unrelated Interference") %>% 
+  dplyr::mutate(
+    mean = round(mean(Recall), 3),
+    error = Recall-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Recall = "Recall ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Residual sum of squares for the unrelated interference group")
+```
+
+```{r}
+int_tib %>%
+  dplyr::filter(Interference == "Related Interference") %>% 
+  dplyr::mutate(
+    mean = round(mean(Recall), 3),
+    error = Recall-mean,
+    e_square = round(error^2, 3)
+) %>% 
+  gt() %>% 
+  gt::grand_summary_rows(
+    columns = e_square,
+    fns = list(
+      Sum = ~sum(.)
+    ),
+    formatter = fmt_number,
+    decimals = 3,
+    missing_text = ""
+) %>%
+  gt::tab_style(
+    style = list(
+      cell_fill(color = tbl_highlight),
+      cell_text(weight = "bold", color = tbl_hlg_txt)
+      ),
+    locations = cells_grand_summary()
+    )%>% 
+    gt::cols_label(
+    Recall = "Recall ($x$)",
+    mean = "Mean ($\\bar{X}$)",
+    error = "Error ($x-\\bar{X}$)",
+    e_square = "$\\text{Error}^2$"
+  ) %>% 
+  gt::tab_header("Residual sum of squares for the related interference group")
+```
+
+
+We use these sums as follows
+
+$$
+\\begin{aligned}
+SS_\text{R} &= \sum(Y_{ik}-\bar{Y}_k)^2 \\\\
+&= 8.834 + 16.834 + 21.334 \\\\
+&= 47.00
+\\end{aligned}
+$$
+
+The associated degrees of freedom are
+
+$$
+\\begin{aligned}
+df &= df_\text{No interference} + df_\text{Unrelated interference} + df_\text{related interference} \\\\
+&= (n_\text{No interference}-1) + (n_\text{Unrelated interference}-1) + (n_\text{related interference}-1) \\\\
+&= 5 + 5 + 5 \\\\
+&= 15
+\\end{aligned}
+$$
+
+We convert the sums of squares to mean squares by dividing by the degrees of freedom for each
+
+$$
+\\begin{aligned}
+MS_\text{M} &= \frac{SS_\text{M}}{df_\text{M}} = \frac{80.09}{2} = 40.05 \\\\
+MS_\text{R} &= \frac{SS_\text{R}}{df_\text{R}} = \frac{47.00}{15} = 3.13. \\\\
+\\end{aligned}
+$$
+
+We calculate *F* as
+
+$$
+F = \frac{MS_\text{M}}{MS_\text{R}} = \frac{40.05}{3.13} = 12.80
+$$
+
+There was a significant difference in the mean recall after different types of interference, *F*(2, 15) = 12.80, *p* < 0.001.
+
+## Puzzle 10
+
+> Output 16.14 shows the results of an analysis on the data in Table 16.15 (see puzzle 9), to compute a Bayes factor based on a reasonable default prior. Interpret this output.
+
+The Bayes factor is 51.57, which means that the data are 51.57 times more likely given the alternative hypothesis compared to the null hypothesis. In other words, we should shift our belief in the alternative hypothesis (that the type of interference affects memory) relative to the null by a factor of 51.57 This value is strong evidence for the alternative hypothesis (relative to the null). In other words we should shift our belief that the type of interference affects memory a fair amount.

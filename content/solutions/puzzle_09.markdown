@@ -3,7 +3,7 @@ title: "Chapter 9"
 date: '2022-02-11'
 output: html_document
 type: book
-weight: 90
+weight: 100
 toc-depth: 1
 ---
 
@@ -75,12 +75,12 @@ $$
 
 To square root transform the scores we replace each score with its square root.
 
-<div id="enqszexmzf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="htjgtlubtl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#enqszexmzf .gt_table {
+#htjgtlubtl .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -105,7 +105,7 @@ To square root transform the scores we replace each score with its square root.
   border-left-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_heading {
+#htjgtlubtl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -117,7 +117,7 @@ To square root transform the scores we replace each score with its square root.
   border-right-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_title {
+#htjgtlubtl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -127,7 +127,7 @@ To square root transform the scores we replace each score with its square root.
   border-bottom-width: 0;
 }
 
-#enqszexmzf .gt_subtitle {
+#htjgtlubtl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -137,13 +137,13 @@ To square root transform the scores we replace each score with its square root.
   border-top-width: 0;
 }
 
-#enqszexmzf .gt_bottom_border {
+#htjgtlubtl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_col_headings {
+#htjgtlubtl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -158,7 +158,7 @@ To square root transform the scores we replace each score with its square root.
   border-right-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_col_heading {
+#htjgtlubtl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -178,7 +178,7 @@ To square root transform the scores we replace each score with its square root.
   overflow-x: hidden;
 }
 
-#enqszexmzf .gt_column_spanner_outer {
+#htjgtlubtl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,15 +190,15 @@ To square root transform the scores we replace each score with its square root.
   padding-right: 4px;
 }
 
-#enqszexmzf .gt_column_spanner_outer:first-child {
+#htjgtlubtl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#enqszexmzf .gt_column_spanner_outer:last-child {
+#htjgtlubtl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#enqszexmzf .gt_column_spanner {
+#htjgtlubtl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -210,7 +210,7 @@ To square root transform the scores we replace each score with its square root.
   width: 100%;
 }
 
-#enqszexmzf .gt_group_heading {
+#htjgtlubtl .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -232,7 +232,7 @@ To square root transform the scores we replace each score with its square root.
   vertical-align: middle;
 }
 
-#enqszexmzf .gt_empty_group_heading {
+#htjgtlubtl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -247,15 +247,15 @@ To square root transform the scores we replace each score with its square root.
   vertical-align: middle;
 }
 
-#enqszexmzf .gt_from_md > :first-child {
+#htjgtlubtl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#enqszexmzf .gt_from_md > :last-child {
+#htjgtlubtl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#enqszexmzf .gt_row {
+#htjgtlubtl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -274,7 +274,7 @@ To square root transform the scores we replace each score with its square root.
   overflow-x: hidden;
 }
 
-#enqszexmzf .gt_stub {
+#htjgtlubtl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -286,7 +286,7 @@ To square root transform the scores we replace each score with its square root.
   padding-left: 12px;
 }
 
-#enqszexmzf .gt_summary_row {
+#htjgtlubtl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -296,7 +296,7 @@ To square root transform the scores we replace each score with its square root.
   padding-right: 5px;
 }
 
-#enqszexmzf .gt_first_summary_row {
+#htjgtlubtl .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -306,7 +306,7 @@ To square root transform the scores we replace each score with its square root.
   border-top-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_grand_summary_row {
+#htjgtlubtl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -316,7 +316,7 @@ To square root transform the scores we replace each score with its square root.
   padding-right: 5px;
 }
 
-#enqszexmzf .gt_first_grand_summary_row {
+#htjgtlubtl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -326,11 +326,11 @@ To square root transform the scores we replace each score with its square root.
   border-top-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_striped {
+#htjgtlubtl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#enqszexmzf .gt_table_body {
+#htjgtlubtl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -339,7 +339,7 @@ To square root transform the scores we replace each score with its square root.
   border-bottom-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_footnotes {
+#htjgtlubtl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -353,13 +353,13 @@ To square root transform the scores we replace each score with its square root.
   border-right-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_footnote {
+#htjgtlubtl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#enqszexmzf .gt_sourcenotes {
+#htjgtlubtl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -373,41 +373,41 @@ To square root transform the scores we replace each score with its square root.
   border-right-color: #D3D3D3;
 }
 
-#enqszexmzf .gt_sourcenote {
+#htjgtlubtl .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#enqszexmzf .gt_left {
+#htjgtlubtl .gt_left {
   text-align: left;
 }
 
-#enqszexmzf .gt_center {
+#htjgtlubtl .gt_center {
   text-align: center;
 }
 
-#enqszexmzf .gt_right {
+#htjgtlubtl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#enqszexmzf .gt_font_normal {
+#htjgtlubtl .gt_font_normal {
   font-weight: normal;
 }
 
-#enqszexmzf .gt_font_bold {
+#htjgtlubtl .gt_font_bold {
   font-weight: bold;
 }
 
-#enqszexmzf .gt_font_italic {
+#htjgtlubtl .gt_font_italic {
   font-style: italic;
 }
 
-#enqszexmzf .gt_super {
+#htjgtlubtl .gt_super {
   font-size: 65%;
 }
 
-#enqszexmzf .gt_footnote_marks {
+#htjgtlubtl .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -489,12 +489,12 @@ $$
 \bar{X}_\text{20% trimmed} = \frac{25896}{22} = 1177.09.
 $$
 
-<div id="jejqoueofw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tghkntmjrd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jejqoueofw .gt_table {
+#tghkntmjrd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -519,7 +519,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_heading {
+#tghkntmjrd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -531,7 +531,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_title {
+#tghkntmjrd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -541,7 +541,7 @@ $$
   border-bottom-width: 0;
 }
 
-#jejqoueofw .gt_subtitle {
+#tghkntmjrd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -551,13 +551,13 @@ $$
   border-top-width: 0;
 }
 
-#jejqoueofw .gt_bottom_border {
+#tghkntmjrd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_col_headings {
+#tghkntmjrd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -572,7 +572,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_col_heading {
+#tghkntmjrd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -592,7 +592,7 @@ $$
   overflow-x: hidden;
 }
 
-#jejqoueofw .gt_column_spanner_outer {
+#tghkntmjrd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,15 +604,15 @@ $$
   padding-right: 4px;
 }
 
-#jejqoueofw .gt_column_spanner_outer:first-child {
+#tghkntmjrd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jejqoueofw .gt_column_spanner_outer:last-child {
+#tghkntmjrd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jejqoueofw .gt_column_spanner {
+#tghkntmjrd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -624,7 +624,7 @@ $$
   width: 100%;
 }
 
-#jejqoueofw .gt_group_heading {
+#tghkntmjrd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -646,7 +646,7 @@ $$
   vertical-align: middle;
 }
 
-#jejqoueofw .gt_empty_group_heading {
+#tghkntmjrd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -661,15 +661,15 @@ $$
   vertical-align: middle;
 }
 
-#jejqoueofw .gt_from_md > :first-child {
+#tghkntmjrd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jejqoueofw .gt_from_md > :last-child {
+#tghkntmjrd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jejqoueofw .gt_row {
+#tghkntmjrd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -688,7 +688,7 @@ $$
   overflow-x: hidden;
 }
 
-#jejqoueofw .gt_stub {
+#tghkntmjrd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -700,7 +700,7 @@ $$
   padding-left: 12px;
 }
 
-#jejqoueofw .gt_summary_row {
+#tghkntmjrd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -710,7 +710,7 @@ $$
   padding-right: 5px;
 }
 
-#jejqoueofw .gt_first_summary_row {
+#tghkntmjrd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -720,7 +720,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_grand_summary_row {
+#tghkntmjrd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -730,7 +730,7 @@ $$
   padding-right: 5px;
 }
 
-#jejqoueofw .gt_first_grand_summary_row {
+#tghkntmjrd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -740,11 +740,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_striped {
+#tghkntmjrd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jejqoueofw .gt_table_body {
+#tghkntmjrd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -753,7 +753,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_footnotes {
+#tghkntmjrd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -767,13 +767,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_footnote {
+#tghkntmjrd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jejqoueofw .gt_sourcenotes {
+#tghkntmjrd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -787,41 +787,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#jejqoueofw .gt_sourcenote {
+#tghkntmjrd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jejqoueofw .gt_left {
+#tghkntmjrd .gt_left {
   text-align: left;
 }
 
-#jejqoueofw .gt_center {
+#tghkntmjrd .gt_center {
   text-align: center;
 }
 
-#jejqoueofw .gt_right {
+#tghkntmjrd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jejqoueofw .gt_font_normal {
+#tghkntmjrd .gt_font_normal {
   font-weight: normal;
 }
 
-#jejqoueofw .gt_font_bold {
+#tghkntmjrd .gt_font_bold {
   font-weight: bold;
 }
 
-#jejqoueofw .gt_font_italic {
+#tghkntmjrd .gt_font_italic {
   font-style: italic;
 }
 
-#jejqoueofw .gt_super {
+#tghkntmjrd .gt_super {
   font-size: 65%;
 }
 
-#jejqoueofw .gt_footnote_marks {
+#tghkntmjrd .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1025,12 +1025,12 @@ $$
 \bar{X}_\text{20% trimmed} = \frac{29287}{24} = 1220.29.
 $$
 
-<div id="gftxxcsuwy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uapblwuasa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#gftxxcsuwy .gt_table {
+#uapblwuasa .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1055,7 +1055,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_heading {
+#uapblwuasa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1067,7 +1067,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_title {
+#uapblwuasa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1077,7 +1077,7 @@ $$
   border-bottom-width: 0;
 }
 
-#gftxxcsuwy .gt_subtitle {
+#uapblwuasa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1087,13 +1087,13 @@ $$
   border-top-width: 0;
 }
 
-#gftxxcsuwy .gt_bottom_border {
+#uapblwuasa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_col_headings {
+#uapblwuasa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1108,7 +1108,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_col_heading {
+#uapblwuasa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1128,7 +1128,7 @@ $$
   overflow-x: hidden;
 }
 
-#gftxxcsuwy .gt_column_spanner_outer {
+#uapblwuasa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1140,15 +1140,15 @@ $$
   padding-right: 4px;
 }
 
-#gftxxcsuwy .gt_column_spanner_outer:first-child {
+#uapblwuasa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gftxxcsuwy .gt_column_spanner_outer:last-child {
+#uapblwuasa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gftxxcsuwy .gt_column_spanner {
+#uapblwuasa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1160,7 +1160,7 @@ $$
   width: 100%;
 }
 
-#gftxxcsuwy .gt_group_heading {
+#uapblwuasa .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1182,7 +1182,7 @@ $$
   vertical-align: middle;
 }
 
-#gftxxcsuwy .gt_empty_group_heading {
+#uapblwuasa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1197,15 +1197,15 @@ $$
   vertical-align: middle;
 }
 
-#gftxxcsuwy .gt_from_md > :first-child {
+#uapblwuasa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gftxxcsuwy .gt_from_md > :last-child {
+#uapblwuasa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gftxxcsuwy .gt_row {
+#uapblwuasa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1224,7 +1224,7 @@ $$
   overflow-x: hidden;
 }
 
-#gftxxcsuwy .gt_stub {
+#uapblwuasa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1236,7 +1236,7 @@ $$
   padding-left: 12px;
 }
 
-#gftxxcsuwy .gt_summary_row {
+#uapblwuasa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1246,7 +1246,7 @@ $$
   padding-right: 5px;
 }
 
-#gftxxcsuwy .gt_first_summary_row {
+#uapblwuasa .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1256,7 +1256,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_grand_summary_row {
+#uapblwuasa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1266,7 +1266,7 @@ $$
   padding-right: 5px;
 }
 
-#gftxxcsuwy .gt_first_grand_summary_row {
+#uapblwuasa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,11 +1276,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_striped {
+#uapblwuasa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gftxxcsuwy .gt_table_body {
+#uapblwuasa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1289,7 +1289,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_footnotes {
+#uapblwuasa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1303,13 +1303,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_footnote {
+#uapblwuasa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#gftxxcsuwy .gt_sourcenotes {
+#uapblwuasa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1323,41 +1323,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#gftxxcsuwy .gt_sourcenote {
+#uapblwuasa .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#gftxxcsuwy .gt_left {
+#uapblwuasa .gt_left {
   text-align: left;
 }
 
-#gftxxcsuwy .gt_center {
+#uapblwuasa .gt_center {
   text-align: center;
 }
 
-#gftxxcsuwy .gt_right {
+#uapblwuasa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gftxxcsuwy .gt_font_normal {
+#uapblwuasa .gt_font_normal {
   font-weight: normal;
 }
 
-#gftxxcsuwy .gt_font_bold {
+#uapblwuasa .gt_font_bold {
   font-weight: bold;
 }
 
-#gftxxcsuwy .gt_font_italic {
+#uapblwuasa .gt_font_italic {
   font-style: italic;
 }
 
-#gftxxcsuwy .gt_super {
+#uapblwuasa .gt_super {
   font-size: 65%;
 }
 
-#gftxxcsuwy .gt_footnote_marks {
+#uapblwuasa .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1573,12 +1573,12 @@ $$
 \bar{X}_\text{winsorized} = \frac{45072}{38} = 1186.11.
 $$
 
-<div id="zyfrvsgguy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dgottsxhzj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#zyfrvsgguy .gt_table {
+#dgottsxhzj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1603,7 +1603,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_heading {
+#dgottsxhzj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1615,7 +1615,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_title {
+#dgottsxhzj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1625,7 +1625,7 @@ $$
   border-bottom-width: 0;
 }
 
-#zyfrvsgguy .gt_subtitle {
+#dgottsxhzj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1635,13 +1635,13 @@ $$
   border-top-width: 0;
 }
 
-#zyfrvsgguy .gt_bottom_border {
+#dgottsxhzj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_col_headings {
+#dgottsxhzj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1656,7 +1656,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_col_heading {
+#dgottsxhzj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1676,7 +1676,7 @@ $$
   overflow-x: hidden;
 }
 
-#zyfrvsgguy .gt_column_spanner_outer {
+#dgottsxhzj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1688,15 +1688,15 @@ $$
   padding-right: 4px;
 }
 
-#zyfrvsgguy .gt_column_spanner_outer:first-child {
+#dgottsxhzj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zyfrvsgguy .gt_column_spanner_outer:last-child {
+#dgottsxhzj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zyfrvsgguy .gt_column_spanner {
+#dgottsxhzj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1708,7 +1708,7 @@ $$
   width: 100%;
 }
 
-#zyfrvsgguy .gt_group_heading {
+#dgottsxhzj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1730,7 +1730,7 @@ $$
   vertical-align: middle;
 }
 
-#zyfrvsgguy .gt_empty_group_heading {
+#dgottsxhzj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1745,15 +1745,15 @@ $$
   vertical-align: middle;
 }
 
-#zyfrvsgguy .gt_from_md > :first-child {
+#dgottsxhzj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zyfrvsgguy .gt_from_md > :last-child {
+#dgottsxhzj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zyfrvsgguy .gt_row {
+#dgottsxhzj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1772,7 +1772,7 @@ $$
   overflow-x: hidden;
 }
 
-#zyfrvsgguy .gt_stub {
+#dgottsxhzj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1784,7 +1784,7 @@ $$
   padding-left: 12px;
 }
 
-#zyfrvsgguy .gt_summary_row {
+#dgottsxhzj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1794,7 +1794,7 @@ $$
   padding-right: 5px;
 }
 
-#zyfrvsgguy .gt_first_summary_row {
+#dgottsxhzj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1804,7 +1804,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_grand_summary_row {
+#dgottsxhzj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1814,7 +1814,7 @@ $$
   padding-right: 5px;
 }
 
-#zyfrvsgguy .gt_first_grand_summary_row {
+#dgottsxhzj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1824,11 +1824,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_striped {
+#dgottsxhzj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zyfrvsgguy .gt_table_body {
+#dgottsxhzj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1837,7 +1837,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_footnotes {
+#dgottsxhzj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1851,13 +1851,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_footnote {
+#dgottsxhzj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#zyfrvsgguy .gt_sourcenotes {
+#dgottsxhzj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1871,41 +1871,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#zyfrvsgguy .gt_sourcenote {
+#dgottsxhzj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#zyfrvsgguy .gt_left {
+#dgottsxhzj .gt_left {
   text-align: left;
 }
 
-#zyfrvsgguy .gt_center {
+#dgottsxhzj .gt_center {
   text-align: center;
 }
 
-#zyfrvsgguy .gt_right {
+#dgottsxhzj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zyfrvsgguy .gt_font_normal {
+#dgottsxhzj .gt_font_normal {
   font-weight: normal;
 }
 
-#zyfrvsgguy .gt_font_bold {
+#dgottsxhzj .gt_font_bold {
   font-weight: bold;
 }
 
-#zyfrvsgguy .gt_font_italic {
+#dgottsxhzj .gt_font_italic {
   font-style: italic;
 }
 
-#zyfrvsgguy .gt_super {
+#dgottsxhzj .gt_super {
   font-size: 65%;
 }
 
-#zyfrvsgguy .gt_footnote_marks {
+#dgottsxhzj .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2109,12 +2109,12 @@ $$
 \bar{X}_\text{winsorized} = \frac{49079}{40} = 1226.97.
 $$
 
-<div id="frburfhezm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="veoisbrmbr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#frburfhezm .gt_table {
+#veoisbrmbr .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2139,7 +2139,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#frburfhezm .gt_heading {
+#veoisbrmbr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2151,7 +2151,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#frburfhezm .gt_title {
+#veoisbrmbr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2161,7 +2161,7 @@ $$
   border-bottom-width: 0;
 }
 
-#frburfhezm .gt_subtitle {
+#veoisbrmbr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2171,13 +2171,13 @@ $$
   border-top-width: 0;
 }
 
-#frburfhezm .gt_bottom_border {
+#veoisbrmbr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#frburfhezm .gt_col_headings {
+#veoisbrmbr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2192,7 +2192,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#frburfhezm .gt_col_heading {
+#veoisbrmbr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2212,7 +2212,7 @@ $$
   overflow-x: hidden;
 }
 
-#frburfhezm .gt_column_spanner_outer {
+#veoisbrmbr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2224,15 +2224,15 @@ $$
   padding-right: 4px;
 }
 
-#frburfhezm .gt_column_spanner_outer:first-child {
+#veoisbrmbr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#frburfhezm .gt_column_spanner_outer:last-child {
+#veoisbrmbr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#frburfhezm .gt_column_spanner {
+#veoisbrmbr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2244,7 +2244,7 @@ $$
   width: 100%;
 }
 
-#frburfhezm .gt_group_heading {
+#veoisbrmbr .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2266,7 +2266,7 @@ $$
   vertical-align: middle;
 }
 
-#frburfhezm .gt_empty_group_heading {
+#veoisbrmbr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2281,15 +2281,15 @@ $$
   vertical-align: middle;
 }
 
-#frburfhezm .gt_from_md > :first-child {
+#veoisbrmbr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#frburfhezm .gt_from_md > :last-child {
+#veoisbrmbr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#frburfhezm .gt_row {
+#veoisbrmbr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2308,7 +2308,7 @@ $$
   overflow-x: hidden;
 }
 
-#frburfhezm .gt_stub {
+#veoisbrmbr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2320,7 +2320,7 @@ $$
   padding-left: 12px;
 }
 
-#frburfhezm .gt_summary_row {
+#veoisbrmbr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2330,7 +2330,7 @@ $$
   padding-right: 5px;
 }
 
-#frburfhezm .gt_first_summary_row {
+#veoisbrmbr .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2340,7 +2340,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#frburfhezm .gt_grand_summary_row {
+#veoisbrmbr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2350,7 +2350,7 @@ $$
   padding-right: 5px;
 }
 
-#frburfhezm .gt_first_grand_summary_row {
+#veoisbrmbr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2360,11 +2360,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#frburfhezm .gt_striped {
+#veoisbrmbr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#frburfhezm .gt_table_body {
+#veoisbrmbr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2373,7 +2373,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#frburfhezm .gt_footnotes {
+#veoisbrmbr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2387,13 +2387,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#frburfhezm .gt_footnote {
+#veoisbrmbr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#frburfhezm .gt_sourcenotes {
+#veoisbrmbr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2407,41 +2407,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#frburfhezm .gt_sourcenote {
+#veoisbrmbr .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#frburfhezm .gt_left {
+#veoisbrmbr .gt_left {
   text-align: left;
 }
 
-#frburfhezm .gt_center {
+#veoisbrmbr .gt_center {
   text-align: center;
 }
 
-#frburfhezm .gt_right {
+#veoisbrmbr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#frburfhezm .gt_font_normal {
+#veoisbrmbr .gt_font_normal {
   font-weight: normal;
 }
 
-#frburfhezm .gt_font_bold {
+#veoisbrmbr .gt_font_bold {
   font-weight: bold;
 }
 
-#frburfhezm .gt_font_italic {
+#veoisbrmbr .gt_font_italic {
   font-style: italic;
 }
 
-#frburfhezm .gt_super {
+#veoisbrmbr .gt_super {
   font-size: 65%;
 }
 
-#frburfhezm .gt_footnote_marks {
+#veoisbrmbr .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2653,12 +2653,12 @@ $$
 
 If we collate our answers from the previous Puzzles it will make it easier to compare the robust estimates:
 
-<div id="wgkwjptnuf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="egmplyyxvv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#wgkwjptnuf .gt_table {
+#egmplyyxvv .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2683,7 +2683,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-left-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_heading {
+#egmplyyxvv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2695,7 +2695,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-right-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_title {
+#egmplyyxvv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2705,7 +2705,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-bottom-width: 0;
 }
 
-#wgkwjptnuf .gt_subtitle {
+#egmplyyxvv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2715,13 +2715,13 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-top-width: 0;
 }
 
-#wgkwjptnuf .gt_bottom_border {
+#egmplyyxvv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_col_headings {
+#egmplyyxvv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2736,7 +2736,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-right-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_col_heading {
+#egmplyyxvv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2756,7 +2756,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   overflow-x: hidden;
 }
 
-#wgkwjptnuf .gt_column_spanner_outer {
+#egmplyyxvv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2768,15 +2768,15 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   padding-right: 4px;
 }
 
-#wgkwjptnuf .gt_column_spanner_outer:first-child {
+#egmplyyxvv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wgkwjptnuf .gt_column_spanner_outer:last-child {
+#egmplyyxvv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wgkwjptnuf .gt_column_spanner {
+#egmplyyxvv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2788,7 +2788,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   width: 100%;
 }
 
-#wgkwjptnuf .gt_group_heading {
+#egmplyyxvv .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2810,7 +2810,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   vertical-align: middle;
 }
 
-#wgkwjptnuf .gt_empty_group_heading {
+#egmplyyxvv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2825,15 +2825,15 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   vertical-align: middle;
 }
 
-#wgkwjptnuf .gt_from_md > :first-child {
+#egmplyyxvv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wgkwjptnuf .gt_from_md > :last-child {
+#egmplyyxvv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wgkwjptnuf .gt_row {
+#egmplyyxvv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2852,7 +2852,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   overflow-x: hidden;
 }
 
-#wgkwjptnuf .gt_stub {
+#egmplyyxvv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2864,7 +2864,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   padding-left: 12px;
 }
 
-#wgkwjptnuf .gt_summary_row {
+#egmplyyxvv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2874,7 +2874,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   padding-right: 5px;
 }
 
-#wgkwjptnuf .gt_first_summary_row {
+#egmplyyxvv .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2884,7 +2884,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-top-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_grand_summary_row {
+#egmplyyxvv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2894,7 +2894,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   padding-right: 5px;
 }
 
-#wgkwjptnuf .gt_first_grand_summary_row {
+#egmplyyxvv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2904,11 +2904,11 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-top-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_striped {
+#egmplyyxvv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wgkwjptnuf .gt_table_body {
+#egmplyyxvv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2917,7 +2917,7 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-bottom-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_footnotes {
+#egmplyyxvv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2931,13 +2931,13 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-right-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_footnote {
+#egmplyyxvv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#wgkwjptnuf .gt_sourcenotes {
+#egmplyyxvv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2951,41 +2951,41 @@ If we collate our answers from the previous Puzzles it will make it easier to co
   border-right-color: #D3D3D3;
 }
 
-#wgkwjptnuf .gt_sourcenote {
+#egmplyyxvv .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#wgkwjptnuf .gt_left {
+#egmplyyxvv .gt_left {
   text-align: left;
 }
 
-#wgkwjptnuf .gt_center {
+#egmplyyxvv .gt_center {
   text-align: center;
 }
 
-#wgkwjptnuf .gt_right {
+#egmplyyxvv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wgkwjptnuf .gt_font_normal {
+#egmplyyxvv .gt_font_normal {
   font-weight: normal;
 }
 
-#wgkwjptnuf .gt_font_bold {
+#egmplyyxvv .gt_font_bold {
   font-weight: bold;
 }
 
-#wgkwjptnuf .gt_font_italic {
+#egmplyyxvv .gt_font_italic {
   font-style: italic;
 }
 
-#wgkwjptnuf .gt_super {
+#egmplyyxvv .gt_super {
   font-size: 65%;
 }
 
-#wgkwjptnuf .gt_footnote_marks {
+#egmplyyxvv .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -3034,12 +3034,12 @@ Looking at the means based on the raw scores, we can see that there is not much 
 
 To log transform the JIG:SAW data we need to take the natural log of each score. You can use software such as Excel, SPSS or R to do this for you. I used R to create this table.
 
-<div id="tajsdnzdyx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ksxuzawhre" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tajsdnzdyx .gt_table {
+#ksxuzawhre .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3064,7 +3064,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-left-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_heading {
+#ksxuzawhre .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3076,7 +3076,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-right-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_title {
+#ksxuzawhre .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3086,7 +3086,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-bottom-width: 0;
 }
 
-#tajsdnzdyx .gt_subtitle {
+#ksxuzawhre .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3096,13 +3096,13 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-top-width: 0;
 }
 
-#tajsdnzdyx .gt_bottom_border {
+#ksxuzawhre .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_col_headings {
+#ksxuzawhre .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3117,7 +3117,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-right-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_col_heading {
+#ksxuzawhre .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3137,7 +3137,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   overflow-x: hidden;
 }
 
-#tajsdnzdyx .gt_column_spanner_outer {
+#ksxuzawhre .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3149,15 +3149,15 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   padding-right: 4px;
 }
 
-#tajsdnzdyx .gt_column_spanner_outer:first-child {
+#ksxuzawhre .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tajsdnzdyx .gt_column_spanner_outer:last-child {
+#ksxuzawhre .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tajsdnzdyx .gt_column_spanner {
+#ksxuzawhre .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3169,7 +3169,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   width: 100%;
 }
 
-#tajsdnzdyx .gt_group_heading {
+#ksxuzawhre .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3191,7 +3191,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   vertical-align: middle;
 }
 
-#tajsdnzdyx .gt_empty_group_heading {
+#ksxuzawhre .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3206,15 +3206,15 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   vertical-align: middle;
 }
 
-#tajsdnzdyx .gt_from_md > :first-child {
+#ksxuzawhre .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tajsdnzdyx .gt_from_md > :last-child {
+#ksxuzawhre .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tajsdnzdyx .gt_row {
+#ksxuzawhre .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3233,7 +3233,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   overflow-x: hidden;
 }
 
-#tajsdnzdyx .gt_stub {
+#ksxuzawhre .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3245,7 +3245,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   padding-left: 12px;
 }
 
-#tajsdnzdyx .gt_summary_row {
+#ksxuzawhre .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3255,7 +3255,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   padding-right: 5px;
 }
 
-#tajsdnzdyx .gt_first_summary_row {
+#ksxuzawhre .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3265,7 +3265,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-top-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_grand_summary_row {
+#ksxuzawhre .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3275,7 +3275,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   padding-right: 5px;
 }
 
-#tajsdnzdyx .gt_first_grand_summary_row {
+#ksxuzawhre .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3285,11 +3285,11 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-top-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_striped {
+#ksxuzawhre .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tajsdnzdyx .gt_table_body {
+#ksxuzawhre .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3298,7 +3298,7 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-bottom-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_footnotes {
+#ksxuzawhre .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3312,13 +3312,13 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-right-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_footnote {
+#ksxuzawhre .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tajsdnzdyx .gt_sourcenotes {
+#ksxuzawhre .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3332,41 +3332,41 @@ To log transform the JIG:SAW data we need to take the natural log of each score.
   border-right-color: #D3D3D3;
 }
 
-#tajsdnzdyx .gt_sourcenote {
+#ksxuzawhre .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tajsdnzdyx .gt_left {
+#ksxuzawhre .gt_left {
   text-align: left;
 }
 
-#tajsdnzdyx .gt_center {
+#ksxuzawhre .gt_center {
   text-align: center;
 }
 
-#tajsdnzdyx .gt_right {
+#ksxuzawhre .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tajsdnzdyx .gt_font_normal {
+#ksxuzawhre .gt_font_normal {
   font-weight: normal;
 }
 
-#tajsdnzdyx .gt_font_bold {
+#ksxuzawhre .gt_font_bold {
   font-weight: bold;
 }
 
-#tajsdnzdyx .gt_font_italic {
+#ksxuzawhre .gt_font_italic {
   font-style: italic;
 }
 
-#tajsdnzdyx .gt_super {
+#ksxuzawhre .gt_super {
   font-size: 65%;
 }
 
-#tajsdnzdyx .gt_footnote_marks {
+#ksxuzawhre .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;

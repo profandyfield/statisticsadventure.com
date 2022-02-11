@@ -1,0 +1,609 @@
+---
+title: "Chapter 7"
+date: '2022-02-10'
+output: html_document
+type: book
+weight: 80
+toc-depth: 1
+---
+
+# Probability
+
+## Puzzle 1
+
+> Later in the story, Zach and Milton go back to JIG:SAW and have to travel across the bridge again. When Zach reaches the discs of death, the population parameters of the red and blue discs are unchanged (Section 7.2.4), but he decides that the maximum speed he could tolerate is 45 rpm. Should he still choose the blue disc?
+
+Looking back at Section 7.2.2, we can see that the population parameters for the red discs were \$ \$ = 33, \$ \$ = 8 and for the blue discs \$ \$ = 45, \$ \$ = 2. To find out the probability of the two disc colours spinning too fast for Zach to cope with, we first need to convert our score of 45 rpm to a *z*-score. For the red disc we’d get
+
+$$
+z_\text{red} = \frac{X-\mu}{\sigma} = \frac{45-33}{8} = 1.5,
+$$
+
+and for the blue disc we’d get
+
+$$
+z_\text{blue} = \frac{X-\mu}{\sigma} = \frac{45-45}{2} = 0.
+$$
+
+We then need to look up the values of the corresponding *z*s in the table of the standard normal distribution. For the red disc, the corresponding *z* is positive (1.5), and we want the probability of values that size or larger so we look at the value in the *smaller proportion* column, which is 0.06681. For the blue disc, the *z*-score is 0, which corresponds to a value of 0.5. So, there is a 6.68% chance that the red disc is one that spins at 45rpm or faster, but a 50% chance for the blue disc. So, Zach should go for the red disc because the probability is smaller – it is less likely to be a disc that goes too fast for him to cope with.
+
+## Puzzle 2
+
+> When Zach reaches the tunnels of death (Section 7.2.5) he decides that his previous estimate of being able to run through quicksand for 5m was optimistic, so he reduces it to 4m. The population parameters for the left and right tunnels are the same as before: which tunnel should he pick to maximize his chance of survival?
+
+We need to calculate the probability that the length of each tunnel is 4m or less, given the population from which it came. To do this we first need to convert the value of 4m into a *z*-score for each tunnel. For the left tunnel we get
+
+$$
+z_\text{left} = \frac{X-\mu}{\sigma} = \frac{4-4.5}{1.5} = -0.33.
+$$
+
+For the right we get
+
+$$
+z_\text{right} = \frac{X-\mu}{\sigma} = \frac{4-4}{1} = 0.
+$$
+
+We then need to look up the values of these corresponding *z*s in the table of the standard normal distribution. For the left tunnel, the corresponding *z* is negative (\$ z = −0.33 \$) and we want the probability value for this value or smaller, so we read the value in the *smaller proportion* column, which is 0.37070. For the right tunnel the *z* score is 0, which corresponds to a probability of 0.50000. So, there is a 37.07% chance that the left tunnel is one that is 4m long or less, and a 50% chance that the right tunnel is one that is 4m long or less. Therefore, Zach should choose the right tunnel.
+
+## Puzzle 3
+
+> If the population parameters for the tunnels of death changed to be \$ \$ = 5 m, \$ \$ = 1.25 m for the left, and \$ \$ = 6 m, \$ \$ = 1.75 m for the right, and Zach still thought he could run through quicksand for 4 m, which tunnel should he choose?
+
+As in Puzzle 2, we need to calculate the probability that the length of each tunnel is 4m or less, given the population from which it came. To do this we first need to convert the value of 4m into a *z*-score for each tunnel. For the left tunnel we get
+
+$$
+z_\text{left} = \frac{X-\mu}{\sigma} = \frac{4-5}{1.25} = -0.8.
+$$
+
+For the right we get
+
+$$
+z_\text{right} = \frac{X-\mu}{\sigma} = \frac{4-6}{1.75} = -1.14.
+$$
+
+Next we need to look up the values of these corresponding zs in the table of the standard normal distribution. For the left tunnel, because the corresponding *z* is negative ($z = −0.8$), and we want the probability for this value or smaller, we read the value in the *smaller proportion* column, which is 0.21186. For the right tunnel, the *z* score is also negative ($z = −1.14$), so we again read the value in the *smaller proportion* column, which is 0.12714. So, there is a 21.19% chance that the left tunnel is one that is 4 m long or less, and a 12.71% chance that the right tunnel is one that is 4 m long or less. Therefore, Zach should choose the left tunnel this time.
+
+## Puzzle 4
+
+> When Zach reaches the catapults of death (Section 7.2.6) the distance he needs to travel is still between 100 and 105 m, but the population parameters for the two catapults have changed. The left catapult comes from a population with \$ \$ = 101 m, \$ \$ = 5 m, and the right comes from population with \$ \$ = 105 m, \$ \$ = 3 m. Which catapult is most likely to propel him the safe distance of 100–10 m?
+
+To find the probability that the left and right catapults will propel Zach safely between 100 and 105m, we first need to convert the means and standard deviations of the two catapults into *z*-scores in the usual way.
+
+For the left catapult, over a distance of 100m, we get
+
+$$
+z_\text{left 100m} = \frac{X-\mu}{\sigma} = \frac{100-101}{5} = -0.2,
+$$
+
+and for a distance of 105m we get
+
+$$
+z_\text{left 105m} = \frac{X-\mu}{\sigma} = \frac{105-101}{5} = 0.8.
+$$
+
+For the right, over a distance of 100m, we get
+
+$$
+z_\text{right 100m} = \frac{X-\mu}{\sigma} = \frac{100-105}{3} = -1.67,
+$$
+
+and for a distance of 105m we get
+
+$$
+z_\text{right 105m} = \frac{X-\mu}{\sigma} = \frac{105-105}{3} = 0,
+$$
+
+Using the method in see Section 7.2.4 and Zach’s Facts 7.3, we look up the corresponding *z*s in the table of the standard normal distribution.
+
+-   **Left catapult**: the smaller *z* is negative (\$ z = −0.2 \$), so note the value in the *smaller proportion* column, which is 0.42074. The larger *z* is positive (*z* = 0.8), so again note the value in the *smaller proportion* column, which is 0.21186. The probability of the left catapult propelling Zach safely between 100m and 105m is then 1 minus these two values, so we get \$ 1 − 0.42074 − 0.21186 = 0.3674 \$.
+
+-   **Right catapult**: the smaller *z* is 0, so the value in both columns is 0.50000. The larger *z* is negative (\$ z = −1.67 \$), so note the value in the *smaller proportion* column, which is 0.04746. The probability of the right catapult propelling Zach safely between 100m and 105m is 1 minus these two values, so we get \$ 1 − 0.50000 − 0.04746 = 0.45254 \$.
+
+To sum up, there is a 36.74% chance that the left catapult will fire Zach between 100 and 105 meters and a 45.25% chance that the right catapult will fire Zach between 100 and 105 meters. Therefore, Zach should choose the right catapult.
+
+## Puzzle 5
+
+> When Zach and Milton reach Deathscotch (Section 7.3), they see a different table of frequencies (Table 7.2 in the book, reproduced below). Should Zach still choose to hop onto a skull?
+
+<div id="rkrobfiqkk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#rkrobfiqkk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rkrobfiqkk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rkrobfiqkk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rkrobfiqkk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rkrobfiqkk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rkrobfiqkk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rkrobfiqkk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rkrobfiqkk .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rkrobfiqkk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rkrobfiqkk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rkrobfiqkk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rkrobfiqkk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rkrobfiqkk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#rkrobfiqkk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rkrobfiqkk .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rkrobfiqkk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rkrobfiqkk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#rkrobfiqkk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rkrobfiqkk .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#rkrobfiqkk .gt_left {
+  text-align: left;
+}
+
+#rkrobfiqkk .gt_center {
+  text-align: center;
+}
+
+#rkrobfiqkk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rkrobfiqkk .gt_font_normal {
+  font-weight: normal;
+}
+
+#rkrobfiqkk .gt_font_bold {
+  font-weight: bold;
+}
+
+#rkrobfiqkk .gt_font_italic {
+  font-style: italic;
+}
+
+#rkrobfiqkk .gt_super {
+  font-size: 65%;
+}
+
+#rkrobfiqkk .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Table 7.2 (reproduced): A classification table of stones and outcomes</th>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1"></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2">
+        <span class="gt_column_spanner">Outcome</span>
+      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" style="text-align: center;">Total</th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;">Vanishes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;">Remains</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left gt_stub">Skull</td>
+<td class="gt_row gt_right" style="text-align: center;">11</td>
+<td class="gt_row gt_right" style="text-align: center;">24</td>
+<td class="gt_row gt_right" style="text-align: center;">35</td></tr>
+    <tr><td class="gt_row gt_left gt_stub">Heart</td>
+<td class="gt_row gt_right" style="text-align: center;">15</td>
+<td class="gt_row gt_right" style="text-align: center;">26</td>
+<td class="gt_row gt_right" style="text-align: center;">41</td></tr>
+    <tr>
+      <td class="gt_row gt_stub gt_right gt_grand_summary_row gt_first_grand_summary_row">Total</td>
+      <td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row" style="text-align: center;">26</td>
+      <td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row" style="text-align: center;">50</td>
+      <td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row" style="text-align: center;">76</td>
+    </tr>
+  </tbody>
+  
+  
+</table>
+</div>
+
+To work out which stones are more likely to vanish, skulls or hearts, we need to use conditional probability. Conditional probability tells us the probability of an outcome, given that something else has happened. The ‘given that’ in the conditional probability statement restricts the probability space to a particular outcome. For example, if we want the probability of a stone vanishing given it’s a skull, we are restricting the probability space to skulls. In Table 7.2 we can see that there are 35 skulls, so that is our probability space, and of those 11 vanished, so the conditional probability is
+
+$$
+p(\text{vanish|skull}) = \frac{f(\text{vanishing skulls})}{f(\text{skulls})} = \frac{11}{35} = 0.31.
+$$
+
+We can then calculate the probability of a stone vanishing, given it’s a heart, in the same way; in Table 7.2 we can see that there are 41 hearts, so that is our probability space, of which 15 vanished, so the conditional probability is
+
+$$
+p(\text{vanish|heart}) = \frac{f(\text{vanishing heart})}{f(\text{heart})} = \frac{15}{41} = 0.37.
+$$
+
+So there is a probability of 0.31 that a skull will vanish and a probability of 0.37 that a heart will vanish.
+
+We can reach the same conclusion by using probabilities rather than frequencies. The probability that a stone is a skull and vanishes is 11/76 because there are 76 stones in total and 11 of them are vanishing skulls, and the probability of a skull is 35/76 because there are 76 stones 35 of which are skulls. Both probabilities have 76 in the lower half of the fraction so the conditional probability reduces down to 11/35 = 0.31 or 31%.
+
+$$
+p(\text{vanish|skull}) = \frac{p(\text{skull } \cap \text{vanishes})}{f(\text{skull})} = \frac{11/76}{35/76} = \frac{11}{35} = 0.31.
+$$
+
+The probability that a stone is a heart and vanishes is 15/76 because there are 76 stones in total and 15 of them are vanishing hearts, and the probability of a heart is 41/76 because there are 76 stones 41 of which are hearts. Both probabilities have 76 in the lower half of the fraction so the conditional probability reduces down to 15/41 = 0.37 or 37%
+
+$$
+p(\text{vanish|heart}) = \frac{p(\text{heart } \cap \text{vanishes})}{f(\text{heart})} = \frac{15/76}{41/76} = \frac{15}{41} = 0.37.
+$$
+
+A final way to calculate the conditional probability is using Bayes’ theorem
+
+$$
+p(\text{A|B}) = \frac{p(\text{B|A})p(A))}{p(B)}.
+$$
+
+For example, we could work out the conditional probability of a stone vanishing given it’s a skull, \$ p() \$ by replacing *A* with *vanish* and *B* with *skull*
+
+$$
+p(\text{vanish|skull}) = \frac{p(\text{skull|vanish})p(\text{vanish}))}{p(\text{skull})}.
+$$
+
+The probability of a skull is
+
+$$
+p(\text{skull}) = \frac{f(\text{skull})}{f(\text{all stones})} = \frac{35}{76} = 0.46.
+$$
+
+The probability of any stone vanishing
+
+$$
+p(\text{vanish}) = \frac{f(\text{vanish})}{f(\text{all stones})} = \frac{26}{76} = 0.34.
+$$
+
+There were 26 stones that vanished and 11 were skulls, so the reverse conditional probability, that is, the probability of a skull given that the stone vanished is
+
+$$
+p(\text{skull|vanish}) = \frac{f(\text{vanishing skulls})}{f(\text{vanishing})} = \frac{11}{26} = 0.42.
+$$
+
+Bayes’ theorem tells us that the conditional probability of the stone vanishing given you select a skull is
+
+$$
+p(\text{vanish|skull}) = \frac{p(\text{skull|vanish})p(\text{vanish}))}{p(\text{skull})} = \frac{0.42 \times 0.34}{0.46} = 0.31.
+$$
+
+So, as we’ve seen before, there is a 0.31 probability that a skull will vanish.
+
+We can work out the probability that a stone will vanish given it’s a heart in the same way:
+
+The probability of a heart is
+
+$$
+p(\text{heart}) = \frac{f(\text{heart})}{f(\text{all stones})} = \frac{41}{76} = 0.54.
+$$
+
+The probability of any stone vanishing is, as calculated above, 0.34.
+
+There were 26 stones that vanished and 15 were hearts, so the reverse conditional probability, that is, the probability of a heart given that the stone vanished is
+
+$$
+p(\text{heart|vanish}) = \frac{f(\text{vanishing hearts})}{f(\text{vanishing})} = \frac{15}{26} = 0.58.
+$$
+
+Bayes’ theorem tells us that the conditional probability of the stone vanishing given you select a heart is
+
+$$
+p(\text{vanish|heart}) = \frac{p(\text{heart|vanish})p(\text{vanish}))}{p(\text{heart})} = \frac{0.58 \times 0.34}{0.54} = 0.37.
+$$
+
+Whichever of the three methods you use, there is a 0.37 probability that a heart will vanish and a 0.31 probability that a skull will vanish. Put another way, about 31% of skulls disappear and about 37% of hearts disappear, so Zach should still choose to jump onto a skull because hearts are still more likely to vanish than skulls.
+
+## Puzzle 6
+
+> Using Table 6.1 (in the book), what is the probability that someone in the general population has a higher IQ than Zach? (Hint: use a value of IQ one more than Zach’s score.)
+
+Zach’s IQ score was 125, so if we want to calculate the probability that someone in the general population has a score that is higher than this we can calculate the probability of someone having a score at least as big as 126 (one score higher than Zach’s). To do this we first need to convert 126 into a *z*-score using the population mean and standard deviation from Table 6.1, which were 100 and 15, respectively.
+
+$$
+z = \frac{X-\mu}{\sigma} = \frac{126-100}{15} = 1.73
+$$
+
+To find the probability of obtaining a score at least as big as 126, we look up the value of the corresponding *z*, which is 1.73, in the table of the standard normal distribution. Because the *z* is positive, and we’re interested in values as large or larger than \$ z = 1.73 \$, we read the value in the *smaller proportion* column, which is 0.042. Therefore, the probability of someone in the general population having an IQ score higher than Zach is 0.042, in other words it’s quite unlikley: Zach is smarter than he thinks.
+
+## Puzzle 7
+
+> Using Table 6.1 (in the book), what is the probability that someone in the general population has as much creativity as Zach or more?
+
+Zach’s creativity raw score was 30. To find the probability that someone in the general population has as much creativity as Zach or more, we need to look up the value of the corresponding *z*, which was 1.36 (see Table 6.1 in the book), in the table of the standard normal distribution. Because the *z* is positive, and we want to know about values of \$ z \$ at least as large as Zach’s, we read the value in the *smaller proportion* column, which is 0.087, or 8.7%. Therefore, the probability that someone in the general population has as much creativity as Zach or more is 0.087.
+
+## Puzzle 8
+
+> Using Table 6.1 (in the book),, what is the probability that someone in the general population has the same emotional intelligence as Zach or lower?
+
+Zach’s emotional intelligence raw score was 165. To find the probability that someone in the general population has the same amount of emotional intelligence as Zach or less, we need to look up the value of the corresponding *z*, which was 0.75 (see Table 6.1 in the book), in the table of the standard normal distribution. Because the *z* is positive, and we want to know about values of \$ z \$ at as large as Zach’s or *smaller*, we read the value in the *larger proportion* column, which is 0.773 (or 77.3%). Therefore, the probability that someone in the general population has the same emotional intelligence as Zach or less is 0.773.
+
+## Puzzle 9
+
+> Using Table 6.1 (in the book), what is the probability that a JIG:SAW code 1318 worker is at least as intelligent (IQ score) as Zach?
+
+Zach’s IQ raw score was 125. To find the probability that a JIG:SAW code 1318 worker is at least as intelligent as Zach, we need to look up the value of Zach’s corresponding *z* (remember we’re looking at the *z* calculated using the code 1318 worker’s mean and standard deviation), which was \$ –0.28 \$ (see Table 6.1 in the book), in the table of the standard normal distribution. Because the *z* is negative, and we want to know about values of \$ z \$ at least as large as Zach’s, we read the value in the *larger proportion* column for \$ z = 0.28 \$, which is 0.610, or 61%. Therefore, the probability that a JIG:SAW code 1318 worker is at least as intelligent as Zach is 0.61.
+
+## Puzzle 10
+
+Using Table 6.1 (in the book), what is the probability that a JIG:SAW technician is at least as intelligent (IQ score) as Zach?
+
+Zach’s IQ raw score was 125. To find the probability that a JIG:SAW technician is at least as intelligent as Zach, we need to look up the value of Zach’s corresponding *z*, which was 0.5 (see Table 6.1 in the book; remember to look at the rows for JIG:SAW technicians), in the table of the standard normal distribution. Because the *z* is positive and we want to know about values of \$ z \$ at least as large as Zach’s, we read the value in the *smaller proportion* column, which is 0.31, or 31%. Therefore, the probability that a JIG:SAW technician is at least as intelligent as Zach is 0.31.

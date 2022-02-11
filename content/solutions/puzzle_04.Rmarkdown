@@ -137,7 +137,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{1029.21} = 32.08.
+s = \sqrt{1029.21} = 32.08.
 $$
 
 ## Puzzle 6
@@ -211,7 +211,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{226,854.09} = 476.29 \ \text{days}.
+s = \sqrt{226,854.09} = 476.29 \ \text{days}.
 $$
 
 To calculate the median, range and interquartile range, first arrange the scores in ascending order:
@@ -290,7 +290,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{6273.43} = 79.21 \ \text{days}.
+s = \sqrt{6273.43} = 79.21 \ \text{days}.
 $$
 
 From these calculations we can see that the variance and standard deviation, like the mean, are both greatly influenced by extreme scores. When Jennifer Aniston and Brad Pitt's marriage was included in the calculations (see puzzle 7), the variance and standard deviation were much larger: 22,6854.09 and 476.29, respectively. Therefore, by removing the outlier (Jen and Brad's marriage) the mean is now a better 'fit' to the data.
@@ -357,7 +357,7 @@ tibble::tibble(
     error = "Deviance ($x-\\bar{X}$)",
     e_square = "$\\text{Deviance}^2$"
   ) %>% 
-  gt::tab_header("Calculating the sums of squared errors for ratinmgs of Zach's song")
+  gt::tab_header("Calculating the sums of squared errors for ratings of Zach's song")
 
 ```
 
@@ -371,7 +371,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{5.98} = 2.45.
+s = \sqrt{5.98} = 2.45.
 $$
 
 

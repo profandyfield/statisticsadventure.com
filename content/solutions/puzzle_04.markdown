@@ -1,6 +1,6 @@
 ---
 title: "Chapter 4"
-date: '2022-02-09'
+date: '2022-02-10'
 output: html_document
 type: book
 weight: 50
@@ -75,12 +75,12 @@ $$
 
 To calculate the sum of squares, subtract the mean from each score, then square each deviance. Finally, add up these squared deviances (Table 1).
 
-<div id="vdzbgkvmpg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mlaivybftx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#vdzbgkvmpg .gt_table {
+#mlaivybftx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -105,7 +105,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-left-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_heading {
+#mlaivybftx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -117,7 +117,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-right-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_title {
+#mlaivybftx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -127,7 +127,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-bottom-width: 0;
 }
 
-#vdzbgkvmpg .gt_subtitle {
+#mlaivybftx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -137,13 +137,13 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-top-width: 0;
 }
 
-#vdzbgkvmpg .gt_bottom_border {
+#mlaivybftx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_col_headings {
+#mlaivybftx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -158,7 +158,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-right-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_col_heading {
+#mlaivybftx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -178,7 +178,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   overflow-x: hidden;
 }
 
-#vdzbgkvmpg .gt_column_spanner_outer {
+#mlaivybftx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -190,15 +190,15 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   padding-right: 4px;
 }
 
-#vdzbgkvmpg .gt_column_spanner_outer:first-child {
+#mlaivybftx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vdzbgkvmpg .gt_column_spanner_outer:last-child {
+#mlaivybftx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vdzbgkvmpg .gt_column_spanner {
+#mlaivybftx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -210,7 +210,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   width: 100%;
 }
 
-#vdzbgkvmpg .gt_group_heading {
+#mlaivybftx .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -232,7 +232,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   vertical-align: middle;
 }
 
-#vdzbgkvmpg .gt_empty_group_heading {
+#mlaivybftx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -247,15 +247,15 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   vertical-align: middle;
 }
 
-#vdzbgkvmpg .gt_from_md > :first-child {
+#mlaivybftx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vdzbgkvmpg .gt_from_md > :last-child {
+#mlaivybftx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vdzbgkvmpg .gt_row {
+#mlaivybftx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -274,7 +274,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   overflow-x: hidden;
 }
 
-#vdzbgkvmpg .gt_stub {
+#mlaivybftx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -286,7 +286,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   padding-left: 12px;
 }
 
-#vdzbgkvmpg .gt_summary_row {
+#mlaivybftx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -296,7 +296,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   padding-right: 5px;
 }
 
-#vdzbgkvmpg .gt_first_summary_row {
+#mlaivybftx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -306,7 +306,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-top-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_grand_summary_row {
+#mlaivybftx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -316,7 +316,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   padding-right: 5px;
 }
 
-#vdzbgkvmpg .gt_first_grand_summary_row {
+#mlaivybftx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -326,11 +326,11 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-top-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_striped {
+#mlaivybftx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vdzbgkvmpg .gt_table_body {
+#mlaivybftx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -339,7 +339,7 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-bottom-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_footnotes {
+#mlaivybftx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -353,13 +353,13 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-right-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_footnote {
+#mlaivybftx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#vdzbgkvmpg .gt_sourcenotes {
+#mlaivybftx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -373,41 +373,41 @@ To calculate the sum of squares, subtract the mean from each score, then square 
   border-right-color: #D3D3D3;
 }
 
-#vdzbgkvmpg .gt_sourcenote {
+#mlaivybftx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#vdzbgkvmpg .gt_left {
+#mlaivybftx .gt_left {
   text-align: left;
 }
 
-#vdzbgkvmpg .gt_center {
+#mlaivybftx .gt_center {
   text-align: center;
 }
 
-#vdzbgkvmpg .gt_right {
+#mlaivybftx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vdzbgkvmpg .gt_font_normal {
+#mlaivybftx .gt_font_normal {
   font-weight: normal;
 }
 
-#vdzbgkvmpg .gt_font_bold {
+#mlaivybftx .gt_font_bold {
   font-weight: bold;
 }
 
-#vdzbgkvmpg .gt_font_italic {
+#mlaivybftx .gt_font_italic {
   font-style: italic;
 }
 
-#vdzbgkvmpg .gt_super {
+#mlaivybftx .gt_super {
   font-size: 65%;
 }
 
-#vdzbgkvmpg .gt_footnote_marks {
+#mlaivybftx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -554,7 +554,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{1029.21} = 32.08.
+s = \sqrt{1029.21} = 32.08.
 $$
 
 ## Puzzle 6
@@ -580,12 +580,12 @@ $$
 
 Then we compute the standard deviation starting with the sum of squared errors, which is 2,268,540.91 (Table 2).
 
-<div id="lbhffyuxhr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pigfklfahj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#lbhffyuxhr .gt_table {
+#pigfklfahj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -610,7 +610,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-left-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_heading {
+#pigfklfahj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -622,7 +622,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-right-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_title {
+#pigfklfahj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -632,7 +632,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-bottom-width: 0;
 }
 
-#lbhffyuxhr .gt_subtitle {
+#pigfklfahj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -642,13 +642,13 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-top-width: 0;
 }
 
-#lbhffyuxhr .gt_bottom_border {
+#pigfklfahj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_col_headings {
+#pigfklfahj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -663,7 +663,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-right-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_col_heading {
+#pigfklfahj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -683,7 +683,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   overflow-x: hidden;
 }
 
-#lbhffyuxhr .gt_column_spanner_outer {
+#pigfklfahj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -695,15 +695,15 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   padding-right: 4px;
 }
 
-#lbhffyuxhr .gt_column_spanner_outer:first-child {
+#pigfklfahj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lbhffyuxhr .gt_column_spanner_outer:last-child {
+#pigfklfahj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lbhffyuxhr .gt_column_spanner {
+#pigfklfahj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -715,7 +715,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   width: 100%;
 }
 
-#lbhffyuxhr .gt_group_heading {
+#pigfklfahj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -737,7 +737,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   vertical-align: middle;
 }
 
-#lbhffyuxhr .gt_empty_group_heading {
+#pigfklfahj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -752,15 +752,15 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   vertical-align: middle;
 }
 
-#lbhffyuxhr .gt_from_md > :first-child {
+#pigfklfahj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lbhffyuxhr .gt_from_md > :last-child {
+#pigfklfahj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lbhffyuxhr .gt_row {
+#pigfklfahj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -779,7 +779,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   overflow-x: hidden;
 }
 
-#lbhffyuxhr .gt_stub {
+#pigfklfahj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -791,7 +791,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   padding-left: 12px;
 }
 
-#lbhffyuxhr .gt_summary_row {
+#pigfklfahj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -801,7 +801,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   padding-right: 5px;
 }
 
-#lbhffyuxhr .gt_first_summary_row {
+#pigfklfahj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -811,7 +811,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-top-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_grand_summary_row {
+#pigfklfahj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -821,7 +821,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   padding-right: 5px;
 }
 
-#lbhffyuxhr .gt_first_grand_summary_row {
+#pigfklfahj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -831,11 +831,11 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-top-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_striped {
+#pigfklfahj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lbhffyuxhr .gt_table_body {
+#pigfklfahj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -844,7 +844,7 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-bottom-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_footnotes {
+#pigfklfahj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -858,13 +858,13 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-right-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_footnote {
+#pigfklfahj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#lbhffyuxhr .gt_sourcenotes {
+#pigfklfahj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -878,41 +878,41 @@ Then we compute the standard deviation starting with the sum of squared errors, 
   border-right-color: #D3D3D3;
 }
 
-#lbhffyuxhr .gt_sourcenote {
+#pigfklfahj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#lbhffyuxhr .gt_left {
+#pigfklfahj .gt_left {
   text-align: left;
 }
 
-#lbhffyuxhr .gt_center {
+#pigfklfahj .gt_center {
   text-align: center;
 }
 
-#lbhffyuxhr .gt_right {
+#pigfklfahj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lbhffyuxhr .gt_font_normal {
+#pigfklfahj .gt_font_normal {
   font-weight: normal;
 }
 
-#lbhffyuxhr .gt_font_bold {
+#pigfklfahj .gt_font_bold {
   font-weight: bold;
 }
 
-#lbhffyuxhr .gt_font_italic {
+#pigfklfahj .gt_font_italic {
   font-style: italic;
 }
 
-#lbhffyuxhr .gt_super {
+#pigfklfahj .gt_super {
   font-size: 65%;
 }
 
-#lbhffyuxhr .gt_footnote_marks {
+#pigfklfahj .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1012,7 +1012,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{226,854.09} = 476.29 \ \text{days}.
+s = \sqrt{226,854.09} = 476.29 \ \text{days}.
 $$
 
 To calculate the median, range and interquartile range, first arrange the scores in ascending order:
@@ -1045,12 +1045,12 @@ $$
 The mean length of celebrity marriages is now 97.1 days, compared to 238.91 days when Jennifer Aniston and Brad Pitt’s marriage was included. This demonstrates that the mean is greatly influenced by extreme scores.
 Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad Pitt’s marriage, starting with the sum of squared errors, which is 56,460.9 (Table 3).
 
-<div id="njirbfcnmc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pieypipfma" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#njirbfcnmc .gt_table {
+#pieypipfma .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1075,7 +1075,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-left-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_heading {
+#pieypipfma .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1087,7 +1087,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-right-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_title {
+#pieypipfma .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1097,7 +1097,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-bottom-width: 0;
 }
 
-#njirbfcnmc .gt_subtitle {
+#pieypipfma .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1107,13 +1107,13 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-top-width: 0;
 }
 
-#njirbfcnmc .gt_bottom_border {
+#pieypipfma .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_col_headings {
+#pieypipfma .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1128,7 +1128,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-right-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_col_heading {
+#pieypipfma .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1148,7 +1148,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   overflow-x: hidden;
 }
 
-#njirbfcnmc .gt_column_spanner_outer {
+#pieypipfma .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1160,15 +1160,15 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   padding-right: 4px;
 }
 
-#njirbfcnmc .gt_column_spanner_outer:first-child {
+#pieypipfma .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#njirbfcnmc .gt_column_spanner_outer:last-child {
+#pieypipfma .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#njirbfcnmc .gt_column_spanner {
+#pieypipfma .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1180,7 +1180,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   width: 100%;
 }
 
-#njirbfcnmc .gt_group_heading {
+#pieypipfma .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1202,7 +1202,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   vertical-align: middle;
 }
 
-#njirbfcnmc .gt_empty_group_heading {
+#pieypipfma .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1217,15 +1217,15 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   vertical-align: middle;
 }
 
-#njirbfcnmc .gt_from_md > :first-child {
+#pieypipfma .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#njirbfcnmc .gt_from_md > :last-child {
+#pieypipfma .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#njirbfcnmc .gt_row {
+#pieypipfma .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1244,7 +1244,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   overflow-x: hidden;
 }
 
-#njirbfcnmc .gt_stub {
+#pieypipfma .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1256,7 +1256,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   padding-left: 12px;
 }
 
-#njirbfcnmc .gt_summary_row {
+#pieypipfma .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1266,7 +1266,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   padding-right: 5px;
 }
 
-#njirbfcnmc .gt_first_summary_row {
+#pieypipfma .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,7 +1276,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-top-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_grand_summary_row {
+#pieypipfma .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1286,7 +1286,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   padding-right: 5px;
 }
 
-#njirbfcnmc .gt_first_grand_summary_row {
+#pieypipfma .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1296,11 +1296,11 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-top-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_striped {
+#pieypipfma .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#njirbfcnmc .gt_table_body {
+#pieypipfma .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1309,7 +1309,7 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-bottom-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_footnotes {
+#pieypipfma .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1323,13 +1323,13 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-right-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_footnote {
+#pieypipfma .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#njirbfcnmc .gt_sourcenotes {
+#pieypipfma .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1343,41 +1343,41 @@ Let’s now calculate the standard deviation excluding Jennifer Aniston and Brad
   border-right-color: #D3D3D3;
 }
 
-#njirbfcnmc .gt_sourcenote {
+#pieypipfma .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#njirbfcnmc .gt_left {
+#pieypipfma .gt_left {
   text-align: left;
 }
 
-#njirbfcnmc .gt_center {
+#pieypipfma .gt_center {
   text-align: center;
 }
 
-#njirbfcnmc .gt_right {
+#pieypipfma .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#njirbfcnmc .gt_font_normal {
+#pieypipfma .gt_font_normal {
   font-weight: normal;
 }
 
-#njirbfcnmc .gt_font_bold {
+#pieypipfma .gt_font_bold {
   font-weight: bold;
 }
 
-#njirbfcnmc .gt_font_italic {
+#pieypipfma .gt_font_italic {
   font-style: italic;
 }
 
-#njirbfcnmc .gt_super {
+#pieypipfma .gt_super {
   font-size: 65%;
 }
 
-#njirbfcnmc .gt_footnote_marks {
+#pieypipfma .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1472,7 +1472,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{6273.43} = 79.21 \ \text{days}.
+s = \sqrt{6273.43} = 79.21 \ \text{days}.
 $$
 
 From these calculations we can see that the variance and standard deviation, like the mean, are both greatly influenced by extreme scores. When Jennifer Aniston and Brad Pitt’s marriage was included in the calculations (see puzzle 7), the variance and standard deviation were much larger: 22,6854.09 and 476.29, respectively. Therefore, by removing the outlier (Jen and Brad’s marriage) the mean is now a better ‘fit’ to the data.
@@ -1507,12 +1507,12 @@ $$
 
 Then the standard deviation starting with the sum of squared errors, which is 83.73 (Table 4).
 
-<div id="vwwhqoccye" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aqmxnlyedj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#vwwhqoccye .gt_table {
+#aqmxnlyedj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1537,7 +1537,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-left-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_heading {
+#aqmxnlyedj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1549,7 +1549,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-right-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_title {
+#aqmxnlyedj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1559,7 +1559,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-bottom-width: 0;
 }
 
-#vwwhqoccye .gt_subtitle {
+#aqmxnlyedj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1569,13 +1569,13 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-top-width: 0;
 }
 
-#vwwhqoccye .gt_bottom_border {
+#aqmxnlyedj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_col_headings {
+#aqmxnlyedj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1590,7 +1590,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-right-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_col_heading {
+#aqmxnlyedj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1610,7 +1610,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   overflow-x: hidden;
 }
 
-#vwwhqoccye .gt_column_spanner_outer {
+#aqmxnlyedj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1622,15 +1622,15 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   padding-right: 4px;
 }
 
-#vwwhqoccye .gt_column_spanner_outer:first-child {
+#aqmxnlyedj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vwwhqoccye .gt_column_spanner_outer:last-child {
+#aqmxnlyedj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vwwhqoccye .gt_column_spanner {
+#aqmxnlyedj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1642,7 +1642,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   width: 100%;
 }
 
-#vwwhqoccye .gt_group_heading {
+#aqmxnlyedj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1664,7 +1664,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   vertical-align: middle;
 }
 
-#vwwhqoccye .gt_empty_group_heading {
+#aqmxnlyedj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1679,15 +1679,15 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   vertical-align: middle;
 }
 
-#vwwhqoccye .gt_from_md > :first-child {
+#aqmxnlyedj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vwwhqoccye .gt_from_md > :last-child {
+#aqmxnlyedj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vwwhqoccye .gt_row {
+#aqmxnlyedj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1706,7 +1706,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   overflow-x: hidden;
 }
 
-#vwwhqoccye .gt_stub {
+#aqmxnlyedj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1718,7 +1718,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   padding-left: 12px;
 }
 
-#vwwhqoccye .gt_summary_row {
+#aqmxnlyedj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1728,7 +1728,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   padding-right: 5px;
 }
 
-#vwwhqoccye .gt_first_summary_row {
+#aqmxnlyedj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1738,7 +1738,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-top-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_grand_summary_row {
+#aqmxnlyedj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1748,7 +1748,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   padding-right: 5px;
 }
 
-#vwwhqoccye .gt_first_grand_summary_row {
+#aqmxnlyedj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,11 +1758,11 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-top-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_striped {
+#aqmxnlyedj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vwwhqoccye .gt_table_body {
+#aqmxnlyedj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1771,7 +1771,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-bottom-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_footnotes {
+#aqmxnlyedj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1785,13 +1785,13 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-right-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_footnote {
+#aqmxnlyedj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#vwwhqoccye .gt_sourcenotes {
+#aqmxnlyedj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1805,41 +1805,41 @@ Then the standard deviation starting with the sum of squared errors, which is 83
   border-right-color: #D3D3D3;
 }
 
-#vwwhqoccye .gt_sourcenote {
+#aqmxnlyedj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#vwwhqoccye .gt_left {
+#aqmxnlyedj .gt_left {
   text-align: left;
 }
 
-#vwwhqoccye .gt_center {
+#aqmxnlyedj .gt_center {
   text-align: center;
 }
 
-#vwwhqoccye .gt_right {
+#aqmxnlyedj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vwwhqoccye .gt_font_normal {
+#aqmxnlyedj .gt_font_normal {
   font-weight: normal;
 }
 
-#vwwhqoccye .gt_font_bold {
+#aqmxnlyedj .gt_font_bold {
   font-weight: bold;
 }
 
-#vwwhqoccye .gt_font_italic {
+#aqmxnlyedj .gt_font_italic {
   font-style: italic;
 }
 
-#vwwhqoccye .gt_super {
+#aqmxnlyedj .gt_super {
   font-size: 65%;
 }
 
-#vwwhqoccye .gt_footnote_marks {
+#aqmxnlyedj .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1848,7 +1848,7 @@ Then the standard deviation starting with the sum of squared errors, which is 83
 <table class="gt_table">
   <thead class="gt_header">
     <tr>
-      <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Calculating the sums of squared errors for ratinmgs of Zach's song</th>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Calculating the sums of squared errors for ratings of Zach's song</th>
     </tr>
     
   </thead>
@@ -1959,7 +1959,7 @@ $$
 The standard deviation is the square root of the variance
 
 $$
-s^2 = \sqrt{5.98} = 2.45.
+s = \sqrt{5.98} = 2.45.
 $$
 
 To calculate the median, range and interquartile range, first arrange the scores in ascending order:

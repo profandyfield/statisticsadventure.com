@@ -1,0 +1,432 @@
+---
+title: "Chapter 9"
+date: '`r Sys.Date()`'
+output: html_document
+type: book
+weight: 90
+toc-depth: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.kable.NA = '')
+
+library(broom)
+library(gt)
+library(here)
+library(tidyverse)
+library(kableExtra)
+
+here::here("R/adventr_themes.R") %>% source()
+here::here("R/web_helpers.R") %>% source()
+
+jig_tib <- here::here("static/csv/ais_ch_05_jigsaw_data.csv") %>% 
+  readr::read_csv()
+
+```
+
+# Robust estimation
+
+## Puzzle 1
+
+> What is a robust estimate?
+
+A robust estimate is one that is, on average, equal to the expected population value even when the normal assumptions of the statistic are not met.
+
+## Puzzle 2
+
+> What is the difference between trimming data and winsorizing it?
+
+They both give robust estimates, but the trimmed mean is the mean based on scores that have had a percentage of extreme scores removed. For example, removing the highest and lowest 20% of scores and then computing the mean of the remaining scores would give us the 20% trimmed mean. Winsorizing data, on the other hand, is where a percentage of the highest scores are replaced with the next highest score (rather than being discarded) in the data and the same percentage of the lowest scores are replaced with the next lowest score in the data. 
+
+## Puzzle 3
+
+> Zach randomly selected 10 scores from the professional services non-employees (see Figure 9.1 in the book): 14, 15, 13, 11, 16, 13, 21, 12, 11, 15. Calculate the mean, the 20% trimmed mean, the 10% trimmed mean, and the 20% winsorized mean.
+
+First, let's calculate the mean by adding the scores and dividing by the number of scores:
+
+$$
+\\begin{aligned}
+\bar{X} &= \frac{\sum_{i = 1}^n x_i}{n} \\\\
+&= \frac{14+15+13+11+16+13+21+12+11+15}{10} \\\\
+&= \frac{141}{10} \\\\
+&= 14.1.
+\\end{aligned}
+$$
+
+To trim 20% of the data from the two ends of the distribution, we need to trim 2 scores from each end (because 20% of 10 is 2). The mean of the remaining 6 scores is the 20% trimmed mean. We first need to arrange the scores in ascending order: 11, 11, 12, 13, 13, 14, 15, 15, 16, 21. Then we trim (i.e. delete) 2 scores from each end. The data are now: 12, 13, 13, 14, 15, 15 (note that we trimmed the two 11s from the bottom, and the 16 and 21 from the top). Finally, we calculate the mean of these 6 scores:
+
+
+$$
+\\begin{aligned}
+\bar{X} &= \frac{\sum_{i = 1}^n x_i}{n} \\\\
+&= \frac{12+13+13+14+15+15}{6} \\\\
+&= \frac{82}{6} \\\\
+&= 13.67.
+\\end{aligned}
+$$
+
+To trim 10% of the data, we need to trim 1 score from each end because 10% of 10 is 1. This involves removing the lowest score (11) and highest score (21). The remaining 8 scores are: 11, 12, 13, 13, 14, 15, 15, 16. The 10% trimmed mean will be the mean of these scores:
+
+$$
+\\begin{aligned}
+\bar{X} &= \frac{\sum_{i = 1}^n x_i}{n} \\\\
+&= \frac{11+ 12+13+13+14+15+15+16}{8} \\\\
+&= \frac{109}{8} \\\\
+&= 13.63.
+\\end{aligned}
+$$
+
+To calculate the 20% winsorized mean, we need to replace the top and bottom 20% of scores with the next highest or lowest score. For these data, the top 2 scores (16 and 21) are both replaced with the next highest score (15), and the bottom two scores (11 and 11) are replaced with the next lowest score (12). So the data becomes: 12, 12, 12, 13, 13, 14, 15, 15, 15, 15. We then calculate the mean of these data:
+
+$$
+\\begin{aligned}
+\bar{X} &= \frac{\sum_{i = 1}^n x_i}{n} \\\\
+&= \frac{12+12+12+13+13+14+15+15+15+15}{10} \\\\
+&= \frac{136}{10} \\\\
+&= 13.6.
+\\end{aligned}
+$$
+
+## Puzzle 4
+
+> Square-root transform the above scores.
+
+To square root transform the scores we replace each score with its square root.
+
+```{r}
+tibble::tibble(
+  score = c(14, 15, 13, 11, 16, 13, 21, 12, 11, 15),
+  sqrt = round(sqrt(score), 2)
+) %>% 
+  gt::gt() %>% 
+  gt::tab_header(title = "Scores and their square root transformation") %>% 
+  gt::tab_style(
+    style = cell_text(align = "center"),
+    locations = list(cells_body(), cells_column_labels())
+  ) %>%
+    gt::cols_label(
+      score = md("Original score<br>$x_i$"),
+      sqrt = md("Transformed score<br>$\\sqrt{x_i}$")
+    )
+```
+
+
+## Puzzle 5
+
+> Using the data in Table 9.3 (in the book), what was the mean strength of scientists in both the JIG:SAW group and the non-employees?
+
+To calculate the mean strength, we need to add up all the scores in each group and then divide the total by the number of scientists in each group.
+
+Let's start with the strength scores for JIG:SAW employees:
+
+1161, 1141, 1174, 1112, 1185, 1095, 1102, 1112, 1071, 1244, 1102, 1216, 1884, 1276, 1373, 1145, 1169, 1136, 1313, 1129, 1119, 1197, 1111, 1121, 1274, 1197, 1139, 1233, 1334, 1150, 1138, 1185, 1158, 1445, 1525, 1408, 1128, 1723
+
+$$
+\bar{X} = \frac{\sum_{i = 1}^n x_i}{n} = \frac{46725}{38} = 1229.61.
+$$
+
+The mean scientists' strength score for JIG:SAW employees was 1229.61.
+
+Now, let's move into the strength scores for Non-employees:
+
+1321, 1153, 1072, 1218, 1088, 1373, 1135, 1055, 1096, 1007, 1223, 1291, 1171, 1101, 2091, 1308, 1141, 1433, 1141, 1212, 1769, 1071, 1412, 1214, 1031, 1209, 1222, 1241, 1740, 1367, 1313, 1208, 1257, 1376, 1155, 1065, 1147, 1166, 1566, 1436
+
+$$
+\bar{X} = \frac{\sum_{i = 1}^n x_i}{n} = \frac{50595}{40} = 1264.88.
+$$
+
+The mean scientists' strength score for non-employees was 1264.88.
+
+
+## Puzzle 6
+
+> Using the data in Table 9.3 (in the book and reproduced above), what was the 20% trimmed mean strength of scientists in both the JIG:SAW group and the non-employees?
+
+First, we will calculate the 20% trimmed mean strength for the JIG:SAW employees. There are 38 scores in total and 20% of 38 is 7.6. We can't remove 7.6 scores, so we will take 8 scores from each end of the distribution instead. The table shows the raw scores listed in ascending order, and in the final column I have deleted the bottom and top 8 scores. The 20% trimmed mean is the mean of the scores in this final column
+
+$$
+\bar{X}_\text{20% trimmed} = \frac{25896}{22} = 1177.09.
+$$
+
+
+```{r}
+jig_tib %>% 
+  dplyr::filter(Job_Type == "Scientists" & Employee == "JIG:SAW Employee") %>% 
+  dplyr::select(ID, Strength) %>% 
+  dplyr::arrange(Strength) %>% 
+  dplyr::mutate(
+    trim = ifelse(Strength > 1120 & Strength < 1300, Strength, NA)
+  ) %>% 
+  gt::gt() %>% 
+  gt::grand_summary_rows(
+      columns = c(Strength, trim),
+      fns = list(
+        Sum = ~sum(., na.rm = TRUE),
+        n = ~sum(!is.na(.)),
+        Mean = ~mean(., na.rm = TRUE)
+      ),
+      formatter = fmt_number,
+      decimals = 2,
+      missing_text = ""
+    ) %>%
+  gt::tab_style(
+      style = list(
+        cell_fill(color = tbl_highlight),
+        cell_text(weight = "bold", color = tbl_hlg_txt, align = "center")
+      ),
+      locations = cells_grand_summary(columns = c(Strength, trim), rows = 3)
+    ) %>%
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = list(
+        cells_body(columns = c(ID, Strength, trim)),
+        cells_grand_summary()
+      )
+    ) %>% 
+  gt::fmt_missing(
+    columns = trim,
+    missing_text = ""
+  ) %>%
+    gt::cols_label(
+      ID = "Participant ID",
+      Strength = md("Strength<br>(complete)"),
+      trim = md("Strength<br>(20% trimmed)")
+    ) %>% 
+  gt::tab_header(title = "Trimming 20% of the strength scores (JIG:SAW employees)")
+  
+```
+
+
+We calculate the 20% trimmed mean strength of the non-employees in exactly the same way. There are 40 scores in total, 20% of 40 = 8, so we will take 8 scores from each end of the distribution (after putting them in ascending order) and then calculate the mean of the remaining scores. The table shows the raw scores listed in ascending order, and in the final column I have deleted the bottom and top 8 scores. The 20% trimmed mean will be the mean of the scores in this column
+
+$$
+\bar{X}_\text{20% trimmed} = \frac{29287}{24} = 1220.29.
+$$
+
+```{r}
+jig_tib %>% 
+  dplyr::filter(Job_Type == "Scientists" & Employee == "Non-Employee") %>% 
+  dplyr::select(ID, Strength) %>% 
+  dplyr::arrange(Strength) %>% 
+  dplyr::mutate(
+    trim = ifelse(Strength > 1100 & Strength < 1376, Strength, NA)
+  ) %>% 
+  gt::gt() %>% 
+  gt::grand_summary_rows(
+      columns = c(Strength, trim),
+      fns = list(
+        Sum = ~sum(., na.rm = TRUE),
+        n = ~sum(!is.na(.)),
+        Mean = ~mean(., na.rm = TRUE)
+      ),
+      formatter = fmt_number,
+      decimals = 2,
+      missing_text = ""
+    ) %>%
+  gt::tab_style(
+      style = list(
+        cell_fill(color = tbl_highlight),
+        cell_text(weight = "bold", color = tbl_hlg_txt, align = "center")
+      ),
+      locations = cells_grand_summary(columns = c(Strength, trim), rows = 3)
+    ) %>%
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = list(
+        cells_body(columns = c(ID, Strength, trim)),
+        cells_grand_summary()
+      )
+    ) %>% 
+  gt::fmt_missing(
+    columns = trim,
+    missing_text = ""
+  ) %>%
+    gt::cols_label(
+      ID = "Participant ID",
+      Strength = md("Strength<br>(complete)"),
+      trim = md("Strength<br>(Winsorized)")
+    ) %>% 
+  gt::tab_header(title = "Trimming 20% of the strength scores (Non-employees)")
+  
+```
+
+
+## Puzzle 7
+
+> Using the data in Table 9.3 (in the book and reproduced in Puzzle 5), what was the 20% winsorized mean strength of scientists in both the JIG:SAW group and non-employees?
+
+To calculate the 20% Winsorized mean, we need to replace the top and bottom 20% of scores with the next highest or lowest score. If we start with the JIG:SAW employees, there were 38 in total and 20% of 38 is 7.6, but we would round this up to 8 because we need a whole number. Therefore, we take 8 scores from each end of the distribution and replace them with the next highest or lowest score. First, I put the scores into ascending order. I have done this in the table below. In the final column, I have replaced the largest 8 scores with the next largest score (1276), and replaced the lowest 8 scores with the next lowest score (1121). To get the 20% winsorized mean, calculate the mean of the final column
+
+$$
+\bar{X}_\text{winsorized} = \frac{45072}{38} = 1186.11.
+$$
+
+```{r}
+jig_tib %>% 
+  dplyr::filter(Job_Type == "Scientists" & Employee == "JIG:SAW Employee") %>% 
+  dplyr::select(ID, Strength) %>% 
+  dplyr::arrange(Strength) %>% 
+  dplyr::mutate(
+    trim = ifelse(Strength < 1121, 1121, 
+                  ifelse(Strength > 1276, 1276, Strength))
+  ) %>% 
+  gt::gt() %>% 
+  gt::grand_summary_rows(
+      columns = c(Strength, trim),
+      fns = list(
+        Sum = ~sum(., na.rm = TRUE),
+        n = ~sum(!is.na(.)),
+        Mean = ~mean(., na.rm = TRUE)
+      ),
+      formatter = fmt_number,
+      decimals = 2,
+      missing_text = ""
+    ) %>%
+  gt::tab_style(
+      style = list(
+        cell_fill(color = tbl_highlight),
+        cell_text(weight = "bold", color = tbl_hlg_txt, align = "center")
+      ),
+      locations = cells_grand_summary(columns = c(Strength, trim), rows = 3)
+    ) %>%
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = list(
+        cells_body(columns = c(ID, Strength, trim)),
+        cells_grand_summary()
+      )
+    ) %>% 
+  gt::fmt_missing(
+    columns = trim,
+    missing_text = ""
+  ) %>%
+    gt::cols_label(
+      ID = "Participant ID",
+      Strength = md("Strength<br>(complete)"),
+      trim = md("Strength<br>(Winsorized)")
+    ) %>% 
+  gt::tab_header(title = "Winsorizing the strength scores (JIG:SAW employees)")
+  
+```
+
+
+I did exactly the same for the non-employees: because there were 40 scores in total and 20% of 40 is 8, I took the raw scores and replaced the largest 8 scores with the next largest score (1373), and replaced the lowest 8 scores with the next lowest score (1101) — see the table below (final column). To get the 20% Winsorized mean, calculate the mean of the final column
+
+$$
+\bar{X}_\text{winsorized} = \frac{49079}{40} = 1226.97.
+$$
+
+```{r}
+jig_tib %>% 
+  dplyr::filter(Job_Type == "Scientists" & Employee == "Non-Employee") %>% 
+  dplyr::select(ID, Strength) %>% 
+  dplyr::arrange(Strength) %>% 
+  dplyr::mutate(
+    trim = ifelse(Strength < 1101, 1101, 
+                  ifelse(Strength > 1373, 1373, Strength))
+  ) %>% 
+  gt::gt() %>% 
+  gt::grand_summary_rows(
+      columns = c(Strength, trim),
+      fns = list(
+        Sum = ~sum(., na.rm = TRUE),
+        n = ~sum(!is.na(.)),
+        Mean = ~mean(., na.rm = TRUE)
+      ),
+      formatter = fmt_number,
+      decimals = 2,
+      missing_text = ""
+    ) %>%
+  gt::tab_style(
+      style = list(
+        cell_fill(color = tbl_highlight),
+        cell_text(weight = "bold", color = tbl_hlg_txt, align = "center")
+      ),
+      locations = cells_grand_summary(columns = c(Strength, trim), rows = 3)
+    ) %>%
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = list(
+        cells_body(columns = c(ID, Strength, trim)),
+        cells_grand_summary()
+      )
+    ) %>% 
+  gt::fmt_missing(
+    columns = trim,
+    missing_text = ""
+  ) %>%
+    gt::cols_label(
+      ID = "Participant ID",
+      Strength = md("Strength<br>(complete)"),
+      trim = md("Strength<br>(20% trimmed)")
+    ) %>% 
+  gt::tab_header(title = "Winsorizing the strength scores (Non-employees)")
+  
+```
+
+## Puzzle 8
+
+> Using your answers above, how do the robust estimates of the mean differ from those based on the raw data?
+
+If we collate our answers from the previous Puzzles it will make it easier to compare the robust estimates:
+
+```{r}
+tibble::tribble(
+  ~Scientist, ~`Raw score`, ~`20% trimmed`, ~`20% winsorized`,
+  "JIG:SAW", 1229.61, 1177.09, 1186.11,
+  "Non-employee", 1264.88, 1220.29, 1226.97
+  )  %>% 
+  gt::gt(rowname_col = "Scientist") %>%
+    gt::tab_spanner(
+    label = "Mean strength",
+    columns = c(`Raw score`, `20% trimmed`, `20% winsorized`)
+  ) %>% 
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = list(
+        cells_column_labels(),
+        cells_body(),
+        cells_column_spanners()
+      )
+    ) %>% 
+  gt::tab_header(title = "Estimated mean strength")
+```
+
+
+Looking at the means based on the raw scores, we can see that there is not much difference between the mean strength of scientists in the JIG:SAW and non-employee groups; the non-employees were slightly stronger than the JIG:SAW employees, but not by very much. Looking at the 20% trimmed and 20% winsorized means, these robust estimates are smaller than the raw mean by about 40–45 units in the non-employee group, and smaller by about 40–50 units in the JIG:SAW group. In other words, the change in the mean is fairly similar in the two groups, and the differences between the groups have stayed fairly similar (raw mean difference = 35.27, trimmed mean difference = 43.2, winsorized mean difference = 40.67). (You might think that 35.27 is quite different to 43.2, and you'd be correct if the scale of measurement perhaps ranged from 0 to 50, but the strength scores range from 1000 to 2000, and in that context a difference of around 8 is not particularly startling.)
+
+## Puzzle 9
+
+> Log-transform the JIG:SAW data from Table 9.3 (in the book and reproduced in Puzzle 5).
+
+To log transform the JIG:SAW data we need to take the natural log of each score. You can use software such as Excel, SPSS or R to do this for you. I used R to create this table.
+
+```{r}
+jig_tib %>% 
+  dplyr::filter(Job_Type == "Scientists" & Employee == "Non-Employee") %>% 
+  dplyr::select(ID, Strength) %>% 
+  dplyr::mutate(
+    ln = round(log(Strength), 2),
+    ln10 = round(log(Strength, base = 10), 2),
+  ) %>% 
+  gt::gt() %>% 
+  gt::tab_header(title = "Scores and their log transformations") %>% 
+  gt::tab_style(
+    style = cell_text(align = "center"),
+    locations = list(cells_body(), cells_column_labels())
+  ) %>%
+    gt::cols_label(
+      Strength = md("Strength score<br>$x_i$"),
+      ln = md("Nautural log<br>$\\ln{x_i}$"),
+      ln10 = md("Log (base 10)<br>$\\log_{10}{x_i}$")
+    )
+```
+
+
+## Puzzle 10
+
+> Describe the process of bootstrapping.
+
+Bootstrapping is a technique from which the sampling distribution of a statistic is estimated by taking repeated samples (with replacement) from the data set (in effect, treating the data as a population from which smaller samples are taken). The statistic of interest (e.g., the mean, or b coefficient) is calculated for each sample, from which the sampling distribution of the statistic is estimated. The standard error of the statistic is estimated as the standard deviation of the sampling distribution created from the bootstrap samples. From this process, confidence intervals and significance tests can be computed too.
+

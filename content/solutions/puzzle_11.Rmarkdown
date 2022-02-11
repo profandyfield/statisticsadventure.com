@@ -342,7 +342,3 @@ The posterior odds are the ratio of the posterior probability for one hypothesis
 $$
 \text{posterior odds} = \frac{p(\text{glasses|correct})}{p(\text{no glasses|correct})} = \frac{0.58}{0.69} = 0.84.
 $$
-
-"posterior odds"=  p"(hypothesis 1|data)" /p"(hypothesis 2|data)" =  p"(glasses|correct)" /p"(no glasses| correct)" =0.58/0.69=0.84
-
-

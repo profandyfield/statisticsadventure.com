@@ -1,0 +1,1511 @@
+---
+title: "Chapter 13"
+date: '`r Sys.Date()`'
+output: html_document
+type: book
+weight: 140
+toc-depth: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.kable.NA = '')
+
+library(broom)
+library(gt)
+library(here)
+library(tidyverse)
+library(kableExtra)
+
+here::here("R/adventr_themes.R") %>% source()
+here::here("R/web_helpers.R") %>% source()
+
+neu_tib <- here::here("static/csv/ais_ch_13_neurotic_relationship.csv") %>% 
+  readr::read_csv()
+```
+
+# Relationships
+
+## Puzzle 1
+
+> Table 13.7 (in the book, reproduced below) shows the infidelity data from the Mark et al. (2011) study but for women. Compute the chi-square statistic and standardized residuals for these data
+
+
+```{r}
+tibble::tribble(
+  ~`Happiness in relationship`, ~Unfaithful, ~Faithful,
+  "Unhappy (greater than the median)", 34, 70,
+  "Happy (median or less)", 45, 263
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Table 13.7 (reproduced): Contingency table showing how many women engaged in infidelity or not, based on how happy they were in their relationship. Data from Table 3 of Mark et al. (2011)"
+  )
+```
+
+Let U represent unhappy/unfaithful, H represent happy and F represent faithful then the expected values $ E $ for each cell are:
+
+$$
+\\begin{aligned}
+E_{UU} &= \frac{RT_U \times CT_U}{n} = \frac{104 \times 79}{412} = 19.94 \\\\
+E_{UF} &= \frac{RT_U \times CT_F}{n} = \frac{104 \times 333}{412} = 84.06 \\\\
+E_{HU} &= \frac{RT_H \times CT_U}{n} = \frac{308 \times 79}{412} = 59.06 \\\\
+E_{HF} &= \frac{RT_H \times CT_U}{n} = \frac{308 \times 333}{412} = 248.94
+\\end{aligned}
+$$
+
+I have tabulated these expected values:
+
+```{r}
+tibble::tribble(
+  ~`Happiness in relationship`, ~Unfaithful, ~Faithful,
+  "Unhappy (greater than the median)", 19.94, 84.06,
+  "Happy (median or less)", 59.06, 248.94
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Expected values for Table 13.7"
+  )
+```
+
+
+To compute the chi-square statistic we take each value in each cell of Table 13.7, subtract from it the corresponding expected value, square the result, and then divide by the corresponding expected value. Once we've done this for each cell in the table, we add them up:
+
+$$
+\\begin{aligned}
+\chi^2 &= \sum \frac{(O_{ij} - E_{ij})^2}{E_{ij}} \\\\
+&= \frac{(34-19.94)^2}{19.94} + \frac{(70-84.06)^2}{84.06} + \dots \\\\
+&\quad + \frac{(45-59.06)^2}{59.06} + \frac{(263-248.94)^2}{248.94} \\\\
+&= \frac{14.06^2}{19.94} + \frac{-14.06^2}{84.06} + \frac{-14.06^2}{59.06} + \frac{14.06^2}{248.94} \\\\
+&= 9.91 + 2.35 + 3.35 + 0.79 \\\\
+&= 16.40
+\\end{aligned}
+$$
+
+
+The degrees of freedom are calculated as $ (r − 1)(c − 1) $, in which $ r $ is the number of rows and $ c $ is the number of columns; in other words it is the number of levels of each variable minus one multiplied. In this case the df will be $ (2 − 1)(2 − 1) = 1 $.
+
+We now need to look up the critical values for the chi-square distribution with df = 1 (Section A.3 of the book), and we will see that they are 3.84 ($p = 0.05$) and 6.63 ($p = 0.01$). Because the chi-square value that we calculated is bigger than these values it means that the probability of getting a value at least as big as 16.4 if there were no association between the variables in the population is less than 0.01. With a computer we'd be able to work out the exact value of the probability. In any case, the probability is small enough that we might reject the possibility that infidelity and relationship happiness are not related at all in women.
+
+$$
+\\begin{aligned}
+z_{U, U} &= \frac{O_{U, U} - E_{U, U}}{\sqrt{E_{U, U}}} = \frac{34-19.94}{\sqrt{19.94}} = 3.15 \\\\
+z_{U, F} &= \frac{O_{U, F} - E_{U, F}}{\sqrt{E_{U, F}}} = \frac{70-84.06}{\sqrt{84.06}} = -1.53 \\\\
+z_{H, U} &= \frac{O_{H, U} - E_{H, U}}{\sqrt{E_{H, U}}} = \frac{45-59.06}{\sqrt{59.06}} = -1.83 \\\\
+z_{H, F} &= \frac{O_{H, F} - E_{H, F}}{\sqrt{E_{H, F}}} = \frac{263-248.94}{\sqrt{248.94}} = 0.89
+\\end{aligned}
+$$
+
+
+```{r}
+tibble::tribble(
+  ~`Happiness in relationship`, ~Unfaithful, ~Faithful,
+  "Unhappy (greater than the median)", 3.15, -1.53,
+  "Happy (median or less)", -1.83, 0.89
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Contingency table showing the standardized residuals for each cell in Table 13.7",
+    totals = FALSE
+  )
+```
+
+## Puzzle 2
+
+> Table 13.8 (in the book and reproduced below) shows the number of women who were unfaithful or not, based on whether they felt sexually compatible with their partner (data from Mark et al., 2011). Compute the chi-square statistic and standardized residuals for these data.
+
+ 
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 42, 154,
+  "Compatible (median or less)", 37, 177
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Table 13.8 (reproduced): Contingency table showing how many women engaged in infidelity or not, based on how compatible they felt with their partner. Data from Table 3 of Mark et al. (2011)"
+  )
+```
+
+First we need to calculate the expected values for each cell in Table 13.8.
+Let I represent incompatible, C represent compatible, U represent unfaithful, and F represent faithful. The expected values $ E $ for each cell are:
+
+$$
+\\begin{aligned}
+E_{IU} &= \frac{RT_I \times CT_U}{n} = \frac{196 \times 79}{410} = 37.77 \\\\
+E_{IF} &= \frac{RT_I \times CT_F}{n} = \frac{196 \times 331}{410} = 158.23 \\\\
+E_{CU} &= \frac{RT_C \times CT_U}{n} = \frac{214 \times 79}{410} = 41.23 \\\\
+E_{CF} &= \frac{RT_C \times CT_U}{n} = \frac{214 \times 331}{410} = 172.77
+\\end{aligned}
+$$
+
+I have tabulated these expected values:
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 37.77, 158.23,
+  "Compatible (median or less)", 41.23,	172.77
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Expected values for Table 13.8"
+  )
+```
+
+
+To compute the chi-square statistic we take each value in each cell of Table 13.8, subtract from it the corresponding expected value, square the result, and then divide by the corresponding expected value. Once we've done this for each cell in the table, we add them up:
+
+$$
+\\begin{aligned}
+\chi^2 &= \sum \frac{(O_{ij} - E_{ij})^2}{E_{ij}} \\\\
+&= \frac{(42-37.77)^2}{37.77} + \frac{(154-158.23)^2}{158.23} + \dots \\\\
+&\quad + \frac{(37-41.23)^2}{41.23} + \frac{(177-172.77)^2}{172.77} \\\\
+&= \frac{4.23^2}{37.77} + \frac{-4.23^2}{158.23} + \frac{-4.23^2}{41.23} + \frac{4.23^2}{172.77} \\\\
+&= 0.47 + 0.11  + 0.44 + 0.10 \\\\
+&= 1.12
+\\end{aligned}
+$$
+
+The degrees of freedom are calculated as $ (r − 1)(c − 1) $, in which $ r $ is the number of rows and $ c $ is the number of columns; in other words it is the number of levels of each variable minus one multiplied. In this case the df will be $ (2 − 1)(2 − 1) = 1 $.
+
+We now need to look up the critical values for the chi-square distribution with df = 1 (Section A.3 of the book), and we will see that they are 3.84 ($p = 0.05$) and 6.63 ($p = 0.01$). Because the chi-square value that we calculated is smaller than these values it means that the probability of getting a value at least as big as 1.12 if there were no association between the variables in the population is greater than 0.05. With a computer we'd be able to work out the exact value of the probability. In any case, because the probability is larger than the critical value of 0.05, it suggests that for women, infidelity and compatibility are not significantly related.
+
+The puzzle also asks us to calculate the standardized residuals for these data
+
+$$
+\\begin{aligned}
+z_{I, U} &= \frac{O_{I, U} - E_{I, U}}{\sqrt{E_{I, U}}} = \frac{42-37.77}{\sqrt{37.77}} = 0.69 \\\\
+z_{I, F} &= \frac{O_{I, F} - E_{I, F}}{\sqrt{E_{I, F}}} = \frac{154-158.23}{\sqrt{158.23}} = -0.34 \\\\
+z_{C, U} &= \frac{O_{C, U} - E_{C, U}}{\sqrt{E_{C, U}}} = \frac{37-41.23}{\sqrt{41.23}} = -0.66 \\\\
+z_{C, F} &= \frac{O_{C, F} - E_{C, F}}{\sqrt{E_{C, F}}} = \frac{177-172.77}{\sqrt{172.77}} = 0.32
+\\end{aligned}
+$$
+
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 0.69, -0.34,
+  "Compatible (median or less)", -0.66,	0.32
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Contingency table showing the standardized residuals for each cell in Table 13.7",
+    totals = FALSE
+  )
+```
+
+
+## Puzzle 3
+
+> Table 13.9 (in the book and reproduced below) shows the number of men who were unfaithful or not, based on whether they felt sexually compatible with their partner (data from Mark et al., 2011). Compute the chi-square statistic and standardized residuals for these data.
+
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 87, 228,
+  "Compatible (median or less)", 31,	160
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Table 13.9 (reproduced): Contingency table showing how many men engaged in infidelity or not based on how compatible they felt with their partner. Data from Table 3 of Mark et al. (2011)"
+  )
+```
+
+First we need to calculate the expected values for each cell in Table 13.9.
+Let I represent incompatible, C represent compatible, U represent unfaithful, and F represent faithful. The expected values $ E $ for each cell are:
+
+$$
+\\begin{aligned}
+E_{IU} &= \frac{RT_I \times CT_U}{n} = \frac{315 \times 118}{506} = 73.46 \\\\
+E_{IF} &= \frac{RT_I \times CT_F}{n} = \frac{315 \times 388}{506} = 241.54 \\\\
+E_{CU} &= \frac{RT_C \times CT_U}{n} = \frac{191 \times 118}{506} = 44.54 \\\\
+E_{CF} &= \frac{RT_C \times CT_U}{n} = \frac{191 \times 388}{506} = 146.46
+\\end{aligned}
+$$
+I have tabulated these expected values:
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 73.46,	241.54,
+  "Compatible (median or less)", 44.54, 146.46
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Expected values for Table 13.8"
+  )
+```
+
+
+To compute the chi-square statistic we take each value in each cell of Table 13.9, subtract from it the corresponding expected value, square the result, and then divide by the corresponding expected value. Once we've done this for each cell in the table, we add them up:
+
+$$
+\\begin{aligned}
+\chi^2 &= \sum \frac{(O_{ij} - E_{ij})^2}{E_{ij}} \\\\
+&= \frac{(87-73.46)^2}{73.46} + \frac{(228-241.54)^2}{241.54} + \dots \\\\
+&\quad + \frac{(31-44.54)^2}{44.54} + \frac{(160-146.46)^2}{146.46} \\\\
+&= \frac{13.54^2}{73.46} + \frac{-13.54^2}{241.54} + \frac{-13.54^2}{44.54} + \frac{13.54^2}{146.46} \\\\
+&= 2.50 + 0.76 + 4.12 + 1.25 \\\\
+&= 8.62
+\\end{aligned}
+$$
+The degrees of freedom are calculated as $ (r − 1)(c − 1) $, in which $ r $ is the number of rows and $ c $ is the number of columns; in other words it is the number of levels of each variable minus one multiplied. In this case the df will be $ (2 − 1)(2 − 1) = 1 $.
+
+We now need to look up the critical values for the chi-square distribution with df = 1 (Section A.3 of the book), and we will see that they are 3.84 ($p = 0.05$) and 6.63 ($p = 0.01$). Because the chi-square value that we calculated is larger than these values (8.62) it means that the probability of getting a value at least as big as 8.62 if there were no association between the variables in the population is less than 0.01. With a computer we'd be able to work out the exact value of the probability. In any case, the probability is small enough that we might reject the possibility that infidelity and compatibility are not related at all in men.
+
+The puzzle also asks us to calculate the standardized residuals for these data
+
+$$
+\\begin{aligned}
+z_{I, U} &= \frac{O_{I, U} - E_{I, U}}{\sqrt{E_{I, U}}} = \frac{87-73.46}{\sqrt{73.46}} = 1.58 \\\\
+z_{I, F} &= \frac{O_{I, F} - E_{I, F}}{\sqrt{E_{I, F}}} = \frac{228-241.54}{\sqrt{241.54}} = -0.87 \\\\
+z_{C, U} &= \frac{O_{C, U} - E_{C, U}}{\sqrt{E_{C, U}}} = \frac{31-44.54}{\sqrt{44.54}} = -2.03 \\\\
+z_{C, F} &= \frac{O_{C, F} - E_{C, F}}{\sqrt{E_{C, F}}} = \frac{160-146.46}{\sqrt{146.46}} = 1.12
+\\end{aligned}
+$$
+
+
+```{r}
+tibble::tribble(
+  ~`Compatibility in relationship`, ~Unfaithful, ~Faithful,
+  "Incompatible (greater than the median)", 1.58, -0.87,
+  "Compatible (median or less)", -2.03,	1.12
+) %>% 
+  get_cont_table(
+    spanner = "Infidelity",
+    caption = "Contingency table showing the standardized residuals for each cell in Table 13.7",
+    totals = FALSE
+  )
+```
+
+
+## Puzzle 4
+
+> For puzzles 1 to 3 calculate the chi-square test using Yates's correction.
+Yates's continuity correction adjusts the formula for the chi-square statistic slightly so that you subtract 0.5 from the absolute value of the difference between observed and expected frequencies before you square the difference:
+$$
+\chi^2 = \sum \frac{(|O_{ij}-E_{ij} |-0.5)^2}{E_{ij}}
+$$ 
+
+
+> For Puzzle 1:
+
+$$
+\\begin{aligned}
+\chi^2 &= \frac{(14.06-0.5)^2}{19.94} + \frac{(14.06-0.5)^2}{84.06} + \dots \\\\
+&\quad + \frac{(14.06-0.5)^2}{59.06} + \frac{(14.06-0.5)^2}{248.94} \\\\
+&= 9.22 + 2.19 + 3.11 + 0.74 \\\\
+&= 15.26 
+\\end{aligned}
+$$
+
+The chi-square value using Yates's correction is 15.26, which is lower than 16.40 - the value when the correction wasn't applied. The fact that the test statistic has got smaller means that the exact *p*-value will be smaller too. The correction makes the test stricter.
+
+> For Puzzle 2:
+
+$$
+\\begin{aligned}
+\chi^2 &= \frac{(4.23-0.5)^2}{37.77} + \frac{(4.23-0.5)^2}{158.23} + \dots \\\\
+&\quad + \frac{(4.23-0.5)^2}{41.23} + \frac{(4.23-0.5)^2}{172.77} \\\\
+&= 0.37 + 0.09 + 0.34 + 0.08 \\\\
+&= 0.88 
+\\end{aligned}
+$$
+
+The chi-square value using Yates's correction for puzzle 2 is 0.88, which is even lower than 1.12 (the value when the correction wasn't applied).
+
+> For Puzzle 3:
+
+$$
+\\begin{aligned}
+\chi^2 &= \frac{(13.54-0.5)^2}{73.46} + \frac{(13.54-0.5)^2}{241.54} + \dots \\\\
+&\quad + \frac{(13.54-0.5)^2}{44.54} + \frac{(13.54-0.5)^2}{146.46} \\\\
+&= 2.31 + 0.70 + 3.82 + 1.16 \\\\
+&= 8.00
+\\end{aligned}
+$$
+
+The chi-square value using Yates's correction for Puzzle 3 is 8.00, which is a fair bit lower than 11.52 (the value when the correction wasn't applied). 
+
+## Puzzle 5
+
+For puzzles 1 to 3 calculate the likelihood ratio.
+
+For each puzzle we can use this equation, in which $ O_{ij} $ is the observed value of row *i* and column *j* of the contingency table, and $ E_{ij} $ is the correspondiong model (or expected) value. These values are in the solutions for the original puzzle.
+
+$$
+L\chi^2 = 2\sum O_{ij} \ln\bigg(\frac{O_{ij}}{E_{ij}} \bigg)
+$$
+
+
+> For Puzzle 1:
+
+We use the values in Table 13.7 for the observed values and the corresponding expected values.
+
+$$
+\\begin{aligned}
+L\chi^2 &= 2\Big[34 \times \ln\Big(\frac{34}{19.94}\Big)  + 70 \times \ln\Big(\frac{70}{84.06}\Big)\dots \\\\
+&\quad + 45 \times \ln\Big(\frac{45}{59.06}\Big) + 263 \times \ln\Big(\frac{263}{248.94}\Big) \bigg] \\\\
+&= 2[34 \times 0.534 + 70 \times -0.183 + 45 \times -0.272 + 263 \times 0.055] \\\\
+&= 2[18.16 + (-12.81) + (-12.24) + 14.46] \\\\
+&= 15.14
+\\end{aligned}
+$$
+
+> For Puzzle 2:
+
+We use the values in Table 13.8 for the observed values and the corresponding expected values.
+
+$$
+\\begin{aligned}
+L\chi^2 &= 2\Big[42 \times \ln\Big(\frac{42}{37.77}\Big)  + 154 \times \ln\Big(\frac{154}{158.23}\Big)\dots \\\\
+&\quad + 37 \times \ln\Big(\frac{37}{41.23}\Big) + 177 \times \ln\Big(\frac{177}{172.77}\Big) \bigg] \\\\
+&= 2[42 \times 0.106 + 154 \times -0.027 + 37 \times -0.108 + 177 \times 0.024] \\\\
+&= 2[4.45 + (-4.16) + (-4.00) + 4.25] \\\\
+&= 1.08
+\\end{aligned}
+$$
+
+> For puzzle 3:
+
+We use the values in Table 13.9 for the observed values and the corresponding expected values
+
+$$
+\\begin{aligned}
+L\chi^2 &= 2\Big[87 \times \ln\Big(\frac{87}{73.46}\Big)  + 228 \times \ln\Big(\frac{228}{241.54}\Big)\dots \\\\
+&\quad + 31 \times \ln\Big(\frac{31}{44.54}\Big) + 160 \times \ln\Big(\frac{160}{146.46}\Big) \bigg] \\\\
+&= 2[87 \times 0.169 + 228 \times -0.058 + 31 \times -0.362 + 160 \times 0.088] \\\\
+&= 2[14.70 + (-13.22) + (-11.22) + 14.08] \\\\
+&= 8.68
+\\end{aligned}
+$$
+
+## Puzzle 6
+
+> For puzzles 1 to 3 compute the odds ratio.
+
+Remember that the equation to calculate the odds is:
+
+$$
+\text{odds} = \frac{P(\text{event})}{P(\text{no event})}
+$$
+
+> For Puzzle 1:
+
+The values that we need to answer this puzzle can be found in Table 13.7. We want to know how much more likely a woman is to be unfaithful if she is unhappy rather than happy in her relationship (or vice versa). To begin with, we want to know the odds of a woman being unfaithful given she is unhappy, which will be the probability of an unhappy woman being unfaithful divided by the probability of an unhappy woman being faithful
+
+$$
+\\begin{aligned}
+\text{odds}_{U,U} &= \frac{\text{number that were unhappy and were unfaithful}}{\text{number that were unhappy and were faithful}} \\\\
+&= \frac{34}{70} \\\\
+&= 0.486.
+\\end{aligned}
+$$
+
+Next, we calculate the odds that a woman was unfaithful given she was happy:
+
+$$
+\\begin{aligned}
+\text{odds}_{U,H} &= \frac{\text{number that were happy and were unfaithful}}{\text{number that were happy and were faithful}} \\\\
+&= \frac{45}{263} \\\\
+&= 0.171.
+\\end{aligned}
+$$
+
+We can then calculate the odds ratio as the odds of being unfaithful if a woman reported being unhappy divided by the odds of a woman being unfaithful but reporting being happy:
+
+$$
+\\begin{aligned}
+\text{OR} &= \frac{0.486}{0.171} \\\\
+&= 2.84.
+\\end{aligned}
+$$
+
+If a woman reported being unhappy in her relationship, the odds of her being unfaithful were 2.84 times higher than if she reported happiness.
+
+> For Puzzle 2:
+
+The values that we need to answer this puzzle can be found in Table 13.8. We want to know how much more likely a woman is to be unfaithful if she incompatible rather than compatible in her relationship (or vice versa). To begin with, we want to know the odds of a woman being unfaithful given she feels incompatible, which will be the probability of a woman who feels incompatible being unfaithful divided by the probability of a woman who feels incompatible being faithful:
+
+$$
+\\begin{aligned}
+\text{odds}_{U,I} &= \frac{\text{number that felt incompatible and were unfaithfull}}{\text{number that felt incompatible and were faithful}} \\\\
+&= \frac{42}{154} \\\\
+&= 0.273.
+\\end{aligned}
+$$
+
+Next, we calculate the odds that a woman was unfaithful given she felt compatible:
+
+$$
+\\begin{aligned}
+\text{odds}_{U,C} &= \frac{\text{number that felt compatible and were unfaithful}}{\text{number that felt compatible and were faithful}} \\\\
+&= \frac{37}{177} \\\\
+&= 0.209.
+\\end{aligned}
+$$
+
+We can then calculate the odds ratio as the odds of being unfaithful if a woman reported feeling incompatible divided by the odds of a woman being unfaithful but reporting feeling compatible:
+
+$$
+\\begin{aligned}
+\text{OR} &= \frac{0.273}{0.209} \\\\
+&= 1.31.
+\\end{aligned}
+$$
+
+If a woman reported feeling incompatible in her relationship, the odds of her being unfaithful were only 1.31 times higher than if she reported feeling compatible. 
+
+> For Puzzle 3:
+
+The values that we need to answer this puzzle can be found in Table 13.9. This time let's calculate how much more likely a man is to be faithful if he feels compatible rather than incompatible with his partner (or vice versa). To begin with, we want to know the odds of a man being faithful given he feels compatible with his partner, which will be the probability of a man feeling compatible and being faithful divided by the probability of a man feeling compatible and being unfaithful:
+
+$$
+\\begin{aligned}
+\text{odds}_{F,C} &= \frac{\text{number of men who felt compatible and were faithful}}{\text{number of men who felt compatible and were unfaithful}} \\\\
+&= \frac{160}{31} \\\\
+&= 5.16.
+\\end{aligned}
+$$
+
+Next, we calculate the odds that a man was faithful given he felt incompatible with his partner:
+
+$$
+\\begin{aligned}
+\text{odds}_{F,I} &= \frac{\text{number of men who felt incompatible and were faithful}}{\text{number of men who felt incompatible and were unfaithful}} \\\\
+&= \frac{228}{87} \\\\
+&= 2.62.
+\\end{aligned}
+$$
+
+The odds ratio is the odds of a man who feels compatible with his partner being faithful divided by the odds of a man who feels incompatible with his partner being faithful.
+
+$$
+\\begin{aligned}
+\text{OR} &= \frac{5.16}{2.62} \\\\
+&= 1.96.
+\\end{aligned}
+$$
+
+This ratio tells us that a man who felt compatible with his partner was about twice as likely to be faithful (than unfaithful) than a man who felt incompatible with his partner. 
+
+## Puzzle 7
+
+> Using the data in Table 13.4 (in the book chapter and reproduced below), compute the Pearson correlation, confidence interval, and t-statistic for the relationship between Neuroticism and each of Rewards, Costs, Ideal and Alternatives.
+
+
+```{r}
+neu_tib %>% 
+    gt::gt(rowname_col = "Person") %>% 
+    gt::grand_summary_rows(
+      columns = everything(),
+      fns = list(
+        Mean = ~mean(., na.rm = TRUE),
+        SD = ~sd(., na.rm = TRUE)
+      ),
+      formatter = fmt_number,
+      decimals = 2,
+      missing_text = ""
+    ) %>%
+  gt::tab_style(
+      style = cell_text(align = "center"),
+      locations = cells_body()
+      ) %>% 
+  gt::tab_style(
+      style = list(
+        cell_fill(color = tbl_highlight),
+        cell_text(weight = "bold", align = "center", color = tbl_hlg_txt)
+      ),
+      locations = list(
+        cells_grand_summary(columns = c(Neuroticism, Rewards, Costs, Ideal, Alternatives), rows = 1),
+        cells_grand_summary(columns = c(Neuroticism, Rewards, Costs, Ideal, Alternatives), rows = 2)
+      )
+    ) %>% 
+    gt::tab_header(title = "Table 13.4 (reproduced): Data on neuroticism and relationship commitment based on Kurdek (1997)")
+```
+
+
+> Neuroticism and Rewards
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Neuroticism,
+        y = Rewards,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Neuroticism and Rewards")
+```
+
+
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{-122.4}{9} \\\\
+&= -13.6.
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{-13.6}{13.83 \times 1.35} \\\\
+&= -0.73.
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Neuroticism and Rewards was $ -0.73 $. This is quite a large negative effect and means that the more neurotic the person, the less rewards they felt they received from their relationship.
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{-0.73\sqrt{10-2}}{\sqrt{1-(-0.73)^2}} \\\\
+&= \frac{-0.73\sqrt{8}}{\sqrt{0.47}} \\\\
+&= \frac{-2.06}{0.69} \\\\
+&= -3.01 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was $ -3.01 $, and we can ignore the minus sign because that just tells us the direction of the effect. The question is whether our observed value of 3.01 is bigger than the critical value of 2.306, which it is, suggesting that there is a significant negative relationship between neuroticism and how rewarding you perceive your relationship to be; i.e., the more neurotic you are, the less rewarding you perceive your relationship to be.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + (-0.73))}{1 - (-0.73)}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{0.27}{1.73}\Big] \\\\
+&= -0.93
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= -0.93-(1.96 \times 0.38) \\\\
+&= -1.67 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= -0.93 + (1.96 \times 0.38) \\\\
+&= -0.18
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -1.67}-1}{e^{2 \times -1.67}+1}\\\\
+&= \frac{-0.96}{1.04} \\\\
+&= -0.93 \\\\
+r^+ &= \frac{e^{2 \times -0.18}-1}{e^{2 \times -0.18}+1} \\\\
+&= \frac{-0.30}{1.70} \\\\
+&= -0.18
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.93, -0.18) $, which does not contain zero. This suggests that there is a significant negative relationship between neuroticism and rewards, i.e., the more neurotic you are the less likely you are to perceive your relationship as rewarding.
+
+> Neuroticism and Costs 
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Neuroticism,
+        y = Costs,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Neuroticism and Costs")
+```
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{97.8}{9} \\\\
+&= 10.87.
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{10.87}{13.83 \times 1.16} \\\\
+&= 0.68
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Neuroticism and Costs was $ r = 0.68 $. This is quite a large positive effect and means that the more neurotic the person, the more costs they felt were associated with their relationship. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{0.68\sqrt{10-2}}{\sqrt{1-0.68^2}} \\\\
+&= \frac{0.68\sqrt{8}}{\sqrt{0.54}} \\\\
+&= \frac{1.92}{0.74} \\\\
+&= 2.60 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was 2.60, which is slightly bigger than the critical value of 2.306, suggesting that there is a significant positive relationship between neuroticism and the costs you perceive your relationship to have, i.e., the more neurotic you are, the more costs you perceive your relationship to have.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + 0.68}{1 - 0.68}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{1.68}{0.32}\Big] \\\\
+&= 0.83
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= 0.83-(1.96 \times 0.38) \\\\
+&= 0.08 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= 0.83 + (1.96 \times 0.38) \\\\
+&= 1.57
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times 0.08}-1}{e^{2 \times 0.08}+1}\\\\
+&= \frac{0.17}{2.17} \\\\
+&= 0.08 \\\\
+r^+ &= \frac{e^{2 \times 1.57}-1}{e^{2 \times 1.57}+1} \\\\
+&= \frac{22.06}{24.06} \\\\
+&= 0.92
+\\end{aligned}
+$$
+The confidence interval is $ (0.08, 0.92) $, which does not contain zero. This suggests that there is a significant positive relationship between neuroticism and costs, i.e., the more neurotic you are the more likely you are to perceive your relationship as having more costs.
+
+> Neuroticism and Ideal
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Neuroticism,
+        y = Ideal,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Neuroticism and Ideal")
+```
+
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{-90.6}{9} \\\\
+&= -10.07
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{-10.07}{13.83 \times 1.17} \\\\
+&= -0.62.
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Neuroticism and Ideal was $ -0.62 $. This is a medium negative effect and means that the more neurotic the person, the less ideal they felt their relationship was.
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{-0.62\sqrt{10-2}}{\sqrt{1-(-0.62)^2}} \\\\
+&= \frac{-0.62\sqrt{8}}{\sqrt{0.61}} \\\\
+&= \frac{-1.76}{0.78} \\\\
+&= -2.25 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was $ -2.25 $, which is slightly less than the critical value of 2.306, suggesting that there is not a significant relationship between neuroticism and how ideal you perceive your relationship to be.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + (-0.62))}{1 - (-0.62)}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{0.38}{1.62}\Big] \\\\
+&= -0.73
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= -0.73-(1.96 \times 0.38) \\\\
+&= -1.47 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= -0.73 + (1.96 \times 0.38) \\\\
+&= 0.02
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -1.47}-1}{e^{2 \times -1.47}+1}\\\\
+&= \frac{-0.95}{1.05} \\\\
+&= -0.90 \\\\
+r^+ &= \frac{e^{2 \times 0.02}-1}{e^{2 \times 0.02}+1} \\\\
+&= \frac{0.03}{2.03} \\\\
+&= 0.02
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.9, 0.02) $, which contains zero, suggesting that there is not likely to be a significant relationship between the variables.
+
+> Neuroticism and Alternatives 
+
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Neuroticism,
+        y = Alternatives,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Neuroticism and Alternatives")
+```
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{130.4}{9} \\\\
+&= 14.49.
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{14.49}{13.83 \times 1.45} \\\\
+&= 0.72
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Neuroticism and Alternatives was $ r = 0.72 $. This is a large positive effect, suggesting that the more neurotic the person, the more they searched for alternative partners. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{0.72\sqrt{10-2}}{\sqrt{1-0.72^2}} \\\\
+&= \frac{0.72\sqrt{8}}{\sqrt{0.48}} \\\\
+&= \frac{2.04}{0.69} \\\\
+&= 2.96 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was 2.96, which is bigger than the critical value of 2.306, suggesting that there was a significant relationship between neuroticism and alternatives.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + 0.72}{1 - 0.72}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{1.72}{0.28}\Big] \\\\
+&= 0.91
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= 0.91-(1.96 \times 0.38) \\\\
+&= 0.17 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= 0.91 + (1.96 \times 0.38) \\\\
+&= 1.66
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times 0.17}-1}{e^{2 \times 0.17}+1}\\\\
+&= \frac{0.40}{2.40} \\\\
+&= 0.17 \\\\
+r^+ &= \frac{e^{2 \times 1.66}-1}{e^{2 \times 1.66}+1} \\\\
+&= \frac{26.53}{28.53} \\\\
+&= 0.93
+\\end{aligned}
+$$
+
+The confidence interval is $ (0.17, 0.93) $, which does not contain zero, suggesting that there is likely to be a significant positive relationship between the variables Neuroticism and Alternatives.
+
+
+
+## Puzzle 8
+
+> Using the data in Table 13.4 (in the book), compute the Pearson correlation, confidence interval, and t-statistic for the relationship between Rewards and each of Costs, Ideal and Alternatives.
+
+Remember that we're using the data in Table 13.4 (which was reproduced in the answer to puzzle 7).
+
+> Rewards and Costs
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Rewards,
+        y = Costs,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Rewards and Costs")
+```
+
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{-2.8}{9} \\\\
+&= -0.31
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{-0.31}{1.35 \times 1.16} \\\\
+&= -0.20
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Rewards and Costs was $ -0.20 $. This is a very small negative effect and means that the more rewards a person felt they received from their relationship, the less costly they felt their relationship was. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{-0.20\sqrt{10-2}}{\sqrt{1-(-0.20)^2}} \\\\
+&= \frac{-0.20\sqrt{8}}{\sqrt{0.96}} \\\\
+&= \frac{-0.57}{0.98} \\\\
+&= -0.58 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was $ -0.58 $, and we can ignore the minus sign because that just tells us the direction of the effect. The observed value of $ -0.58 $ is not bigger than the critical value of 2.306, suggesting that there was not a significant relationship between how many rewards people felt they gained from their relationship and the costs they felt were involved with their relationship.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + (-0.20))}{1 - (-0.20)}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{0.80}{1.20}\Big] \\\\
+&= -0.20
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= -0.20-(1.96 \times 0.38) \\\\
+&= -0.95 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= -0.20 + (1.96 \times 0.38) \\\\
+&= 0.54
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -0.95}-1}{e^{2 \times -0.95}+1}\\\\
+&= \frac{-0.85}{1.15} \\\\
+&= -0.74 \\\\
+r^+ &= \frac{e^{2 \times 0.54}-1}{e^{2 \times 0.54}+1} \\\\
+&= \frac{1.97}{3.97} \\\\
+&= 0.50
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.74, 0.50) $, which does contain zero. This again suggests that there is not a significant relationship between Rewards and Costs.
+
+> Rewards and Ideal
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Rewards,
+        y = Ideal,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Rewards and Ideal")
+```
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{9.6}{9} \\\\
+&= 1.07.
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{1.07}{1.35 \times 1.17} \\\\
+&= 0.68.
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Rewards and Ideal was $ r = 0.68 $. This is a medium large effect and means that the more rewards a person felt they received from their relationship, the more ideal they felt their relationship was, which makes sense!
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{0.68\sqrt{10-2}}{\sqrt{1-0.68^2}} \\\\
+&= \frac{0.68\sqrt{8}}{\sqrt{0.54}} \\\\
+&= \frac{1.91}{0.74} \\\\
+&= 2.59 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was 2.59, which is bigger than the critical value of 2.306, suggesting that there was a significant relationship between how many rewards people felt they gained from their relationship and how ideal they felt their relationship was.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + 0.68}{1 - 0.68}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{1.68}{0.32}\Big] \\\\
+&= 0.82
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= 0.82-(1.96 \times 0.38) \\\\
+&= 0.08 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= 0.82 + (1.96 \times 0.38) \\\\
+&= 1.57
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times 0.08}-1}{e^{2 \times 0.08}+1}\\\\
+&= \frac{0.16}{2.16} \\\\
+&= 0.08 \\\\
+r^+ &= \frac{e^{2 \times 1.57}-1}{e^{2 \times 1.57}+1} \\\\
+&= \frac{21.89}{23.89} \\\\
+&= 0.92
+\\end{aligned}
+$$
+
+The confidence interval is $ (0.08, 0.92) $, which does not cross zero and therefore indicates that there is a significant relationship between Rewards and Ideal.
+
+> Rewards and Alternatives
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Rewards,
+        y = Alternatives,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Rewards and Alternatives")
+```
+
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{-14.4}{9} \\\\
+&= -1.60
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{-1.60}{1.35 \times 1.45} \\\\
+&= -0.82
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Rewards and Alternatives was $ -0.82 $. This is a large negative effect and means that the more rewards a person felt they received from their relationship, the less likely they were to look for alternatives. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{-0.82\sqrt{10-2}}{\sqrt{1-(-0.82)^2}} \\\\
+&= \frac{-0.82\sqrt{8}}{\sqrt{0.33}} \\\\
+&= \frac{-2.31}{0.58} \\\\
+&= -4.01 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was $ -4.01 $, and we can ignore the minus sign because that just tells us the direction of the effect. The observed value of $ -4.01 $ is bigger than the critical value of 2.306, suggesting that there is a significant relationship between how many rewards people felt they gained from their relationship and how likely they were to search for alternatives; i.e., the more rewards they felt they received from their relationship, the less they were open to alternatives.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + (-0.82)}{1 - (-0.82)}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{0.18}{1.82}\Big] \\\\
+&= -1.15
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= -1.15-(1.96 \times 0.38) \\\\
+&= -1.89 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= -1.15 + (1.96 \times 0.38) \\\\
+&= -0.40
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -1.89}-1}{e^{2 \times -1.89}+1}\\\\
+&= \frac{-0.98}{1.02} \\\\
+&= -0.96 \\\\
+r^+ &= \frac{e^{2 \times -0.40}-1}{e^{2 \times -0.40}+1} \\\\
+&= \frac{-0.55}{1.45} \\\\
+&= -0.38
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.96, -0.38) $, which does not contain zero and again suggests that there is a significant relationship between Rewards and Alternatives.
+
+## Puzzle 9
+
+> Using the data in Table 13.4 (in the book), compute the Pearson correlation, confidence interval, and t-statistic for the relationship between Costs and each of Ideal and Alternatives.
+
+Remember that we're using the data in Table 13.4 (which was reproduced in the answer to puzzle 7).
+
+> Costs and Ideal
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Costs,
+        y = Ideal,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Costs and Ideal")
+```
+
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{-6.2}{9} \\\\
+&= -0.69
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{-0.69}{1.16 \times 1.17} \\\\
+&= -0.51
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Costs and Ideal was $ -0.51 $. This is a medium negative effect and means that the more costs a person felt were associated with their relationship, the less ideal they viewed their relationship to be. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{-0.51\sqrt{10-2}}{\sqrt{1-(-0.51)^2}} \\\\
+&= \frac{-0.51\sqrt{8}}{\sqrt{0.74}} \\\\
+&= \frac{-1.44}{0.86} \\\\
+&= -1.67 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was $ -1.67 $, and we can ignore the minus sign because that just tells us the direction of the effect. The question is whether our observed value of $ -1.67 $ is bigger than the critical value of 2.306, which it is not, suggesting that there was not a significant relationship between the costs people felt were associated with their relationship and how ideal they viewed their relationship to be.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + (-0.51)}{1 - (-0.51)}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{0.49}{1.51}\Big] \\\\
+&= -0.56
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= -0.56-(1.96 \times 0.38) \\\\
+&= -1.30 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= -0.56 + (1.96 \times 0.38) \\\\
+&= 0.19
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -1.30}-1}{e^{2 \times -1.30}+1}\\\\
+&= \frac{-0.93}{1.07} \\\\
+&= -0.86 \\\\
+r^+ &= \frac{e^{2 \times 0.19}-1}{e^{2 \times 0.19}+1} \\\\
+&= \frac{0.45}{2.45} \\\\
+&= 0.18
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.86, 0.18) $, which crosses zero and therefore suggests that there is not a significant relationship between Costs and Ideal.
+
+
+> Costs and Alternatives
+
+```{r}
+get_scp(tibble = neu_tib,
+        x = Costs,
+        y = Alternatives,
+        id = "Person",
+        caption = "Calculating cross-product deviations between Costs and Alternatives")
+```
+
+We calculate the covariance using the equation:
+
+$$
+\\begin{aligned}
+\text{cov}_{xy} &= \frac{\text{Sum of cross-products}}{n} \\\\
+&= \frac{4.3}{9} \\\\
+&= 0.48
+\\end{aligned}
+$$
+
+Now we can calculate the Pearson correlation coefficient using the equation:
+
+$$
+\\begin{aligned}
+r &= \frac{\text{cov}_{xy}}{s_x s_y} \\\\
+&= \frac{0.48}{1.16 \times 1.45} \\\\
+&= 0.28
+\\end{aligned}
+$$
+
+Therefore, the Pearson correlation coefficient between Neuroticism and Costs was $ r = 0.28 $. This is a very small positive effect and means that the more costs a person felt were associated with their relationship the more open they were to alternatives. 
+
+Next let's calculate the *t*-statistic:
+
+$$
+\\begin{aligned}
+t_r &= \frac{r\sqrt{N-2}}{\sqrt{1-r^2}} \\\\
+&= \frac{0.28\sqrt{10-2}}{\sqrt{1-0.28^2}} \\\\
+&= \frac{0.28\sqrt{8}}{\sqrt{0.92}} \\\\
+&= \frac{0.80}{0.96} \\\\
+&= 0.84 \\\\
+df_t &= N - 2 \\\\
+&= 8
+\\end{aligned}
+$$
+
+Now we have to look up the critical value for a *t*-distribution (Section A.2 in the book) with 8 degrees of freedom. Reading across the row for 8 degrees of freedom in the *t*-distribution table, we can see that the critical value for a two-tailed test with a *p* equal to 0.05 is 2.306. The value of *t* that we observed was 0.84, which is smaller than the critical value of 2.306, suggesting that there was not a significant relationship between the number of costs people felt were associated with their relationship and how open to alternatives they were.
+
+Finally, the puzzle asks us to calculate the confidence interval for *r*. To do this we need to convert *r* to a *z*-score using the following equation:
+
+
+$$
+\\begin{aligned}
+z_r &= \frac{1}{2}\ln \Big[\frac{1 + r}{1 - r}\Big] \\\\
+&=  \frac{1}{2}\ln \Big[\frac{1 + 0.28}{1 - 0.28}\Big] \\\\
+&= \frac{1}{2}\ln \Big[\frac{1.28}{0.72}\Big] \\\\
+&= 0.29
+\\end{aligned}
+$$
+
+We also need to calculate $ SE_{z_r} $ using the following equation:
+
+$$
+\\begin{aligned}
+SE_{z_r} &= \frac{1}{\sqrt{n-3}} \\\\
+&=  \frac{1}{\sqrt{10-3}} \\\\
+&=  \frac{1}{\sqrt{7}} \\\\
+&= 0.38
+\\end{aligned}
+$$
+
+We can now calculate the confidence interval using the equation:
+
+$$
+\\begin{aligned}
+z_r^- &= z_r - (1.96 \times SE_{z_r}) \\\\
+&= 0.29-(1.96 \times 0.38) \\\\
+&= -0.45 \\\\
+z_r^+ &= z_r+(1.96 \times SE_{z_r}) \\\\
+&= 0.29 + (1.96 \times 0.38) \\\\
+&= 1.04
+\\end{aligned}
+$$
+
+We can now convert the values from *z* back to *r* using this equation:
+
+$$
+r = \frac{e^{2z_r}-1}{e^{2z_r}+1}
+$$
+
+Which gives
+
+$$
+\\begin{aligned}
+r^- &= \frac{e^{2 \times -0.45}-1}{e^{2 \times -0.45}+1}\\\\
+&= \frac{-0.60}{1.40} \\\\
+&= -0.42 \\\\
+r^+ &= \frac{e^{2 \times 1.04}-1}{e^{2 \times 1.04}+1} \\\\
+&= \frac{6.95}{8.95} \\\\
+&= 0.78
+\\end{aligned}
+$$
+
+The confidence interval is $ (-0.42, 0.78) $, which crosses zero and therefore suggests that there is not a significant relationship between Costs and Alternatives.
+
+
+## Puzzle 10
+
+> What is the relationship between covariance and the correlation coefficient?
+
+Both covariance and correlation indicate whether variables are positively or negatively related. However, unlike the correlation coefficient, the covariance is not a standardized measure: it depends upon the scales of measurement and as such you cannot interpret covariance in an objective way – you cannot say whether a covariance is particularly large or small relative to another data set unless both data sets were measured in the same units.  We can convert the covariance into the correlation coefficient, which is a standardized measure, by dividing it by the two standard deviations for each variable multiplied together: 
+
+$$
+r = \frac{cov_{xy}}{s_x s_y}
+$$
+
+
+
+
+

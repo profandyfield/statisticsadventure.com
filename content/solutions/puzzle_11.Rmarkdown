@@ -28,15 +28,10 @@ here::here("R/web_helpers.R") %>% source()
 
 > According to Paul Zak, the hormone oxytocin increases trust in humans. You do an experiment in which groups of people are exposed to oxytocin or not while meeting a stranger. They rate how much they trusted the stranger from 0 (no trust) to 10 (complete trust). The oxytocin group had a mean trust of *M* = 7.45 (*SD* = 2.67) and the non-exposed group had a mean trust of M = 5.13 (*SD* = 1.12). What is Cohen's *d* for this difference? (Compute it using the pooled variance estimate as well as using the control group variability.)
 
-Cohen's *d* using the control group standard deviation is 2.07:
+Cohen's *d* using the control group standard deviation is 2.07. Using subscript $ o $ for the oxytocin-exposed group and $ n $ for the non-exposed:
 
 $$
-\\begin{aligned}
-\hat{d} &= \frac{\bar{X}_\text{Experimental} - \bar{X}_\text{Control}}{s_\text{Control}} \\\\
-&= \frac{\bar{X}_\text{oxytocin} - \bar{X}_\text{non-exposed}}{s_\text{non-exposed}} \\\\
-&= \frac{7.45-5.13}{1.12} \\\\
-&=2.07
-\\end{aligned}
+\hat{d} = \frac{\bar{X}_o - \bar{X}_n}{s_n} = \frac{7.45-5.13}{1.12} = 2.07
 $$
 
 This value means that if a person were exposed to oxytocin their trust rating of a stranger would increase by 2.07 standard deviations, which is a very large effect. If the groups are independent then you can pool the standard deviations. Unfortunately, I'm an idiot and didn't tell you the group sample sizes, and you need these to put into the equation, so it's impossible to answer this question given the information provided. However, let's assume, as in Table 11.3 in the book, that there were 50 people in each group. The pooled standard deviation would be 2.05:
@@ -55,7 +50,7 @@ The Cohen's *d* using the pooled standard deviation is 1.13:
 
 $$
 \\begin{aligned}
-\hat{d} &= \frac{\bar{X}_\text{oxytocin} - \bar{X}_\text{non-exposed}}{s_\text{non-exposed}} \\\\
+\hat{d} &= \frac{\bar{X}_o - \bar{X}_n}{s_p} \\\\
 &= \frac{7.45-5.13}{2.05} \\\\
 &=1.13
 \\end{aligned}
@@ -67,21 +62,21 @@ This value means that if a person was exposed to oxytocin their trust rating of 
 
 > In a different version of the oxytocin study, participants are simply classified according to whether they trusted the stranger or not. The data are in Table 11.3 (in the book and reproduced below). What is the odds ratio for these data?
 
-First, we calculate the odds that a person trusted a stranger after being exposed to oxytocin as
+First, let $ \text{odds}_o $ be the odds that a person trusted a stranger after being exposed to oxytocin, then
 
 $$
 \\begin{aligned}
-\text{odds}_\text{trust after oxytocin} &= \frac{\text{number of people who had oxytocin and trusted}}{\text{number of people who had oxytocin and did not trust}} \\\\
+\text{odds}_o &= \frac{\text{number of people who had oxytocin and trusted}}{\text{number of people who had oxytocin and did not trust}} \\\\
 &= \frac{35}{15} \\\\
 &= 2.33.
 \\end{aligned}
 $$
 
-Next, we calculate the odds that a person trusted a stranger when not exposed to oxytocin as
+Next, let $ \text{odds}_n $ the odds that a person trusted a stranger when not exposed to oxytocin as
 
 $$
 \\begin{aligned}
-\text{odds}_\text{trust after no oxytocin} &= \frac{\text{number of people who trusted after no oxytocin}}{\text{number of people who did not trust after no oxytocin}} \\\\
+\text{odds}_n &= \frac{\text{number of people who trusted after no oxytocin}}{\text{number of people who did not trust after no oxytocin}} \\\\
 &= \frac{27}{23} \\\\
 &= 1.17.
 \\end{aligned}
@@ -91,7 +86,7 @@ The odds ratio is the odds of trusting a stranger after oxytocin divided by the 
 
 $$
 \\begin{aligned}
-\text{odds ratio} &= \frac{\text{odds}_\text{trust after oxytocin}}{\text{odds}_\text{trust after no oxytocin}} \\\\
+\text{odds ratio} &= \frac{\text{odds}_o}{\text{odds}_n} \\\\
 &= \frac{2.33}{1.17} \\\\
 &= 1.99.
 \\end{aligned}
@@ -103,34 +98,11 @@ tibble::tribble(
   ~Group, ~Trusted, ~`Did not trust`,
   "Oxytocin", 35, 15,
   "No oxytocin", 27, 23
-  ) %>%
-  dplyr::mutate(
-    Total = Trusted + `Did not trust`
   ) %>% 
-  gt::gt(rowname_col = "Group") %>%
-  gt::grand_summary_rows(
-      columns = c(Trusted, `Did not trust`, Total),
-      fns = list(
-        Total = ~sum(.)
-      ),
-      formatter = fmt_number,
-      decimals = 0,
-      missing_text = ""
-    ) %>% 
-  gt::tab_style(
-      style = cell_text(align = "center"),
-      locations = list(
-        cells_column_labels(),
-        cells_body(),
-        cells_column_spanners(),
-        cells_grand_summary()
-      )
-    ) %>% 
-  gt::tab_spanner(
-    label = "Outcome",
-    columns = c(Trusted, `Did not trust`)
-  ) %>% 
-  gt::tab_header(title = "Table 11.3 (reproduced): Number of people who trusted a stranger depending on whether they were exposed to oxytocin or not during the meeting")
+  get_cont_table(
+    spanner = "Outcome",
+    caption = "Table 11.3 (reproduced): Number of people who trusted a stranger depending on whether they were exposed to oxytocin or not during the meeting"
+  )
 ```
 
 
@@ -194,33 +166,31 @@ Meta-analysis is where effect sizes from different studies testing the same hypo
 
 > Zach stole some glasses to help with emotion detection. These were tested on 252 people. Some wore the glasses, some didn't, and they had to identify a stranger's emotion from their facial expression. The numbers correct and incorrect in each group are in Table 11.4 (in the book and reproduced below) What is the odds ratio for these data?
 
-First, we calculate the odds that a person correctly identified emotion and wore the glasses as
+First, let $ \text{odds}_g$ be the odds that a person correctly identified emotion and wore the glasses as
 
 $$
 \\begin{aligned}
-\text{odds}_\text{glasses and correct emotion} &= \frac{\text{glasses and correct emotion}}{\text{glasses and incorrect emotion}} \\\\
+\text{odds}_g &= \frac{\text{glasses and correct emotion}}{\text{glasses and incorrect emotion}} \\\\
 &= \frac{68}{49} \\\\
 &= 1.39.
 \\end{aligned}
 $$
 
-Next, we calculate the odds that a person correctly identified emotion and didn't wear the glasses as 
+Next, let $ \text{odds}_n $ be the odds that a person correctly identified emotion and didn't wear the glasses as 
+
 $$
 \\begin{aligned}
-\text{odds}_\text{no glasses and correct emotion} &= \frac{\text{no glasses and correct emotion}}{\text{nno glasses and incorrect emotion}} \\\\
+\text{odds}_n &= \frac{\text{no glasses and correct emotion}}{\text{no glasses and incorrect emotion}} \\\\
 &= \frac{93}{42} \\\\
 &= 2.21.
 \\end{aligned}
 $$
 
 The odds ratio is the odds of correctly identifying emotion while wearing the glasses divided by the odds of correctly identifying emotion while not wearing the glasses. This ratio tells us that people who wore the glasses were 0.63 times as likely to identify emotion correctly than people who did not wear the glasses. 
-odds Ratio=odds_(correct emotion with glasses)/odds_(correct emotion no glasses) 
-=1.39/2.21
-=0.63 
 
 $$
 \\begin{aligned}
-\text{odds ratio} &= \frac{\text{odds}_\text{correct emotion with glasses}}{\text{odds}_\text{correct emotion no glasses}} \\\\
+\text{odds ratio} &= \frac{\text{odds}_g}{\text{odds}_n} \\\\
 &= \frac{1.39}{2.21} \\\\
 &= 0.63.
 \\end{aligned}
@@ -231,34 +201,11 @@ tibble::tribble(
   ~Group, ~Correct, ~Incorrect,
   "Glasses", 68, 49,
   "No glasses", 93, 42
-  ) %>%
-  dplyr::mutate(
-    Total = Correct + Incorrect
-  ) %>% 
-  gt::gt(rowname_col = "Group") %>%
-  gt::grand_summary_rows(
-      columns = c(Correct, Incorrect, Total),
-      fns = list(
-        Total = ~sum(.)
-      ),
-      formatter = fmt_number,
-      decimals = 0,
-      missing_text = ""
-    ) %>% 
-  gt::tab_style(
-      style = cell_text(align = "center"),
-      locations = list(
-        cells_column_labels(),
-        cells_body(),
-        cells_column_spanners(),
-        cells_grand_summary()
-      )
-    ) %>% 
-  gt::tab_spanner(
-    label = "Emotion detected",
-    columns = c(Correct, Incorrect)
-  ) %>% 
-  gt::tab_header(title = "Table 11.4 (reproduced): Number of people who correctly identified a stranger's emotion depending on whether they were wearing emotion detection glasses or not")
+) %>% 
+  get_cont_table(
+    spanner = "Emotion detected",
+    caption = "Table 11.4 (reproduced): Number of people who correctly identified a stranger's emotion depending on whether they were wearing emotion detection glasses or not"
+  )
 ```
 
 

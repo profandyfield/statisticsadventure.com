@@ -1,6 +1,6 @@
 ---
 title: "Chapter 11"
-date: '2022-02-11'
+date: '2022-02-14'
 output: html_document
 type: book
 weight: 120
@@ -13,15 +13,10 @@ toc-depth: 1
 
 > According to Paul Zak, the hormone oxytocin increases trust in humans. You do an experiment in which groups of people are exposed to oxytocin or not while meeting a stranger. They rate how much they trusted the stranger from 0 (no trust) to 10 (complete trust). The oxytocin group had a mean trust of *M* = 7.45 (*SD* = 2.67) and the non-exposed group had a mean trust of M = 5.13 (*SD* = 1.12). What is Cohen’s *d* for this difference? (Compute it using the pooled variance estimate as well as using the control group variability.)
 
-Cohen’s *d* using the control group standard deviation is 2.07:
+Cohen’s *d* using the control group standard deviation is 2.07. Using subscript \$ o \$ for the oxytocin-exposed group and \$ n \$ for the non-exposed:
 
 $$
-\\begin{aligned}
-\hat{d} &= \frac{\bar{X}_\text{Experimental} - \bar{X}_\text{Control}}{s_\text{Control}} \\\\
-&= \frac{\bar{X}_\text{oxytocin} - \bar{X}_\text{non-exposed}}{s_\text{non-exposed}} \\\\
-&= \frac{7.45-5.13}{1.12} \\\\
-&=2.07
-\\end{aligned}
+\hat{d} = \frac{\bar{X}_o - \bar{X}_n}{s_n} = \frac{7.45-5.13}{1.12} = 2.07
 $$
 
 This value means that if a person were exposed to oxytocin their trust rating of a stranger would increase by 2.07 standard deviations, which is a very large effect. If the groups are independent then you can pool the standard deviations. Unfortunately, I’m an idiot and didn’t tell you the group sample sizes, and you need these to put into the equation, so it’s impossible to answer this question given the information provided. However, let’s assume, as in Table 11.3 in the book, that there were 50 people in each group. The pooled standard deviation would be 2.05:
@@ -40,7 +35,7 @@ The Cohen’s *d* using the pooled standard deviation is 1.13:
 
 $$
 \\begin{aligned}
-\hat{d} &= \frac{\bar{X}_\text{oxytocin} - \bar{X}_\text{non-exposed}}{s_\text{non-exposed}} \\\\
+\hat{d} &= \frac{\bar{X}_o - \bar{X}_n}{s_p} \\\\
 &= \frac{7.45-5.13}{2.05} \\\\
 &=1.13
 \\end{aligned}
@@ -52,21 +47,21 @@ This value means that if a person was exposed to oxytocin their trust rating of 
 
 > In a different version of the oxytocin study, participants are simply classified according to whether they trusted the stranger or not. The data are in Table 11.3 (in the book and reproduced below). What is the odds ratio for these data?
 
-First, we calculate the odds that a person trusted a stranger after being exposed to oxytocin as
+First, let \$ \_o \$ be the odds that a person trusted a stranger after being exposed to oxytocin, then
 
 $$
 \\begin{aligned}
-\text{odds}_\text{trust after oxytocin} &= \frac{\text{number of people who had oxytocin and trusted}}{\text{number of people who had oxytocin and did not trust}} \\\\
+\text{odds}_o &= \frac{\text{number of people who had oxytocin and trusted}}{\text{number of people who had oxytocin and did not trust}} \\\\
 &= \frac{35}{15} \\\\
 &= 2.33.
 \\end{aligned}
 $$
 
-Next, we calculate the odds that a person trusted a stranger when not exposed to oxytocin as
+Next, let \$ \_n \$ the odds that a person trusted a stranger when not exposed to oxytocin as
 
 $$
 \\begin{aligned}
-\text{odds}_\text{trust after no oxytocin} &= \frac{\text{number of people who trusted after no oxytocin}}{\text{number of people who did not trust after no oxytocin}} \\\\
+\text{odds}_n &= \frac{\text{number of people who trusted after no oxytocin}}{\text{number of people who did not trust after no oxytocin}} \\\\
 &= \frac{27}{23} \\\\
 &= 1.17.
 \\end{aligned}
@@ -76,18 +71,18 @@ The odds ratio is the odds of trusting a stranger after oxytocin divided by the 
 
 $$
 \\begin{aligned}
-\text{odds ratio} &= \frac{\text{odds}_\text{trust after oxytocin}}{\text{odds}_\text{trust after no oxytocin}} \\\\
+\text{odds ratio} &= \frac{\text{odds}_o}{\text{odds}_n} \\\\
 &= \frac{2.33}{1.17} \\\\
 &= 1.99.
 \\end{aligned}
 $$
 
-<div id="fcxhrrwuwy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="efijzxlqhg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fcxhrrwuwy .gt_table {
+#efijzxlqhg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -112,7 +107,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_heading {
+#efijzxlqhg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -124,7 +119,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_title {
+#efijzxlqhg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -134,7 +129,7 @@ $$
   border-bottom-width: 0;
 }
 
-#fcxhrrwuwy .gt_subtitle {
+#efijzxlqhg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -144,13 +139,13 @@ $$
   border-top-width: 0;
 }
 
-#fcxhrrwuwy .gt_bottom_border {
+#efijzxlqhg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_col_headings {
+#efijzxlqhg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -165,7 +160,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_col_heading {
+#efijzxlqhg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -185,7 +180,7 @@ $$
   overflow-x: hidden;
 }
 
-#fcxhrrwuwy .gt_column_spanner_outer {
+#efijzxlqhg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -197,15 +192,15 @@ $$
   padding-right: 4px;
 }
 
-#fcxhrrwuwy .gt_column_spanner_outer:first-child {
+#efijzxlqhg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fcxhrrwuwy .gt_column_spanner_outer:last-child {
+#efijzxlqhg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fcxhrrwuwy .gt_column_spanner {
+#efijzxlqhg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -217,7 +212,7 @@ $$
   width: 100%;
 }
 
-#fcxhrrwuwy .gt_group_heading {
+#efijzxlqhg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -239,7 +234,7 @@ $$
   vertical-align: middle;
 }
 
-#fcxhrrwuwy .gt_empty_group_heading {
+#efijzxlqhg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -254,15 +249,15 @@ $$
   vertical-align: middle;
 }
 
-#fcxhrrwuwy .gt_from_md > :first-child {
+#efijzxlqhg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fcxhrrwuwy .gt_from_md > :last-child {
+#efijzxlqhg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fcxhrrwuwy .gt_row {
+#efijzxlqhg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -281,7 +276,7 @@ $$
   overflow-x: hidden;
 }
 
-#fcxhrrwuwy .gt_stub {
+#efijzxlqhg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -293,7 +288,7 @@ $$
   padding-left: 12px;
 }
 
-#fcxhrrwuwy .gt_summary_row {
+#efijzxlqhg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -303,7 +298,7 @@ $$
   padding-right: 5px;
 }
 
-#fcxhrrwuwy .gt_first_summary_row {
+#efijzxlqhg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -313,7 +308,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_grand_summary_row {
+#efijzxlqhg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -323,7 +318,7 @@ $$
   padding-right: 5px;
 }
 
-#fcxhrrwuwy .gt_first_grand_summary_row {
+#efijzxlqhg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -333,11 +328,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_striped {
+#efijzxlqhg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fcxhrrwuwy .gt_table_body {
+#efijzxlqhg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -346,7 +341,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_footnotes {
+#efijzxlqhg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -360,13 +355,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_footnote {
+#efijzxlqhg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#fcxhrrwuwy .gt_sourcenotes {
+#efijzxlqhg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -380,41 +375,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#fcxhrrwuwy .gt_sourcenote {
+#efijzxlqhg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#fcxhrrwuwy .gt_left {
+#efijzxlqhg .gt_left {
   text-align: left;
 }
 
-#fcxhrrwuwy .gt_center {
+#efijzxlqhg .gt_center {
   text-align: center;
 }
 
-#fcxhrrwuwy .gt_right {
+#efijzxlqhg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fcxhrrwuwy .gt_font_normal {
+#efijzxlqhg .gt_font_normal {
   font-weight: normal;
 }
 
-#fcxhrrwuwy .gt_font_bold {
+#efijzxlqhg .gt_font_bold {
   font-weight: bold;
 }
 
-#fcxhrrwuwy .gt_font_italic {
+#efijzxlqhg .gt_font_italic {
   font-style: italic;
 }
 
-#fcxhrrwuwy .gt_super {
+#efijzxlqhg .gt_super {
   font-size: 65%;
 }
 
-#fcxhrrwuwy .gt_footnote_marks {
+#efijzxlqhg .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -521,44 +516,42 @@ Meta-analysis is where effect sizes from different studies testing the same hypo
 
 > Zach stole some glasses to help with emotion detection. These were tested on 252 people. Some wore the glasses, some didn’t, and they had to identify a stranger’s emotion from their facial expression. The numbers correct and incorrect in each group are in Table 11.4 (in the book and reproduced below) What is the odds ratio for these data?
 
-First, we calculate the odds that a person correctly identified emotion and wore the glasses as
+First, let \$ \_g\$ be the odds that a person correctly identified emotion and wore the glasses as
 
 $$
 \\begin{aligned}
-\text{odds}_\text{glasses and correct emotion} &= \frac{\text{glasses and correct emotion}}{\text{glasses and incorrect emotion}} \\\\
+\text{odds}_g &= \frac{\text{glasses and correct emotion}}{\text{glasses and incorrect emotion}} \\\\
 &= \frac{68}{49} \\\\
 &= 1.39.
 \\end{aligned}
 $$
 
-Next, we calculate the odds that a person correctly identified emotion and didn’t wear the glasses as
+Next, let \$ \_n \$ be the odds that a person correctly identified emotion and didn’t wear the glasses as
+
 $$
 \\begin{aligned}
-\text{odds}_\text{no glasses and correct emotion} &= \frac{\text{no glasses and correct emotion}}{\text{nno glasses and incorrect emotion}} \\\\
+\text{odds}_n &= \frac{\text{no glasses and correct emotion}}{\text{no glasses and incorrect emotion}} \\\\
 &= \frac{93}{42} \\\\
 &= 2.21.
 \\end{aligned}
 $$
 
 The odds ratio is the odds of correctly identifying emotion while wearing the glasses divided by the odds of correctly identifying emotion while not wearing the glasses. This ratio tells us that people who wore the glasses were 0.63 times as likely to identify emotion correctly than people who did not wear the glasses.
-odds Ratio=odds\_(correct emotion with glasses)/odds\_(correct emotion no glasses)
-=1.39/2.21
-=0.63
 
 $$
 \\begin{aligned}
-\text{odds ratio} &= \frac{\text{odds}_\text{correct emotion with glasses}}{\text{odds}_\text{correct emotion no glasses}} \\\\
+\text{odds ratio} &= \frac{\text{odds}_g}{\text{odds}_n} \\\\
 &= \frac{1.39}{2.21} \\\\
 &= 0.63.
 \\end{aligned}
 $$
 
-<div id="icufmwgbyy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="oungwfiwbq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#icufmwgbyy .gt_table {
+#oungwfiwbq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -583,7 +576,7 @@ $$
   border-left-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_heading {
+#oungwfiwbq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -595,7 +588,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_title {
+#oungwfiwbq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -605,7 +598,7 @@ $$
   border-bottom-width: 0;
 }
 
-#icufmwgbyy .gt_subtitle {
+#oungwfiwbq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -615,13 +608,13 @@ $$
   border-top-width: 0;
 }
 
-#icufmwgbyy .gt_bottom_border {
+#oungwfiwbq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_col_headings {
+#oungwfiwbq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -636,7 +629,7 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_col_heading {
+#oungwfiwbq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -656,7 +649,7 @@ $$
   overflow-x: hidden;
 }
 
-#icufmwgbyy .gt_column_spanner_outer {
+#oungwfiwbq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -668,15 +661,15 @@ $$
   padding-right: 4px;
 }
 
-#icufmwgbyy .gt_column_spanner_outer:first-child {
+#oungwfiwbq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#icufmwgbyy .gt_column_spanner_outer:last-child {
+#oungwfiwbq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#icufmwgbyy .gt_column_spanner {
+#oungwfiwbq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -688,7 +681,7 @@ $$
   width: 100%;
 }
 
-#icufmwgbyy .gt_group_heading {
+#oungwfiwbq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -710,7 +703,7 @@ $$
   vertical-align: middle;
 }
 
-#icufmwgbyy .gt_empty_group_heading {
+#oungwfiwbq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -725,15 +718,15 @@ $$
   vertical-align: middle;
 }
 
-#icufmwgbyy .gt_from_md > :first-child {
+#oungwfiwbq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#icufmwgbyy .gt_from_md > :last-child {
+#oungwfiwbq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#icufmwgbyy .gt_row {
+#oungwfiwbq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -752,7 +745,7 @@ $$
   overflow-x: hidden;
 }
 
-#icufmwgbyy .gt_stub {
+#oungwfiwbq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -764,7 +757,7 @@ $$
   padding-left: 12px;
 }
 
-#icufmwgbyy .gt_summary_row {
+#oungwfiwbq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -774,7 +767,7 @@ $$
   padding-right: 5px;
 }
 
-#icufmwgbyy .gt_first_summary_row {
+#oungwfiwbq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -784,7 +777,7 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_grand_summary_row {
+#oungwfiwbq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -794,7 +787,7 @@ $$
   padding-right: 5px;
 }
 
-#icufmwgbyy .gt_first_grand_summary_row {
+#oungwfiwbq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,11 +797,11 @@ $$
   border-top-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_striped {
+#oungwfiwbq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#icufmwgbyy .gt_table_body {
+#oungwfiwbq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -817,7 +810,7 @@ $$
   border-bottom-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_footnotes {
+#oungwfiwbq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -831,13 +824,13 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_footnote {
+#oungwfiwbq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#icufmwgbyy .gt_sourcenotes {
+#oungwfiwbq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -851,41 +844,41 @@ $$
   border-right-color: #D3D3D3;
 }
 
-#icufmwgbyy .gt_sourcenote {
+#oungwfiwbq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#icufmwgbyy .gt_left {
+#oungwfiwbq .gt_left {
   text-align: left;
 }
 
-#icufmwgbyy .gt_center {
+#oungwfiwbq .gt_center {
   text-align: center;
 }
 
-#icufmwgbyy .gt_right {
+#oungwfiwbq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#icufmwgbyy .gt_font_normal {
+#oungwfiwbq .gt_font_normal {
   font-weight: normal;
 }
 
-#icufmwgbyy .gt_font_bold {
+#oungwfiwbq .gt_font_bold {
   font-weight: bold;
 }
 
-#icufmwgbyy .gt_font_italic {
+#oungwfiwbq .gt_font_italic {
   font-style: italic;
 }
 
-#icufmwgbyy .gt_super {
+#oungwfiwbq .gt_super {
   font-size: 65%;
 }
 
-#icufmwgbyy .gt_footnote_marks {
+#oungwfiwbq .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;

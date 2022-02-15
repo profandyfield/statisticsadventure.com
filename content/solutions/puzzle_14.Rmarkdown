@@ -45,7 +45,10 @@ neu_tib %>%
     ) %>%
   gt::tab_style(
       style = cell_text(align = "center"),
-      locations = cells_body()
+      locations = list(
+        cells_body(),
+        cells_column_labels()
+      )
       ) %>% 
   gt::tab_style(
       style = list(

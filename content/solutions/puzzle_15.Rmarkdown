@@ -299,7 +299,7 @@ Now we need to look up the critical value for t (see the table 'Critical values 
 
 ## Puzzle 3
 
-> Using the analyses in Puzzles 1 and 2, calculate the Cohen's ds for the effect of using a fake vs. own name for both males and females.
+> Using the analyses in Puzzles 1 and 2, calculate the Cohen's *d*s for the effect of using a fake vs. own name for both males and females.
 
 Let's start with calculating Cohen's *d* for the female data. I am going to calculate Cohen's *d* using the pooled standard deviation to give you some practice of how to calculate it. The two groups both contained 10 participants so the *N*s will both be 10. The standard deviations for the fake name and own name groups are given in Puzzle 1. Using these values we can obtain the pooled standard deviation
 

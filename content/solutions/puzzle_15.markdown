@@ -1,6 +1,6 @@
 ---
 title: "Chapter 15"
-date: '2022-02-15'
+date: '2022-02-16'
 output: html_document
 type: book
 weight: 160
@@ -13,12 +13,12 @@ toc-depth: 1
 
 > Earlier in his journey, Milton tried to convince Zach that trying to learn statistics dressed as Florence Nightingale would help him (Chapter 8). This intervention was based on research by Zhang et al. (2013) showing that women completing a maths test under a fake name performed better than those using their real name. Table 15.5 (in the book and reproduced below) has a random selection of the scores from that study. The table shows scores from 20 women and 20 men, in each case half performed the test using their real name whereas the other half used a fake name. Conduct an analysis on the women’s data to see whether scores were significantly higher for those using a fake name compared to those using their own name.
 
-<div id="qldiucajhr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rulaliylpw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qldiucajhr .gt_table {
+#rulaliylpw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -43,7 +43,7 @@ toc-depth: 1
   border-left-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_heading {
+#rulaliylpw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -55,7 +55,7 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_title {
+#rulaliylpw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -65,7 +65,7 @@ toc-depth: 1
   border-bottom-width: 0;
 }
 
-#qldiucajhr .gt_subtitle {
+#rulaliylpw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -75,13 +75,13 @@ toc-depth: 1
   border-top-width: 0;
 }
 
-#qldiucajhr .gt_bottom_border {
+#rulaliylpw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_col_headings {
+#rulaliylpw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -96,7 +96,7 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_col_heading {
+#rulaliylpw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -116,7 +116,7 @@ toc-depth: 1
   overflow-x: hidden;
 }
 
-#qldiucajhr .gt_column_spanner_outer {
+#rulaliylpw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -128,15 +128,15 @@ toc-depth: 1
   padding-right: 4px;
 }
 
-#qldiucajhr .gt_column_spanner_outer:first-child {
+#rulaliylpw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qldiucajhr .gt_column_spanner_outer:last-child {
+#rulaliylpw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qldiucajhr .gt_column_spanner {
+#rulaliylpw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -148,7 +148,7 @@ toc-depth: 1
   width: 100%;
 }
 
-#qldiucajhr .gt_group_heading {
+#rulaliylpw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -170,7 +170,7 @@ toc-depth: 1
   vertical-align: middle;
 }
 
-#qldiucajhr .gt_empty_group_heading {
+#rulaliylpw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -185,15 +185,15 @@ toc-depth: 1
   vertical-align: middle;
 }
 
-#qldiucajhr .gt_from_md > :first-child {
+#rulaliylpw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qldiucajhr .gt_from_md > :last-child {
+#rulaliylpw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qldiucajhr .gt_row {
+#rulaliylpw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -212,7 +212,7 @@ toc-depth: 1
   overflow-x: hidden;
 }
 
-#qldiucajhr .gt_stub {
+#rulaliylpw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -224,7 +224,7 @@ toc-depth: 1
   padding-left: 12px;
 }
 
-#qldiucajhr .gt_summary_row {
+#rulaliylpw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -234,7 +234,7 @@ toc-depth: 1
   padding-right: 5px;
 }
 
-#qldiucajhr .gt_first_summary_row {
+#rulaliylpw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -244,7 +244,7 @@ toc-depth: 1
   border-top-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_grand_summary_row {
+#rulaliylpw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -254,7 +254,7 @@ toc-depth: 1
   padding-right: 5px;
 }
 
-#qldiucajhr .gt_first_grand_summary_row {
+#rulaliylpw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -264,11 +264,11 @@ toc-depth: 1
   border-top-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_striped {
+#rulaliylpw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qldiucajhr .gt_table_body {
+#rulaliylpw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -277,7 +277,7 @@ toc-depth: 1
   border-bottom-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_footnotes {
+#rulaliylpw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -291,13 +291,13 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_footnote {
+#rulaliylpw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qldiucajhr .gt_sourcenotes {
+#rulaliylpw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -311,41 +311,41 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#qldiucajhr .gt_sourcenote {
+#rulaliylpw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qldiucajhr .gt_left {
+#rulaliylpw .gt_left {
   text-align: left;
 }
 
-#qldiucajhr .gt_center {
+#rulaliylpw .gt_center {
   text-align: center;
 }
 
-#qldiucajhr .gt_right {
+#rulaliylpw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qldiucajhr .gt_font_normal {
+#rulaliylpw .gt_font_normal {
   font-weight: normal;
 }
 
-#qldiucajhr .gt_font_bold {
+#rulaliylpw .gt_font_bold {
   font-weight: bold;
 }
 
-#qldiucajhr .gt_font_italic {
+#rulaliylpw .gt_font_italic {
   font-style: italic;
 }
 
-#qldiucajhr .gt_super {
+#rulaliylpw .gt_super {
   font-size: 65%;
 }
 
-#qldiucajhr .gt_footnote_marks {
+#rulaliylpw .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -456,12 +456,12 @@ Because the experiment in this puzzle uses different entities in each group, (i.
 
 We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To compute \$ b_1 \$, we calculate the total relationship between the predictor and outcome, the sum of cross products (SCP) and divide this value by the total deviation of the predictor from its mean, \$ SSx \$, you can find these values in this table:
 
-<div id="buoaumtigd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pjmknicamh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#buoaumtigd .gt_table {
+#pjmknicamh .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -486,7 +486,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-left-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_heading {
+#pjmknicamh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -498,7 +498,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-right-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_title {
+#pjmknicamh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -508,7 +508,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-bottom-width: 0;
 }
 
-#buoaumtigd .gt_subtitle {
+#pjmknicamh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -518,13 +518,13 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-top-width: 0;
 }
 
-#buoaumtigd .gt_bottom_border {
+#pjmknicamh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_col_headings {
+#pjmknicamh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -539,7 +539,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-right-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_col_heading {
+#pjmknicamh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -559,7 +559,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   overflow-x: hidden;
 }
 
-#buoaumtigd .gt_column_spanner_outer {
+#pjmknicamh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -571,15 +571,15 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   padding-right: 4px;
 }
 
-#buoaumtigd .gt_column_spanner_outer:first-child {
+#pjmknicamh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#buoaumtigd .gt_column_spanner_outer:last-child {
+#pjmknicamh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#buoaumtigd .gt_column_spanner {
+#pjmknicamh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -591,7 +591,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   width: 100%;
 }
 
-#buoaumtigd .gt_group_heading {
+#pjmknicamh .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -613,7 +613,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   vertical-align: middle;
 }
 
-#buoaumtigd .gt_empty_group_heading {
+#pjmknicamh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -628,15 +628,15 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   vertical-align: middle;
 }
 
-#buoaumtigd .gt_from_md > :first-child {
+#pjmknicamh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#buoaumtigd .gt_from_md > :last-child {
+#pjmknicamh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#buoaumtigd .gt_row {
+#pjmknicamh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -655,7 +655,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   overflow-x: hidden;
 }
 
-#buoaumtigd .gt_stub {
+#pjmknicamh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -667,7 +667,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   padding-left: 12px;
 }
 
-#buoaumtigd .gt_summary_row {
+#pjmknicamh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -677,7 +677,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   padding-right: 5px;
 }
 
-#buoaumtigd .gt_first_summary_row {
+#pjmknicamh .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -687,7 +687,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-top-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_grand_summary_row {
+#pjmknicamh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -697,7 +697,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   padding-right: 5px;
 }
 
-#buoaumtigd .gt_first_grand_summary_row {
+#pjmknicamh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -707,11 +707,11 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-top-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_striped {
+#pjmknicamh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#buoaumtigd .gt_table_body {
+#pjmknicamh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -720,7 +720,7 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-bottom-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_footnotes {
+#pjmknicamh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -734,13 +734,13 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-right-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_footnote {
+#pjmknicamh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#buoaumtigd .gt_sourcenotes {
+#pjmknicamh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -754,41 +754,41 @@ We need to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. To comp
   border-right-color: #D3D3D3;
 }
 
-#buoaumtigd .gt_sourcenote {
+#pjmknicamh .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#buoaumtigd .gt_left {
+#pjmknicamh .gt_left {
   text-align: left;
 }
 
-#buoaumtigd .gt_center {
+#pjmknicamh .gt_center {
   text-align: center;
 }
 
-#buoaumtigd .gt_right {
+#pjmknicamh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#buoaumtigd .gt_font_normal {
+#pjmknicamh .gt_font_normal {
   font-weight: normal;
 }
 
-#buoaumtigd .gt_font_bold {
+#pjmknicamh .gt_font_bold {
   font-weight: bold;
 }
 
-#buoaumtigd .gt_font_italic {
+#pjmknicamh .gt_font_italic {
   font-style: italic;
 }
 
-#buoaumtigd .gt_super {
+#pjmknicamh .gt_super {
   font-size: 65%;
 }
 
-#buoaumtigd .gt_footnote_marks {
+#pjmknicamh .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1008,12 +1008,12 @@ $$
 
 Next, we need to calculate the sum of squared residuals, which I have done in the table below.
 
-<div id="lpdkiwlzvv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="kjxlyxzrro" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#lpdkiwlzvv .gt_table {
+#kjxlyxzrro .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1038,7 +1038,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-left-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_heading {
+#kjxlyxzrro .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1050,7 +1050,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_title {
+#kjxlyxzrro .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1060,7 +1060,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-bottom-width: 0;
 }
 
-#lpdkiwlzvv .gt_subtitle {
+#kjxlyxzrro .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1070,13 +1070,13 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-width: 0;
 }
 
-#lpdkiwlzvv .gt_bottom_border {
+#kjxlyxzrro .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_col_headings {
+#kjxlyxzrro .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1091,7 +1091,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_col_heading {
+#kjxlyxzrro .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1111,7 +1111,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   overflow-x: hidden;
 }
 
-#lpdkiwlzvv .gt_column_spanner_outer {
+#kjxlyxzrro .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1123,15 +1123,15 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 4px;
 }
 
-#lpdkiwlzvv .gt_column_spanner_outer:first-child {
+#kjxlyxzrro .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lpdkiwlzvv .gt_column_spanner_outer:last-child {
+#kjxlyxzrro .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lpdkiwlzvv .gt_column_spanner {
+#kjxlyxzrro .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1143,7 +1143,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   width: 100%;
 }
 
-#lpdkiwlzvv .gt_group_heading {
+#kjxlyxzrro .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1165,7 +1165,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   vertical-align: middle;
 }
 
-#lpdkiwlzvv .gt_empty_group_heading {
+#kjxlyxzrro .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1180,15 +1180,15 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   vertical-align: middle;
 }
 
-#lpdkiwlzvv .gt_from_md > :first-child {
+#kjxlyxzrro .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lpdkiwlzvv .gt_from_md > :last-child {
+#kjxlyxzrro .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lpdkiwlzvv .gt_row {
+#kjxlyxzrro .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1207,7 +1207,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   overflow-x: hidden;
 }
 
-#lpdkiwlzvv .gt_stub {
+#kjxlyxzrro .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1219,7 +1219,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-left: 12px;
 }
 
-#lpdkiwlzvv .gt_summary_row {
+#kjxlyxzrro .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1229,7 +1229,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 5px;
 }
 
-#lpdkiwlzvv .gt_first_summary_row {
+#kjxlyxzrro .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1239,7 +1239,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_grand_summary_row {
+#kjxlyxzrro .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1249,7 +1249,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 5px;
 }
 
-#lpdkiwlzvv .gt_first_grand_summary_row {
+#kjxlyxzrro .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1259,11 +1259,11 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_striped {
+#kjxlyxzrro .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lpdkiwlzvv .gt_table_body {
+#kjxlyxzrro .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1272,7 +1272,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-bottom-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_footnotes {
+#kjxlyxzrro .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1286,13 +1286,13 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_footnote {
+#kjxlyxzrro .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#lpdkiwlzvv .gt_sourcenotes {
+#kjxlyxzrro .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1306,41 +1306,41 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#lpdkiwlzvv .gt_sourcenote {
+#kjxlyxzrro .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#lpdkiwlzvv .gt_left {
+#kjxlyxzrro .gt_left {
   text-align: left;
 }
 
-#lpdkiwlzvv .gt_center {
+#kjxlyxzrro .gt_center {
   text-align: center;
 }
 
-#lpdkiwlzvv .gt_right {
+#kjxlyxzrro .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lpdkiwlzvv .gt_font_normal {
+#kjxlyxzrro .gt_font_normal {
   font-weight: normal;
 }
 
-#lpdkiwlzvv .gt_font_bold {
+#kjxlyxzrro .gt_font_bold {
   font-weight: bold;
 }
 
-#lpdkiwlzvv .gt_font_italic {
+#kjxlyxzrro .gt_font_italic {
   font-style: italic;
 }
 
-#lpdkiwlzvv .gt_super {
+#kjxlyxzrro .gt_super {
   font-size: 65%;
 }
 
-#lpdkiwlzvv .gt_footnote_marks {
+#kjxlyxzrro .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1559,12 +1559,12 @@ $$
 The experiment in this puzzle again uses different entities in each group (i.e. different men took part in the fake name and own name conditions), so again we have an independent design, which requires us to conduct an independent *t*-test.
 When we conducted this test on the female participants (Puzzle 1) we assigned participants who took the maths test under their own name a 0 for the variable Name (the baseline group), and participants who took the test under a fake name (the experimental group) a value of 1 for the variable Name and we can do the same for the male participants.
 
-<div id="tldmkljsiu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qjcuxzppty" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tldmkljsiu .gt_table {
+#qjcuxzppty .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1589,7 +1589,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-left-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_heading {
+#qjcuxzppty .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1601,7 +1601,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-right-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_title {
+#qjcuxzppty .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1611,7 +1611,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-bottom-width: 0;
 }
 
-#tldmkljsiu .gt_subtitle {
+#qjcuxzppty .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1621,13 +1621,13 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-top-width: 0;
 }
 
-#tldmkljsiu .gt_bottom_border {
+#qjcuxzppty .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_col_headings {
+#qjcuxzppty .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1642,7 +1642,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-right-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_col_heading {
+#qjcuxzppty .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1662,7 +1662,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   overflow-x: hidden;
 }
 
-#tldmkljsiu .gt_column_spanner_outer {
+#qjcuxzppty .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1674,15 +1674,15 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   padding-right: 4px;
 }
 
-#tldmkljsiu .gt_column_spanner_outer:first-child {
+#qjcuxzppty .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tldmkljsiu .gt_column_spanner_outer:last-child {
+#qjcuxzppty .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tldmkljsiu .gt_column_spanner {
+#qjcuxzppty .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1694,7 +1694,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   width: 100%;
 }
 
-#tldmkljsiu .gt_group_heading {
+#qjcuxzppty .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1716,7 +1716,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   vertical-align: middle;
 }
 
-#tldmkljsiu .gt_empty_group_heading {
+#qjcuxzppty .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1731,15 +1731,15 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   vertical-align: middle;
 }
 
-#tldmkljsiu .gt_from_md > :first-child {
+#qjcuxzppty .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tldmkljsiu .gt_from_md > :last-child {
+#qjcuxzppty .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tldmkljsiu .gt_row {
+#qjcuxzppty .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,7 +1758,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   overflow-x: hidden;
 }
 
-#tldmkljsiu .gt_stub {
+#qjcuxzppty .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1770,7 +1770,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   padding-left: 12px;
 }
 
-#tldmkljsiu .gt_summary_row {
+#qjcuxzppty .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1780,7 +1780,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   padding-right: 5px;
 }
 
-#tldmkljsiu .gt_first_summary_row {
+#qjcuxzppty .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1790,7 +1790,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-top-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_grand_summary_row {
+#qjcuxzppty .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1800,7 +1800,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   padding-right: 5px;
 }
 
-#tldmkljsiu .gt_first_grand_summary_row {
+#qjcuxzppty .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1810,11 +1810,11 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-top-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_striped {
+#qjcuxzppty .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tldmkljsiu .gt_table_body {
+#qjcuxzppty .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1823,7 +1823,7 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-bottom-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_footnotes {
+#qjcuxzppty .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1837,13 +1837,13 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-right-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_footnote {
+#qjcuxzppty .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tldmkljsiu .gt_sourcenotes {
+#qjcuxzppty .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1857,41 +1857,41 @@ When we conducted this test on the female participants (Puzzle 1) we assigned pa
   border-right-color: #D3D3D3;
 }
 
-#tldmkljsiu .gt_sourcenote {
+#qjcuxzppty .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tldmkljsiu .gt_left {
+#qjcuxzppty .gt_left {
   text-align: left;
 }
 
-#tldmkljsiu .gt_center {
+#qjcuxzppty .gt_center {
   text-align: center;
 }
 
-#tldmkljsiu .gt_right {
+#qjcuxzppty .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tldmkljsiu .gt_font_normal {
+#qjcuxzppty .gt_font_normal {
   font-weight: normal;
 }
 
-#tldmkljsiu .gt_font_bold {
+#qjcuxzppty .gt_font_bold {
   font-weight: bold;
 }
 
-#tldmkljsiu .gt_font_italic {
+#qjcuxzppty .gt_font_italic {
   font-style: italic;
 }
 
-#tldmkljsiu .gt_super {
+#qjcuxzppty .gt_super {
   font-size: 65%;
 }
 
-#tldmkljsiu .gt_footnote_marks {
+#qjcuxzppty .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2111,12 +2111,12 @@ $$
 
 Next, we need to calculate the sum of squared residuals, which I have done in the table below.
 
-<div id="mqngplspil" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dhzpypcspd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#mqngplspil .gt_table {
+#dhzpypcspd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2141,7 +2141,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-left-color: #D3D3D3;
 }
 
-#mqngplspil .gt_heading {
+#dhzpypcspd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2153,7 +2153,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#mqngplspil .gt_title {
+#dhzpypcspd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2163,7 +2163,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-bottom-width: 0;
 }
 
-#mqngplspil .gt_subtitle {
+#dhzpypcspd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2173,13 +2173,13 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-width: 0;
 }
 
-#mqngplspil .gt_bottom_border {
+#dhzpypcspd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mqngplspil .gt_col_headings {
+#dhzpypcspd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2194,7 +2194,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#mqngplspil .gt_col_heading {
+#dhzpypcspd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2214,7 +2214,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   overflow-x: hidden;
 }
 
-#mqngplspil .gt_column_spanner_outer {
+#dhzpypcspd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2226,15 +2226,15 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 4px;
 }
 
-#mqngplspil .gt_column_spanner_outer:first-child {
+#dhzpypcspd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mqngplspil .gt_column_spanner_outer:last-child {
+#dhzpypcspd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mqngplspil .gt_column_spanner {
+#dhzpypcspd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2246,7 +2246,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   width: 100%;
 }
 
-#mqngplspil .gt_group_heading {
+#dhzpypcspd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2268,7 +2268,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   vertical-align: middle;
 }
 
-#mqngplspil .gt_empty_group_heading {
+#dhzpypcspd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2283,15 +2283,15 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   vertical-align: middle;
 }
 
-#mqngplspil .gt_from_md > :first-child {
+#dhzpypcspd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mqngplspil .gt_from_md > :last-child {
+#dhzpypcspd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mqngplspil .gt_row {
+#dhzpypcspd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2310,7 +2310,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   overflow-x: hidden;
 }
 
-#mqngplspil .gt_stub {
+#dhzpypcspd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2322,7 +2322,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-left: 12px;
 }
 
-#mqngplspil .gt_summary_row {
+#dhzpypcspd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2332,7 +2332,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 5px;
 }
 
-#mqngplspil .gt_first_summary_row {
+#dhzpypcspd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2342,7 +2342,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-color: #D3D3D3;
 }
 
-#mqngplspil .gt_grand_summary_row {
+#dhzpypcspd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2352,7 +2352,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   padding-right: 5px;
 }
 
-#mqngplspil .gt_first_grand_summary_row {
+#dhzpypcspd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2362,11 +2362,11 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-top-color: #D3D3D3;
 }
 
-#mqngplspil .gt_striped {
+#dhzpypcspd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mqngplspil .gt_table_body {
+#dhzpypcspd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2375,7 +2375,7 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-bottom-color: #D3D3D3;
 }
 
-#mqngplspil .gt_footnotes {
+#dhzpypcspd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2389,13 +2389,13 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#mqngplspil .gt_footnote {
+#dhzpypcspd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#mqngplspil .gt_sourcenotes {
+#dhzpypcspd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2409,41 +2409,41 @@ Next, we need to calculate the sum of squared residuals, which I have done in th
   border-right-color: #D3D3D3;
 }
 
-#mqngplspil .gt_sourcenote {
+#dhzpypcspd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#mqngplspil .gt_left {
+#dhzpypcspd .gt_left {
   text-align: left;
 }
 
-#mqngplspil .gt_center {
+#dhzpypcspd .gt_center {
   text-align: center;
 }
 
-#mqngplspil .gt_right {
+#dhzpypcspd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mqngplspil .gt_font_normal {
+#dhzpypcspd .gt_font_normal {
   font-weight: normal;
 }
 
-#mqngplspil .gt_font_bold {
+#dhzpypcspd .gt_font_bold {
   font-weight: bold;
 }
 
-#mqngplspil .gt_font_italic {
+#dhzpypcspd .gt_font_italic {
   font-style: italic;
 }
 
-#mqngplspil .gt_super {
+#dhzpypcspd .gt_super {
   font-size: 65%;
 }
 
-#mqngplspil .gt_footnote_marks {
+#dhzpypcspd .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2651,7 +2651,7 @@ Now we need to look up the critical value for t (see the table ‘Critical value
 
 ## Puzzle 3
 
-> Using the analyses in Puzzles 1 and 2, calculate the Cohen’s ds for the effect of using a fake vs. own name for both males and females.
+> Using the analyses in Puzzles 1 and 2, calculate the Cohen’s *d*s for the effect of using a fake vs. own name for both males and females.
 
 Let’s start with calculating Cohen’s *d* for the female data. I am going to calculate Cohen’s *d* using the pooled standard deviation to give you some practice of how to calculate it. The two groups both contained 10 participants so the *N*s will both be 10. The standard deviations for the fake name and own name groups are given in Puzzle 1. Using these values we can obtain the pooled standard deviation
 
@@ -2826,12 +2826,12 @@ The answer is 60.00, and if you look back at Puzzle 2 you will see that this was
 
 To answer this Puzzle we need to conduct a paired-samples *t*-test because the same participants took part in both conditions of the experiment (control cloak and calcite cloak). First, we need to calculate the difference scores, the mean difference score and the standard deviation, which I have done in the table.
 
-<div id="xrlbwupjhd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qqmsaljokp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xrlbwupjhd .gt_table {
+#qqmsaljokp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2856,7 +2856,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-left-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_heading {
+#qqmsaljokp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2868,7 +2868,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-right-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_title {
+#qqmsaljokp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2878,7 +2878,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-bottom-width: 0;
 }
 
-#xrlbwupjhd .gt_subtitle {
+#qqmsaljokp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2888,13 +2888,13 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-top-width: 0;
 }
 
-#xrlbwupjhd .gt_bottom_border {
+#qqmsaljokp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_col_headings {
+#qqmsaljokp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2909,7 +2909,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-right-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_col_heading {
+#qqmsaljokp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2929,7 +2929,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   overflow-x: hidden;
 }
 
-#xrlbwupjhd .gt_column_spanner_outer {
+#qqmsaljokp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2941,15 +2941,15 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   padding-right: 4px;
 }
 
-#xrlbwupjhd .gt_column_spanner_outer:first-child {
+#qqmsaljokp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xrlbwupjhd .gt_column_spanner_outer:last-child {
+#qqmsaljokp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xrlbwupjhd .gt_column_spanner {
+#qqmsaljokp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2961,7 +2961,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   width: 100%;
 }
 
-#xrlbwupjhd .gt_group_heading {
+#qqmsaljokp .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2983,7 +2983,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   vertical-align: middle;
 }
 
-#xrlbwupjhd .gt_empty_group_heading {
+#qqmsaljokp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2998,15 +2998,15 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   vertical-align: middle;
 }
 
-#xrlbwupjhd .gt_from_md > :first-child {
+#qqmsaljokp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xrlbwupjhd .gt_from_md > :last-child {
+#qqmsaljokp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xrlbwupjhd .gt_row {
+#qqmsaljokp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3025,7 +3025,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   overflow-x: hidden;
 }
 
-#xrlbwupjhd .gt_stub {
+#qqmsaljokp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3037,7 +3037,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   padding-left: 12px;
 }
 
-#xrlbwupjhd .gt_summary_row {
+#qqmsaljokp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3047,7 +3047,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   padding-right: 5px;
 }
 
-#xrlbwupjhd .gt_first_summary_row {
+#qqmsaljokp .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3057,7 +3057,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-top-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_grand_summary_row {
+#qqmsaljokp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3067,7 +3067,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   padding-right: 5px;
 }
 
-#xrlbwupjhd .gt_first_grand_summary_row {
+#qqmsaljokp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3077,11 +3077,11 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-top-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_striped {
+#qqmsaljokp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xrlbwupjhd .gt_table_body {
+#qqmsaljokp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3090,7 +3090,7 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-bottom-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_footnotes {
+#qqmsaljokp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3104,13 +3104,13 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-right-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_footnote {
+#qqmsaljokp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xrlbwupjhd .gt_sourcenotes {
+#qqmsaljokp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3124,41 +3124,41 @@ To answer this Puzzle we need to conduct a paired-samples *t*-test because the s
   border-right-color: #D3D3D3;
 }
 
-#xrlbwupjhd .gt_sourcenote {
+#qqmsaljokp .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xrlbwupjhd .gt_left {
+#qqmsaljokp .gt_left {
   text-align: left;
 }
 
-#xrlbwupjhd .gt_center {
+#qqmsaljokp .gt_center {
   text-align: center;
 }
 
-#xrlbwupjhd .gt_right {
+#qqmsaljokp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xrlbwupjhd .gt_font_normal {
+#qqmsaljokp .gt_font_normal {
   font-weight: normal;
 }
 
-#xrlbwupjhd .gt_font_bold {
+#qqmsaljokp .gt_font_bold {
   font-weight: bold;
 }
 
-#xrlbwupjhd .gt_font_italic {
+#qqmsaljokp .gt_font_italic {
   font-style: italic;
 }
 
-#xrlbwupjhd .gt_super {
+#qqmsaljokp .gt_super {
   font-size: 65%;
 }
 
-#xrlbwupjhd .gt_footnote_marks {
+#qqmsaljokp .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;

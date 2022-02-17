@@ -286,9 +286,11 @@ To work out whether this value of *F* is significant we have to look up the crit
 
 $ R^2 $ represents the amount of variance in the outcome accounted for by the model (SS~M~) relative to how much variation there was to explain in the first place (SS~T~). We have already calculated SS~M~ and SS~T~ in Puzzle 5, so we can plug these values into the equation for $ R^2 $:
 
+
 $$
-R^2= \frac{\text{SS}_\text{M}}{\text{SS}_\text{T}} = \frac{4.66}{18.90} = 0.247
+R^2= \frac{SS_M}{SS_T} = \frac{4.66}{18.90} = 0.247
 $$
+
 
 Therefore, in the current example $ R^2 $ is 0.247, which tells us that the degree to which your partner matches your ideal can account for 24.7% of the variation in how open you are to searching for alternative relationships. This value is quite high.
 

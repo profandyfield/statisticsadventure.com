@@ -13,12 +13,12 @@ toc-depth: 1
 
 > In Chapter 13, we looked at an example of how big a correlation there was between openness to new relationships (Alternatives) and the extent to which your partner matched your ideal (Ideal). The data are in Table 13.4 (in the book and reproduced below). Calculate the parameters of the linear model for openness to new relationships being predicted from how closely a partner matches the person’s ideal.
 
-<div id="lioxfwhxly" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zeqvfbbmed" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#lioxfwhxly .gt_table {
+#zeqvfbbmed .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -43,7 +43,7 @@ toc-depth: 1
   border-left-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_heading {
+#zeqvfbbmed .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -55,7 +55,7 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_title {
+#zeqvfbbmed .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -65,7 +65,7 @@ toc-depth: 1
   border-bottom-width: 0;
 }
 
-#lioxfwhxly .gt_subtitle {
+#zeqvfbbmed .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -75,13 +75,13 @@ toc-depth: 1
   border-top-width: 0;
 }
 
-#lioxfwhxly .gt_bottom_border {
+#zeqvfbbmed .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_col_headings {
+#zeqvfbbmed .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -96,7 +96,7 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_col_heading {
+#zeqvfbbmed .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -116,7 +116,7 @@ toc-depth: 1
   overflow-x: hidden;
 }
 
-#lioxfwhxly .gt_column_spanner_outer {
+#zeqvfbbmed .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -128,15 +128,15 @@ toc-depth: 1
   padding-right: 4px;
 }
 
-#lioxfwhxly .gt_column_spanner_outer:first-child {
+#zeqvfbbmed .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lioxfwhxly .gt_column_spanner_outer:last-child {
+#zeqvfbbmed .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lioxfwhxly .gt_column_spanner {
+#zeqvfbbmed .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -148,7 +148,7 @@ toc-depth: 1
   width: 100%;
 }
 
-#lioxfwhxly .gt_group_heading {
+#zeqvfbbmed .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -170,7 +170,7 @@ toc-depth: 1
   vertical-align: middle;
 }
 
-#lioxfwhxly .gt_empty_group_heading {
+#zeqvfbbmed .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -185,15 +185,15 @@ toc-depth: 1
   vertical-align: middle;
 }
 
-#lioxfwhxly .gt_from_md > :first-child {
+#zeqvfbbmed .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lioxfwhxly .gt_from_md > :last-child {
+#zeqvfbbmed .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lioxfwhxly .gt_row {
+#zeqvfbbmed .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -212,7 +212,7 @@ toc-depth: 1
   overflow-x: hidden;
 }
 
-#lioxfwhxly .gt_stub {
+#zeqvfbbmed .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -224,7 +224,7 @@ toc-depth: 1
   padding-left: 12px;
 }
 
-#lioxfwhxly .gt_summary_row {
+#zeqvfbbmed .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -234,7 +234,7 @@ toc-depth: 1
   padding-right: 5px;
 }
 
-#lioxfwhxly .gt_first_summary_row {
+#zeqvfbbmed .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -244,7 +244,7 @@ toc-depth: 1
   border-top-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_grand_summary_row {
+#zeqvfbbmed .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -254,7 +254,7 @@ toc-depth: 1
   padding-right: 5px;
 }
 
-#lioxfwhxly .gt_first_grand_summary_row {
+#zeqvfbbmed .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -264,11 +264,11 @@ toc-depth: 1
   border-top-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_striped {
+#zeqvfbbmed .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lioxfwhxly .gt_table_body {
+#zeqvfbbmed .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -277,7 +277,7 @@ toc-depth: 1
   border-bottom-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_footnotes {
+#zeqvfbbmed .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -291,13 +291,13 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_footnote {
+#zeqvfbbmed .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#lioxfwhxly .gt_sourcenotes {
+#zeqvfbbmed .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -311,41 +311,41 @@ toc-depth: 1
   border-right-color: #D3D3D3;
 }
 
-#lioxfwhxly .gt_sourcenote {
+#zeqvfbbmed .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#lioxfwhxly .gt_left {
+#zeqvfbbmed .gt_left {
   text-align: left;
 }
 
-#lioxfwhxly .gt_center {
+#zeqvfbbmed .gt_center {
   text-align: center;
 }
 
-#lioxfwhxly .gt_right {
+#zeqvfbbmed .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lioxfwhxly .gt_font_normal {
+#zeqvfbbmed .gt_font_normal {
   font-weight: normal;
 }
 
-#lioxfwhxly .gt_font_bold {
+#zeqvfbbmed .gt_font_bold {
   font-weight: bold;
 }
 
-#lioxfwhxly .gt_font_italic {
+#zeqvfbbmed .gt_font_italic {
   font-style: italic;
 }
 
-#lioxfwhxly .gt_super {
+#zeqvfbbmed .gt_super {
   font-size: 65%;
 }
 
-#lioxfwhxly .gt_footnote_marks {
+#zeqvfbbmed .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -462,12 +462,12 @@ $$
 
 The parameters mentioned in the puzzle allude to the two values of *b*. This puzzle is, therefore, asking us to calculate estimates for \$ b_0 \$ and \$ b_1 \$ in the model. The first step is to calculate the squared deviations for the predictor variable (Ideal), and the cross-product deviations, which are shown in the following table.
 
-<div id="iapqzkgqxe" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="olgzfpkffn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#iapqzkgqxe .gt_table {
+#olgzfpkffn .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -492,7 +492,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-left-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_heading {
+#olgzfpkffn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -504,7 +504,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-right-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_title {
+#olgzfpkffn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -514,7 +514,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-bottom-width: 0;
 }
 
-#iapqzkgqxe .gt_subtitle {
+#olgzfpkffn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -524,13 +524,13 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-top-width: 0;
 }
 
-#iapqzkgqxe .gt_bottom_border {
+#olgzfpkffn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_col_headings {
+#olgzfpkffn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -545,7 +545,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-right-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_col_heading {
+#olgzfpkffn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -565,7 +565,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   overflow-x: hidden;
 }
 
-#iapqzkgqxe .gt_column_spanner_outer {
+#olgzfpkffn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -577,15 +577,15 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   padding-right: 4px;
 }
 
-#iapqzkgqxe .gt_column_spanner_outer:first-child {
+#olgzfpkffn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iapqzkgqxe .gt_column_spanner_outer:last-child {
+#olgzfpkffn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iapqzkgqxe .gt_column_spanner {
+#olgzfpkffn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -597,7 +597,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   width: 100%;
 }
 
-#iapqzkgqxe .gt_group_heading {
+#olgzfpkffn .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -619,7 +619,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   vertical-align: middle;
 }
 
-#iapqzkgqxe .gt_empty_group_heading {
+#olgzfpkffn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -634,15 +634,15 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   vertical-align: middle;
 }
 
-#iapqzkgqxe .gt_from_md > :first-child {
+#olgzfpkffn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iapqzkgqxe .gt_from_md > :last-child {
+#olgzfpkffn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iapqzkgqxe .gt_row {
+#olgzfpkffn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -661,7 +661,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   overflow-x: hidden;
 }
 
-#iapqzkgqxe .gt_stub {
+#olgzfpkffn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -673,7 +673,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   padding-left: 12px;
 }
 
-#iapqzkgqxe .gt_summary_row {
+#olgzfpkffn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -683,7 +683,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   padding-right: 5px;
 }
 
-#iapqzkgqxe .gt_first_summary_row {
+#olgzfpkffn .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -693,7 +693,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-top-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_grand_summary_row {
+#olgzfpkffn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -703,7 +703,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   padding-right: 5px;
 }
 
-#iapqzkgqxe .gt_first_grand_summary_row {
+#olgzfpkffn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -713,11 +713,11 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-top-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_striped {
+#olgzfpkffn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iapqzkgqxe .gt_table_body {
+#olgzfpkffn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -726,7 +726,7 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-bottom-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_footnotes {
+#olgzfpkffn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -740,13 +740,13 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-right-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_footnote {
+#olgzfpkffn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#iapqzkgqxe .gt_sourcenotes {
+#olgzfpkffn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -760,41 +760,41 @@ The parameters mentioned in the puzzle allude to the two values of *b*. This puz
   border-right-color: #D3D3D3;
 }
 
-#iapqzkgqxe .gt_sourcenote {
+#olgzfpkffn .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#iapqzkgqxe .gt_left {
+#olgzfpkffn .gt_left {
   text-align: left;
 }
 
-#iapqzkgqxe .gt_center {
+#olgzfpkffn .gt_center {
   text-align: center;
 }
 
-#iapqzkgqxe .gt_right {
+#olgzfpkffn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iapqzkgqxe .gt_font_normal {
+#olgzfpkffn .gt_font_normal {
   font-weight: normal;
 }
 
-#iapqzkgqxe .gt_font_bold {
+#olgzfpkffn .gt_font_bold {
   font-weight: bold;
 }
 
-#iapqzkgqxe .gt_font_italic {
+#olgzfpkffn .gt_font_italic {
   font-style: italic;
 }
 
-#iapqzkgqxe .gt_super {
+#olgzfpkffn .gt_super {
   font-size: 65%;
 }
 
-#iapqzkgqxe .gt_footnote_marks {
+#olgzfpkffn .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -946,12 +946,12 @@ $$
 
 First, we need to calculate the standard error of \$ b_1 \$. To do this we need to calculate the residual for each data point by looking at the difference between the observed value of the outcome and the value predicted by the model. The following table shows the raw data and in column 4 the model for the particular participant, which uses the values of *b* computed in Puzzle 1. Column 5 shows the predicted value from the model for each person calculated from column 4. Column 6 shows the residual for each person; that is, the observed value of Alternatives (column 2) minus the predicted value of Alternatives (column 5). The final column shows these residuals squared. We add these squared residuals to give us the sum of squared residuals for the model, SS<sub>R</sub>.
 
-<div id="vumbghgllw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="azsuwmmvzj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#vumbghgllw .gt_table {
+#azsuwmmvzj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -976,7 +976,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-left-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_heading {
+#azsuwmmvzj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -988,7 +988,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-right-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_title {
+#azsuwmmvzj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -998,7 +998,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-bottom-width: 0;
 }
 
-#vumbghgllw .gt_subtitle {
+#azsuwmmvzj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1008,13 +1008,13 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-top-width: 0;
 }
 
-#vumbghgllw .gt_bottom_border {
+#azsuwmmvzj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_col_headings {
+#azsuwmmvzj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1029,7 +1029,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-right-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_col_heading {
+#azsuwmmvzj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1049,7 +1049,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   overflow-x: hidden;
 }
 
-#vumbghgllw .gt_column_spanner_outer {
+#azsuwmmvzj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1061,15 +1061,15 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   padding-right: 4px;
 }
 
-#vumbghgllw .gt_column_spanner_outer:first-child {
+#azsuwmmvzj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vumbghgllw .gt_column_spanner_outer:last-child {
+#azsuwmmvzj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vumbghgllw .gt_column_spanner {
+#azsuwmmvzj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1081,7 +1081,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   width: 100%;
 }
 
-#vumbghgllw .gt_group_heading {
+#azsuwmmvzj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1103,7 +1103,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   vertical-align: middle;
 }
 
-#vumbghgllw .gt_empty_group_heading {
+#azsuwmmvzj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1118,15 +1118,15 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   vertical-align: middle;
 }
 
-#vumbghgllw .gt_from_md > :first-child {
+#azsuwmmvzj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vumbghgllw .gt_from_md > :last-child {
+#azsuwmmvzj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vumbghgllw .gt_row {
+#azsuwmmvzj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1145,7 +1145,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   overflow-x: hidden;
 }
 
-#vumbghgllw .gt_stub {
+#azsuwmmvzj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1157,7 +1157,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   padding-left: 12px;
 }
 
-#vumbghgllw .gt_summary_row {
+#azsuwmmvzj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1167,7 +1167,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   padding-right: 5px;
 }
 
-#vumbghgllw .gt_first_summary_row {
+#azsuwmmvzj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1177,7 +1177,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-top-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_grand_summary_row {
+#azsuwmmvzj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1187,7 +1187,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   padding-right: 5px;
 }
 
-#vumbghgllw .gt_first_grand_summary_row {
+#azsuwmmvzj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1197,11 +1197,11 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-top-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_striped {
+#azsuwmmvzj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vumbghgllw .gt_table_body {
+#azsuwmmvzj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1210,7 +1210,7 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-bottom-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_footnotes {
+#azsuwmmvzj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1224,13 +1224,13 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-right-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_footnote {
+#azsuwmmvzj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#vumbghgllw .gt_sourcenotes {
+#azsuwmmvzj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1244,41 +1244,41 @@ First, we need to calculate the standard error of \$ b_1 \$. To do this we need 
   border-right-color: #D3D3D3;
 }
 
-#vumbghgllw .gt_sourcenote {
+#azsuwmmvzj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#vumbghgllw .gt_left {
+#azsuwmmvzj .gt_left {
   text-align: left;
 }
 
-#vumbghgllw .gt_center {
+#azsuwmmvzj .gt_center {
   text-align: center;
 }
 
-#vumbghgllw .gt_right {
+#azsuwmmvzj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vumbghgllw .gt_font_normal {
+#azsuwmmvzj .gt_font_normal {
   font-weight: normal;
 }
 
-#vumbghgllw .gt_font_bold {
+#azsuwmmvzj .gt_font_bold {
   font-weight: bold;
 }
 
-#vumbghgllw .gt_font_italic {
+#azsuwmmvzj .gt_font_italic {
   font-style: italic;
 }
 
-#vumbghgllw .gt_super {
+#azsuwmmvzj .gt_super {
   font-size: 65%;
 }
 
-#vumbghgllw .gt_footnote_marks {
+#azsuwmmvzj .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1477,12 +1477,12 @@ Our model predicts that if someone had scored 6 on the variable Ideal then the v
 Total sum of squares
 The total sum of squares SS<sub>T</sub> uses the differences between the observed data and the mean value of the outcome. It is the total amount of error present when we predict the outcome from its typical value - the mean - rather than from a predictor variable. I have calculated the total sum of squares in the following table. Column 2 shows the observed values of Alternatives. The mean of these values is 2.90, which we could calculate but is also given in Table 13.4 (reproduced in Puzzle 1). Column 3 shows this mean subtracted from each of the observed values, and column 4 shows these residuals squared. The total sum of squares is the sum of this final column, and is 18.90.
 
-<div id="kfgdgbzskm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mkswxwsfzk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kfgdgbzskm .gt_table {
+#mkswxwsfzk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1507,7 +1507,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-left-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_heading {
+#mkswxwsfzk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1519,7 +1519,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-right-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_title {
+#mkswxwsfzk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1529,7 +1529,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-bottom-width: 0;
 }
 
-#kfgdgbzskm .gt_subtitle {
+#mkswxwsfzk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1539,13 +1539,13 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-top-width: 0;
 }
 
-#kfgdgbzskm .gt_bottom_border {
+#mkswxwsfzk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_col_headings {
+#mkswxwsfzk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1560,7 +1560,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-right-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_col_heading {
+#mkswxwsfzk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1580,7 +1580,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   overflow-x: hidden;
 }
 
-#kfgdgbzskm .gt_column_spanner_outer {
+#mkswxwsfzk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1592,15 +1592,15 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   padding-right: 4px;
 }
 
-#kfgdgbzskm .gt_column_spanner_outer:first-child {
+#mkswxwsfzk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kfgdgbzskm .gt_column_spanner_outer:last-child {
+#mkswxwsfzk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kfgdgbzskm .gt_column_spanner {
+#mkswxwsfzk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1612,7 +1612,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   width: 100%;
 }
 
-#kfgdgbzskm .gt_group_heading {
+#mkswxwsfzk .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1634,7 +1634,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   vertical-align: middle;
 }
 
-#kfgdgbzskm .gt_empty_group_heading {
+#mkswxwsfzk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1649,15 +1649,15 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   vertical-align: middle;
 }
 
-#kfgdgbzskm .gt_from_md > :first-child {
+#mkswxwsfzk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kfgdgbzskm .gt_from_md > :last-child {
+#mkswxwsfzk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kfgdgbzskm .gt_row {
+#mkswxwsfzk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1676,7 +1676,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   overflow-x: hidden;
 }
 
-#kfgdgbzskm .gt_stub {
+#mkswxwsfzk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1688,7 +1688,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   padding-left: 12px;
 }
 
-#kfgdgbzskm .gt_summary_row {
+#mkswxwsfzk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1698,7 +1698,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   padding-right: 5px;
 }
 
-#kfgdgbzskm .gt_first_summary_row {
+#mkswxwsfzk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1708,7 +1708,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-top-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_grand_summary_row {
+#mkswxwsfzk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1718,7 +1718,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   padding-right: 5px;
 }
 
-#kfgdgbzskm .gt_first_grand_summary_row {
+#mkswxwsfzk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1728,11 +1728,11 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-top-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_striped {
+#mkswxwsfzk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kfgdgbzskm .gt_table_body {
+#mkswxwsfzk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1741,7 +1741,7 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-bottom-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_footnotes {
+#mkswxwsfzk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1755,13 +1755,13 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-right-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_footnote {
+#mkswxwsfzk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kfgdgbzskm .gt_sourcenotes {
+#mkswxwsfzk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1775,41 +1775,41 @@ The total sum of squares SS<sub>T</sub> uses the differences between the observe
   border-right-color: #D3D3D3;
 }
 
-#kfgdgbzskm .gt_sourcenote {
+#mkswxwsfzk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kfgdgbzskm .gt_left {
+#mkswxwsfzk .gt_left {
   text-align: left;
 }
 
-#kfgdgbzskm .gt_center {
+#mkswxwsfzk .gt_center {
   text-align: center;
 }
 
-#kfgdgbzskm .gt_right {
+#mkswxwsfzk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kfgdgbzskm .gt_font_normal {
+#mkswxwsfzk .gt_font_normal {
   font-weight: normal;
 }
 
-#kfgdgbzskm .gt_font_bold {
+#mkswxwsfzk .gt_font_bold {
   font-weight: bold;
 }
 
-#kfgdgbzskm .gt_font_italic {
+#mkswxwsfzk .gt_font_italic {
   font-style: italic;
 }
 
-#kfgdgbzskm .gt_super {
+#mkswxwsfzk .gt_super {
   font-size: 65%;
 }
 
-#kfgdgbzskm .gt_footnote_marks {
+#mkswxwsfzk .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;

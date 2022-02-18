@@ -6,6 +6,9 @@
 
 {{<\ figure src=“puzzle_img/ch12_pzle_08.png” id=“ch12_pzle_08” caption=“Output 14.10 (reproduced)” numbered=“true” \>}}
 
-You need to remove curly quotes and the slashes ...
+You need to force knitr to treat it as html with
 
+```{=html}
 {{< figure src="puzzle_img/ch12_pzle_08.png" id="ch12_pzle_08" caption="Output 14.10 (reproduced)" numbered="true" >}}
+```
+

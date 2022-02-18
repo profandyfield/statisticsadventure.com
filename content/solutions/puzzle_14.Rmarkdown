@@ -296,7 +296,8 @@ Therefore, in the current example $ R^2 $ is 0.247, which tells us that the degr
 
 ## Puzzle 8
 
-> In Chapter 13 Celia tried to convince Zach that there wasn't a meaningful relationship between how closely your partner matches your ideal and your willingness to entertain other relationships. She did this knowing that Alice closely matched Zach's ideal. The model summarized in Output 14.10 (in the book) shows what happens when you build a model to predict openness to alternative relationships (Alternatives) from both how much your partner matches your ideal (Ideal), and also the benefits you see in your current relationship (Benefit). This model uses the data in Table 13.4 (in the book and reproduced in puzzle 1). How might Celia use this model to get Zach to consider a relationship with her instead of Alice?
+> In Chapter 13 Celia tried to convince Zach that there wasn't a meaningful relationship between how closely your partner matches your ideal and your willingness to entertain other relationships. She did this knowing that Alice closely matched Zach's ideal. The model summarized in [Output 14.10](#figure-ch14_pzle_08) (in the book) shows what happens when you build a model to predict openness to alternative relationships (Alternatives) from both how much your partner matches your ideal (Ideal), and also the benefits you see in your current relationship (Benefit). This model uses the data in Table 13.4 (in the book and reproduced in puzzle 1). How might Celia use this model to get Zach to consider a relationship with her instead of Alice?
+
 
 {{< figure src="puzzle_img/ch14_pzle_08.png" id="ch14_pzle_08" caption="Output 14.10 (reproduced)" numbered="true" >}}
 
@@ -348,7 +349,7 @@ Against denominator:
 ---
 Bayes factor type: BFlinearModel, JZS
 ```
-Output 14.11 (reproduced)
+**Output 14.11** (reproduced)
 
 
 

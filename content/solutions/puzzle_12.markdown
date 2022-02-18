@@ -1,6 +1,6 @@
 ---
 title: "Chapter 12"
-date: '2022-02-11'
+date: '2022-02-18'
 output: html_document
 type: book
 weight: 130
@@ -21,12 +21,12 @@ $$
 
 This equation means that the residual (or error) for person *i* is their actual score on the outcome variable minus the score for the outcome predicted by the model. To calculate the residuals in Table 12.1 we would need to subtract the predicted level of oxytocin in each participant (predicted values) from the observed value for each participant (oxytocin). I have copied Table 12.1 from the book below, but added a new column at the end containing the residual for each participant.
 
-<div id="tpctkmcsnh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xnkgxwurkj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tpctkmcsnh .gt_table {
+#xnkgxwurkj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -51,7 +51,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-left-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_heading {
+#xnkgxwurkj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -63,7 +63,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-right-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_title {
+#xnkgxwurkj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -73,7 +73,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-bottom-width: 0;
 }
 
-#tpctkmcsnh .gt_subtitle {
+#xnkgxwurkj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -83,13 +83,13 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-top-width: 0;
 }
 
-#tpctkmcsnh .gt_bottom_border {
+#xnkgxwurkj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_col_headings {
+#xnkgxwurkj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -104,7 +104,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-right-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_col_heading {
+#xnkgxwurkj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -124,7 +124,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   overflow-x: hidden;
 }
 
-#tpctkmcsnh .gt_column_spanner_outer {
+#xnkgxwurkj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -136,15 +136,15 @@ This equation means that the residual (or error) for person *i* is their actual 
   padding-right: 4px;
 }
 
-#tpctkmcsnh .gt_column_spanner_outer:first-child {
+#xnkgxwurkj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tpctkmcsnh .gt_column_spanner_outer:last-child {
+#xnkgxwurkj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tpctkmcsnh .gt_column_spanner {
+#xnkgxwurkj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -156,7 +156,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   width: 100%;
 }
 
-#tpctkmcsnh .gt_group_heading {
+#xnkgxwurkj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -178,7 +178,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   vertical-align: middle;
 }
 
-#tpctkmcsnh .gt_empty_group_heading {
+#xnkgxwurkj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -193,15 +193,15 @@ This equation means that the residual (or error) for person *i* is their actual 
   vertical-align: middle;
 }
 
-#tpctkmcsnh .gt_from_md > :first-child {
+#xnkgxwurkj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tpctkmcsnh .gt_from_md > :last-child {
+#xnkgxwurkj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tpctkmcsnh .gt_row {
+#xnkgxwurkj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -220,7 +220,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   overflow-x: hidden;
 }
 
-#tpctkmcsnh .gt_stub {
+#xnkgxwurkj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -232,7 +232,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   padding-left: 12px;
 }
 
-#tpctkmcsnh .gt_summary_row {
+#xnkgxwurkj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -242,7 +242,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   padding-right: 5px;
 }
 
-#tpctkmcsnh .gt_first_summary_row {
+#xnkgxwurkj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -252,7 +252,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-top-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_grand_summary_row {
+#xnkgxwurkj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -262,7 +262,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   padding-right: 5px;
 }
 
-#tpctkmcsnh .gt_first_grand_summary_row {
+#xnkgxwurkj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -272,11 +272,11 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-top-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_striped {
+#xnkgxwurkj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tpctkmcsnh .gt_table_body {
+#xnkgxwurkj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -285,7 +285,7 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-bottom-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_footnotes {
+#xnkgxwurkj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -299,13 +299,13 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-right-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_footnote {
+#xnkgxwurkj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tpctkmcsnh .gt_sourcenotes {
+#xnkgxwurkj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -319,41 +319,41 @@ This equation means that the residual (or error) for person *i* is their actual 
   border-right-color: #D3D3D3;
 }
 
-#tpctkmcsnh .gt_sourcenote {
+#xnkgxwurkj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tpctkmcsnh .gt_left {
+#xnkgxwurkj .gt_left {
   text-align: left;
 }
 
-#tpctkmcsnh .gt_center {
+#xnkgxwurkj .gt_center {
   text-align: center;
 }
 
-#tpctkmcsnh .gt_right {
+#xnkgxwurkj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tpctkmcsnh .gt_font_normal {
+#xnkgxwurkj .gt_font_normal {
   font-weight: normal;
 }
 
-#tpctkmcsnh .gt_font_bold {
+#xnkgxwurkj .gt_font_bold {
   font-weight: bold;
 }
 
-#tpctkmcsnh .gt_font_italic {
+#xnkgxwurkj .gt_font_italic {
   font-style: italic;
 }
 
-#tpctkmcsnh .gt_super {
+#xnkgxwurkj .gt_super {
   font-size: 65%;
 }
 
-#tpctkmcsnh .gt_footnote_marks {
+#xnkgxwurkj .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -495,7 +495,9 @@ Heteroscedasticity will bias the confidence intervals and significance tests for
 
 > What does Figure 12.10 (in the book) tell us about whether the assumption of homoscedasticity has been met for this model?
 
-Figure 12.10 tells us that the assumption of homoscedasticity has been violated for this model. We can tell this because the residuals take the form of the characteristic funnel shape: they become less spread out across the graph.
+[Figure 12.10](#figure-ch12_pzle_08) tells us that the assumption of homoscedasticity has been violated for this model. We can tell this because the residuals take the form of the characteristic funnel shape: they become less spread out across the graph.
+
+{{< figure src="puzzle_img/ch12_pzle_08.png" id="ch12_pzle_08" caption="Output 14.10 (reproduced)" numbered="true" >}}
 
 ## Puzzle 9
 

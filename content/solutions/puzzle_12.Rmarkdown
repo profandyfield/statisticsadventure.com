@@ -125,7 +125,9 @@ Heteroscedasticity will bias the confidence intervals and significance tests for
 
 > What does Figure 12.10 (in the book) tell us about whether the assumption of homoscedasticity has been met for this model?
 
-Figure 12.10 tells us that the assumption of homoscedasticity has been violated for this model. We can tell this because the residuals take the form of the characteristic funnel shape: they become less spread out across the graph.
+[Figure 12.10](#figure-ch12_pzle_08) tells us that the assumption of homoscedasticity has been violated for this model. We can tell this because the residuals take the form of the characteristic funnel shape: they become less spread out across the graph.
+
+{{< figure src="puzzle_img/ch12_pzle_08.png" id="ch12_pzle_08" caption="Output 14.10 (reproduced)" numbered="true" >}}
 
 ## Puzzle 9
 

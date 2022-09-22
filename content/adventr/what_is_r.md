@@ -12,5 +12,5 @@ weight: 20
 
 You can get started with [{{< icon name="r-project" pack="fab" >}}](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/) by completing this tutorial (includes videos):
 
-* [Getting started with R and RStudio interactive tutorial](/learnr/r/r_getting_started/)
+* [Getting started with R and RStudio interactive tutorial](http://milton-the-cat.rocks/learnr/r/r_getting_started/)
 

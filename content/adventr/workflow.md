@@ -13,4 +13,4 @@ The tutorials are self-contained (you practice code in code boxes) so you don't 
 
 Here's a video explaining how I suggest you use the tutorials:
 
-{{< youtube FhoYCsZttGc >}}
+{{< youtube mqT7c17tofE >}}
